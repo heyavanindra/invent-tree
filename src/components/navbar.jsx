@@ -1,21 +1,19 @@
-"use client"
+"use client";
 
 import React, { useState } from "react";
 import { MenuButton } from "./menu-button";
 import Image from "next/image";
-import Logo from "../../public/logo/logo3.webp"
+import Logo from "../../public/logo/logo3.webp";
+import { AnimatePresence, motion } from "motion/react";
 
 const Navbar = () => {
-    const [open , setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
   return (
     <nav className="">
-      <div className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between ">
-        
-            <Image src={Logo} alt="Logo" height={200} width={200}>
+      
+        <Image className="fixed top-0 z-30 left-0" src={Logo} alt="Logo" height={200} width={200}></Image>
 
-            </Image>
-        
-        <div className="relative flex items-center h-[40px] w-[100px] mx-10">
+        <div className="fixed top-7 right-7 flex items-center h-[40px] w-[100px] z-60 mx-10">
           <MenuButton
             isOpen={open}
             onClick={() => setOpen(!open)}
@@ -27,7 +25,26 @@ const Navbar = () => {
             className="h-[20px] w-[100px] max-sm:w-[34] cursor-pointer"
           ></MenuButton>
         </div>
-      </div>
+      {/* on open */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{
+              opacity: 0,
+            }}
+            animate={{
+              opacity: 1,
+            }}
+            exit={{
+              opacity: 0,
+            }}
+            transition={{
+              duration: 0.5,
+            }}
+            className="fixed inset-0 z-30 bg-neutral-100 "
+          ></motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };
