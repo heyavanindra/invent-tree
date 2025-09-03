@@ -37,7 +37,7 @@ const RotatingScene = () => {
                   key={idx}
                   style={{ transformOrigin: "bottom left" }}
                   initial={{
-                    rotate: 90,
+                    rotate: 60,
                     opacity: 0,
                   }}
                   animate={{
@@ -45,10 +45,10 @@ const RotatingScene = () => {
                     opacity: 1,
                   }}
                   exit={{
-                    rotate: -90,
+                    rotate: -60,
                     opacity: 0,
                   }}
-                  transition={{ duration: 0.5, ease: "easeInOut" }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
                   src={scene.img}
                   width={700}
                   height={700}

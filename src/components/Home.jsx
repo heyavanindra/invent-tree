@@ -2,6 +2,7 @@
 import {motion} from "motion/react"
 // import Image from "next/image";
 import React from "react";
+import RoatedSVG from "./RotatedSVG";
 
 const HomePage = ({opacity}) => {
   return (
@@ -22,7 +23,7 @@ const HomePage = ({opacity}) => {
         alt="logo"
       ></Image> */}
 
-      <div className="flex w-full justify-center items-center gap-x-[100px]">
+      <div className="flex ml-12 px-12 w-fit justify-end items-center gap-x-[100px]">
         <div className="h-[400px] w-1/3  flex flex-col gap-y-1 items-center">
           <p className="text-center text-2xl font-semibold text-[#4f2d91]">
             To empower political leaders, candidates, and parties with
@@ -51,7 +52,11 @@ const HomePage = ({opacity}) => {
             Learn More
           </button>
         </div>
+        
       </div>
+      <div className="w-[11vw]">
+          <RoatedSVG></RoatedSVG>
+        </div>
     </motion.div>
   );
 };
