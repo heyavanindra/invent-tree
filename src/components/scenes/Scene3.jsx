@@ -12,7 +12,6 @@ const Scene3 = () => {
     return window.matchMedia('(max-width: 767px)').matches;
   });
 
-  // Dynamic image data from translations
 const image = [
     {
         id: '01',
@@ -96,7 +95,7 @@ const image = [
                   }`}
                 >
                   <div className="absolute left-0 top-0 h-20 w-3 bg-[#8777a9]"></div>
-                  <div className={id === t('slide4cards.0.id') ? 'text-center' : ''}>
+                  <div className={id === image[0].id ? 'text-center' : ''}>
                     <div className="text-[2.75rem] md:text-[4.4rem] font-orbitron font-medium text-[#8777a9] leading-none">
                       {id}
                     </div>

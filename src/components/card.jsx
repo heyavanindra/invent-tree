@@ -25,9 +25,9 @@ const Card = ({ desc, title, id ,ref}) => {
         viewport={{
           once: false,
         }}
-        className="h-screen flex flex-col justify-center items-center w-[80vh]  "
+        className="h-screen flex flex-col justify-center items-center bg-black w-[400px]"
       >
-        <div className="p-4 bg-white/80 flex flex-col justify-center items-center gap-y-2 backdrop-blur-xs  rounded-2xl w-[20vw] text-center">
+        <div className="p-4 bg-white/80 flex flex-col justify-center items-center gap-y-2 backdrop-blur-xs  rounded-2xl lg:w-[20vw] text-center">
           <p>{id}</p>
           <h1 className="text-3xl font-semibold text-[#604e84]">{title}</h1>
           <p className="font-medium">{desc}</p>

@@ -37,7 +37,7 @@ const Scene2 = () => {
   const rightColumnData = insertTextBoxes(images);
 
   return (
-    <div className="flex items-center justify-between bg-cover bg-center h-full bg-zinc-100 w-fit">
+    <div className="flex items-center justify-between bg-cover bg-center h-screen max-sm:w-full sm:h-full bg-zinc-100 w-fit">
       
       {/* Center content - only visible on desktop */}
     

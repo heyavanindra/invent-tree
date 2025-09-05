@@ -6,8 +6,7 @@ import RoatedSVG from "./RotatedSVG";
 
 const HomePage = ({opacity}) => {
   return (
-    <motion.div className="relative flex w-screen bg-[url('/Home-Page-Invent-Tree.png')] h-screen items-center overflow-hidden "
-    
+    <motion.div className="relative flex w-screen bg-[url('/Home-Page-Invent-Tree.png')] h-screen items-center overflow-hidden"
     >
      <motion.div className="absolute inset-0 pointer-events-none"
      style={{
@@ -25,7 +24,7 @@ const HomePage = ({opacity}) => {
 
       <div className="flex ml-12 px-12 w-fit justify-end items-center gap-x-[100px]">
         <div className="h-[400px] w-1/3  flex flex-col gap-y-1 items-center">
-          <p className="text-center text-2xl font-semibold text-[#4f2d91]">
+          <p className="text-center tracking-tight sm:text-md lg:text-2xl font-semibold text-[#4f2d91]">
             To empower political leaders, candidates, and parties with
             strategic, data-driven consultancy and innovative digital tools that
             enhance voter engagement, streamline campaign management, and drive
@@ -36,7 +35,7 @@ const HomePage = ({opacity}) => {
         </div>
         <div>
           <div className=" h-fit">
-            <p className="max-w-xl text-center tracking-tight text-lg p-4 leading-relaxed">
+            <p className="max-w-xl text-center text-sm sm:leading-tight tracking-tight lg:text-lg p-4 lg:leading-relaxed">
               At Nivesh Jano, we are dedicated to transforming political vision
               into electoral success. Our comprehensive consultancy services
               span every aspect of modern campaigning — from strategic planning

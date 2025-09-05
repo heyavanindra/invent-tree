@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useContext, useEffect } from "react";
 import Card from "../card";
 import { useInView } from "react-intersection-observer";
 import { ScrollContext } from "@/context/scrollcontext";
@@ -49,20 +49,20 @@ const Scene1 = ({ xGreen }) => {
   const { setActiveScene } = useContext(ScrollContext);
 
   return (
-    <motion.div className="relative flex h-screen w-[8840px] bg-[url('/bg-map.jpg')] bg-cover bg-no-repeat bg-black">
+    <motion.div className="relative flex h-screen w-[8840px] bg-[url('/bg-map.jpg')] bg-cover bg-no-repeat ">
       <motion.div
         style={{
           translateX: xGreen,
         }}
-        className="absolute top-0 z-10 bg-transparent"
+        className="absolute top-0 bottom-0 z-10 bg-transparent"
       >
-        <img src="/green.svg"></img>
+        <img className="h-screen w-full" src="/green.svg"></img>
         <p className="absolute top-[40%] left-30 z-10 px-12 text-teal-200 font-semibold text-4xl">
           To empower political leaders,<br /> candidates with data-driven consultancy.
         </p>
       </motion.div>
 
-      <div className="flex w-full h-screen justify-end items-center gap-x-[40vh]">
+      <div className="flex w-full h-screen justify-end items-center gap-x-[50rem]">
         {scenes.map((scene, idx) => {
           const { ref, inView } = useInView({
             triggerOnce: false,

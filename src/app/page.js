@@ -18,14 +18,17 @@ import Lenis from "lenis";
 import Scene2 from "@/components/scenes/Scene2";
 import Scene3 from "@/components/scenes/Scene3";
 import Scene4 from "@/components/scenes/Scene4";
+import HomepageMobile from "@/components/mobile-view-components/Homepage";
+import ScenesSection from "@/components/mobile-view-components/ScenesSection";
 
 export default function Home() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
+    offset:["start start","end start"],
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-86.6%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-100%"]);
   const xGreen = useTransform(scrollYProgress, [0, 1], [0, -3000]);
   const opacity = useTransform(scrollYProgress, [0, 0.2], [0, 0.8]);
   const { isInView, setIsInView } = useContext(ScrollContext);
@@ -48,31 +51,45 @@ export default function Home() {
   }, []);
 
   return (
-    <div ref={ref} className="flex relative flex-col w-full h-[1800vh] ">
+    <div ref={ref} className="flex relative flex-col w-full sm:h-[1800vh]">
       {/* <HomePage></HomePage> */}
-      <div className="sticky  top-0 left-0 right-0 h-screen overflow-hidden ">
+    
+    <div className="sm:hidden">
+    <HomepageMobile></HomepageMobile>
+    <ScenesSection></ScenesSection>
+    <Scene2></Scene2>
+    <Scene3></Scene3>
+    <Scene4></Scene4>
+    </div>
+
+
+
+      {/* Desktop view */}
+
+      <div className="sticky sm:block  hidden inset-0 h-screen overflow-hidden ">
         <motion.div
           className="flex w-fit overflow-hidden"
           style={{
-            x: x,
+            translateX: x,
           }}
         >
-          <div className="w-[100vw] h-screen">
+          <div className="w-[100vw] max-sm:hidden h-screen">
             <HomePage opacity={opacity}></HomePage>
           </div>
 
-          <div className="h-screen w-[8840px] ">
+          <div className="h-screen max-sm:hidden w-[8840px] ">
             <Scene1 xGreen={xGreen}></Scene1>
           </div>
-          <div className=" h-screen w-[30vw]">
+          <div className=" h-screen max-sm:hidden w-[30vw]">
             <Scene2></Scene2>
           </div>
-          <div className="h-screen w-[100vw] ">
+          <div className="h-screen max-sm:hidden w-[100vw] ">
             <Scene3></Scene3>
           </div>
-          <div>
+          <div className="h-screen max-sm:hidden w-fit">
             <Scene4></Scene4>
           </div>
+          
         </motion.div>
         <AnimatePresence>
           {isInView && <RotatingScene></RotatingScene>}
