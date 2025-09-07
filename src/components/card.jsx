@@ -33,7 +33,7 @@ const Card = ({ desc, title, id ,ref}) => {
           <p className="font-medium">{desc}</p>
         </div>
         <div>
-          <img src="/pin.svg" alt="pin" />
+          <img src="/logo/Invent-Tree logo Favicon-08.png" alt="pin" />
         </div>
       </motion.div>
     </div>

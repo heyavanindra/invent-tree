@@ -10,38 +10,38 @@ const scenes = [
   {
     id: 1,
     label: "Scene 1",
-    title: "Supplier",
-    desc: "Suppliers ensure that biodegradable waste is processed efficiently to promote sustainable agriculture.",
+    title: "Celebrity Conventions",
+    desc: "Multi-day expos featuring panels, signings, and fan interactions.",
   },
   {
     id: 2,
     label: "Scene 2",
-    title: "Collection",
-    desc: "Waste is collected from households and businesses to ensure proper recycling and reuse.",
+    title: "Meet-and-Greets",
+    desc: "Intimate sessions with your favorite stars.",
   },
   {
     id: 3,
     label: "Scene 3",
-    title: "Transportation",
-    desc: "Collected waste is transported safely to processing centers, minimizing environmental impact.",
+    title: "VIP Experiences",
+    desc: "Exclusive access to private events and behind-the-scenes moments.",
   },
   {
     id: 4,
     label: "Scene 4",
-    title: "Processing",
-    desc: "Waste is converted into useful resources such as compost, biogas, or recyclable materials.",
+    title: "Corporate Events",
+    desc: "Book celebrities for brand launches, fundraisers, or promotions.",
   },
   {
     id: 5,
     label: "Scene 5",
-    title: "Distribution",
-    desc: "Processed materials are distributed to farms, industries, and markets for reuse in production cycles.",
+    title: "Custom Events",
+    desc: "Tailored experiences for fan clubs, festivals, or private parties.",
   },
   {
     id: 6,
     label: "Scene 6",
-    title: "Consumer",
-    desc: "Consumers benefit from sustainable products and contribute back by responsibly disposing waste.",
+    title: "Event Management",
+    desc: "Tailored experiences for fan clubs, festivals, or private parties.",
   },
 ];
 
@@ -49,7 +49,7 @@ const Scene1 = ({ xGreen }) => {
   const { setActiveScene } = useContext(ScrollContext);
 
   return (
-    <motion.div className="relative flex h-screen w-[8840px] bg-[url('/bg-map.jpg')] bg-cover bg-no-repeat ">
+    <motion.div className="relative flex h-screen w-[8840px]  bg-[url('/Final-Illustration-Light-Mode.png')] bg-cover bg-no-repeat ">
       <motion.div
         style={{
           translateX: xGreen,
@@ -62,10 +62,11 @@ const Scene1 = ({ xGreen }) => {
         </p>
       </motion.div>
 
-      <div className="flex w-full h-screen justify-end items-center gap-x-[50rem]">
+      <div className="flex w-full h-screen justify-end items-center gap-x-[40rem]">
         {scenes.map((scene, idx) => {
           const { ref, inView } = useInView({
             triggerOnce: false,
+            rootMargin:"0px -1000px 0px -100px"
           });
 
           useEffect(() => {

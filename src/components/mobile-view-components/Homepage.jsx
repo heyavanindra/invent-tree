@@ -3,7 +3,7 @@ import React from 'react'
 const HomepageMobile = () => {
   return (
     <>
-          <div className="flex flex-col bg-violet-300 justify-center items-center h-screen">
+          <div className="flex flex-col bg-violet-100 justify-center items-center h-screen">
       <div className="p-6">
         <h1 className="text-black font-semibold text-2xl text-center tracking-tight leading-tight">
         To empower political leaders, candidates, and parties with strategic, data-driven consultancy and innovative digital tools that enhance voter engagement, streamline campaign management, and drive successful election outcomes.

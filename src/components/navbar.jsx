@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <nav className="">
       
-        <Image className="fixed top-0 z-30 left-0 h-[100px] w-[150px]" src={Logo} alt="Logo" height={200} width={200}></Image>
+        <Image className="fixed top-0 z-30 left-0 max-sm:h-[100px] max-sm:w-[150px] " src={Logo} alt="Logo" height={200} width={200}></Image>
 
         <div className="fixed  right-7 top-7 sm:top-7 sm:right-7 flex items-center sm:h-[40px] sm:w-[100px] z-60 sm:mx-10">
           <MenuButton

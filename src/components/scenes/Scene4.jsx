@@ -26,7 +26,7 @@ const footerLinks = [
 ];
 
   return (
-    <div>
+    <div className='w-fit'>
       <div className="flex flex-col lg:flex-row min-h-screen h-full w-full font-sans text-sm bg-white text-[#222]  ">
 
         {/* Left Section - NEWS */}
@@ -66,7 +66,7 @@ const footerLinks = [
         <main className="w-full lg:w-1/2 flex flex-col justify-start min-md:mt-8 lg:mt-30 px-5 sm:px-8 lg:px-12 xl:px-18 min-md:py-8 max-md:pb-10 lg:py-14 flex-0.9">
 
                   <div className="mb-8 lg:mb-12 w-full max-sm:mt-4 flex justify-center">
-                    <img src="/logo/Invent-Tree logo Favicon-08.png" alt="" />
+                    <img src="/logo/logo3.webp" className='lg:h-[300px] h-[100px]'  alt="" />
                   </div>
 
                           <section className="flex flex-col md:flex-row items-center justify-between bg-[#f6f9ff] rounded-xl p-4 lg:p-3 mb-6 lg:mb-12 gap-2">
