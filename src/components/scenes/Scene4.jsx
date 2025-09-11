@@ -4,33 +4,33 @@ import Link from 'next/link';
 
 const Scene4 = () => {
 
-const news = [
+  const news = [
     {
-        date: "2025.04.27",
-        tag: "New Release",
-        title: "Invent-Tree v2.0 Launches",
-        description: "We are excited to announce the release of Invent-Tree v2.0, featuring enhanced performance and new collaboration tools.",
+      date: "2025.04.27",
+      tag: "New Release",
+      title: "Invent-Tree v2.0 Launches",
+      description: "We are excited to announce the release of Invent-Tree v2.0, featuring enhanced performance and new collaboration tools.",
     },
     {
-        date: "2024.12.22",
-        tag: "Update",
-        title: "Holiday Support Hours",
-        description: "Our support team will be available with limited hours during the holiday season. Please check our contact page for details.",
+      date: "2024.12.22",
+      tag: "Update",
+      title: "Holiday Support Hours",
+      description: "Our support team will be available with limited hours during the holiday season. Please check our contact page for details.",
     },
-];
+  ];
 
-const footerLinks = [
+  const footerLinks = [
     { label: 'About', href: '/about' },
     { label: 'Privacy Policy', href: '/policy' },
     { label: 'Terms of Service', href: '/policy' },
-];
+  ];
 
   return (
     <div className='w-fit'>
       <div className="flex flex-col lg:flex-row min-h-screen h-full w-full font-sans text-sm bg-white text-[#222]  ">
 
         {/* Left Section - NEWS */}
-        <aside className="relative w-full lg:w-1/2 flex-1.1 bg-[#f4f7ff]  py-8 lg:py-12 px-5 sm:px-10 lg:px-14">
+        <aside className="relative w-full lg:w-1/2 flex-1.1 bg-[#f4f7ff]  py-8 lg:py-12 px-5 sm:px-10">
           <div className="mx-0 sm:mx-5 lg:mx-20 mt-0 sm:mt-5 lg:mt-30">
             <div className="relative z-10 flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 lg:mb-10">
               <h1 className="text-4xl sm:text-5xl max-md:text-center max-md:pt-10 text-[#604e84] tracking-wide">
@@ -63,41 +63,41 @@ const footerLinks = [
         </aside>
 
         {/* Right Section - Contact */}
-        <main className="w-full lg:w-1/2 flex flex-col justify-start min-md:mt-8 lg:mt-30 px-5 sm:px-8 lg:px-12 xl:px-18 min-md:py-8 max-md:pb-10 lg:py-14 flex-0.9">
+        <main className="w-full lg:w-1/2  flex flex-col justify-start  px-5 sm:px-8 lg:px-12 xl:px-18 min-md:py-8 max-md:pb-10 flex-0.9">
 
-                  <div className="mb-8 lg:mb-12 w-full max-sm:mt-4 flex justify-center">
-                    <img src="/logo/logo3.webp" className='lg:h-[300px] h-[100px]'  alt="" />
-                  </div>
+          <div className="mb-8  w-full max-sm:mt-4 flex justify-center">
+            <img src="/logo/logo3.webp" className='lg:h-[300px] h-[100px]' alt="" />
+          </div>
 
-                          <section className="flex flex-col md:flex-row items-center justify-between bg-[#f6f9ff] rounded-xl p-4 lg:p-3 mb-6 lg:mb-12 gap-2">
-                            <div className="flex items-center font-semibold text-lg py-1 text-[#222]">
-                              <svg className="w-[22px] h-[22px] mr-2" viewBox="0 0 24 24" xmlns="http:www.w3.org/2000/svg">
-                                <path fill="#13837d" d="M2 6a2 2 0 012-2h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6zm2 .4l7.5 4.5a.5.5 0 00.5 0L20 6.4V6H4v.4z" />
-                              </svg>
-                              <Link href={"/contact"} className="text-base lg:text-xl text-[#8777a9]">contact@invent-tree.com</Link>
-                            </div>
-                            <div className="text-xl lg:text-3xl">
-                              <p className="py-2">
-                                <span className="text-[#8777a9] font-semibold">Tel:</span> 058-322-3322
-                              </p>
-                              <small className="text-xs -mt-1 block font-medium">
-                                Reception Hours: 9:00-18:00 (Mon-Fri)
-                              </small>
-                            </div>
-                          </section>
+          <section className="flex  flex-col md:flex-row items-center justify-between bg-[#f6f9ff] rounded-xl p-4 lg:p-3 mb-6 lg:mb-12 gap-2">
+            <div className="flex items-center font-semibold text-lg py-1 text-[#222]">
+              <svg className="w-[22px] h-[22px] mr-2" viewBox="0 0 24 24" xmlns="http:www.w3.org/2000/svg">
+                <path fill="#13837d" d="M2 6a2 2 0 012-2h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6zm2 .4l7.5 4.5a.5.5 0 00.5 0L20 6.4V6H4v.4z" />
+              </svg>
+              <Link href={"/contact"} className="text-base lg:text-xl text-[#8777a9]">contact@invent-tree.com</Link>
+            </div>
+            <div className="text-xl lg:text-3xl">
+              <p className="py-2">
+                <span className="text-[#8777a9] font-semibold">TEL</span> 058-322-3322
+              </p>
+              <small className="text-xs -mt-1 block font-medium">
+                Reception Hours: 9:00-18:00 (Mon-Fri)
+              </small>
+            </div>
+          </section>
 
-                                  <div className="flex flex-col sm:flex-row gap-6 lg:gap-8 mb-8 text-sm">
-                                    <div className="w-20 h-20 lg:w-30 lg:h-30 rounded-full p-1 flex justify-center items-center mb-4 sm:mb-0 max-md:hidden">
-                                      <RoatedSVG />
-                                    </div>
-                                    <div>
-                                      <address className="not-italic leading-snug border-b pb-3 lg:pb-5">
-                                        <p className="py-1">Invent-Tree Inc.</p>
-                                        <p className="py-1">1234 Innovation Drive, Tokyo, Japan</p>
-                                        <p>TEL: 058-322-3322 / FAX: 058-322-3323</p>
-                                      </address>
+          <div className="flex flex-col sm:flex-row gap-6 lg:gap-8 mb-8 text-sm">
+            <div className="w-20 h-20 lg:w-30 lg:h-30 rounded-full p-1 flex justify-center items-center mb-4 sm:mb-0 max-md:hidden">
+              <RoatedSVG />
+            </div>
+            <div>
+              <address className="not-italic leading-snug border-b pb-3 lg:pb-5">
+                <p className="py-1">Invent-Tree Inc.</p>
+                <p className="py-1">1234 Innovation Drive, Tokyo, Japan</p>
+                <p>TEL: 058-322-3322 / FAX: 058-322-3323</p>
+              </address>
 
-                                      {/* Bottom Nav */}
+              {/* Bottom Nav */}
               <nav className="flex flex-wrap gap-x-6 gap-y-3 lg:gap-x-8 lg:gap-y-4 text-xs lg:text-sm mb-6 lg:mb-20 max-w-[500px] mt-4 lg:mt-5">
                 {footerLinks.map((link, idx) => (
                   <Link

@@ -3,6 +3,7 @@ import { motion } from "motion/react";
 // import Image from "next/image";
 import React from "react";
 import RoatedSVG from "./RotatedSVG";
+import Link from "next/link";
 
 const HomePage = ({ opacity }) => {
   return (
@@ -43,9 +44,9 @@ const HomePage = ({ opacity }) => {
             </p>
             
           </div>
-          <button className="rounded-lg ml-8 px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-400 font-semibold cursor-pointer hover:scale-101 transition-transform duration-300 ease-in-out">
+          <Link href={"/about"} className="rounded-lg ml-8 px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-400 font-semibold cursor-pointer hover:scale-101 transition-transform duration-300 ease-in-out ">
             Learn More
-          </button>
+          </Link>
         </div>
       </div>
       <div className="w-[11vw]">

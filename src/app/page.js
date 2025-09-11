@@ -86,10 +86,10 @@ export default function Home() {
           <div className=" h-screen max-sm:hidden w-[30vw]">
             <Scene2></Scene2>
           </div>
-          <div className="h-screen max-sm:hidden w-[120vw] ">
+          <div className="h-screen max-sm:hidden w-[160vw]">
             <Scene3></Scene3>
           </div>
-          <div className="h-screen max-sm:hidden w-fit">
+          <div className="h-screen max-sm:hidden w-[115vw]">
             <Scene4></Scene4>
           </div>
           

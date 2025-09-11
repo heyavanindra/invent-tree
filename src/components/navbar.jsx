@@ -5,16 +5,18 @@ import { MenuButton } from "./menu-button";
 import Image from "next/image";
 import Logo from "../../public/logo/logo3.webp";
 import { AnimatePresence, motion } from "motion/react";
-
+import Link from "next/link";
+import {ModeToggle} from "./LightToggleButton"
 const Navbar = () => {
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
   return (
     <nav className="">
       
+        <Link href={"/"}>
         <Image className="fixed top-0 z-30 left-0 max-sm:h-[100px] max-sm:w-[150px] " src={Logo} alt="Logo" height={200} width={200}></Image>
-
-        <div className="fixed  right-7 top-7 sm:top-7 sm:right-7 flex items-center sm:h-[40px] sm:w-[100px] z-60 sm:mx-10">
-          <MenuButton
+        </Link>
+        <div className="fixed  right-7 top-7 sm:top-7 sm:right-7 flex items-center sm:h-[40px] z-60 sm:mx-10">
+          {/* <MenuButton
             isOpen={open}
             onClick={() => setOpen(!open)}
             strokeWidth="4"
@@ -23,10 +25,12 @@ const Navbar = () => {
             width="64"
             height="24"
             className="h-[20px] w-[100px] max-sm:w-[34] cursor-pointer"
-          ></MenuButton>
+          ></MenuButton> */}
+          
+    <ModeToggle/>
         </div>
       {/* on open */}
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {open && (
           <motion.div
             initial={{
@@ -44,7 +48,8 @@ const Navbar = () => {
             className="fixed inset-0 z-30 bg-neutral-100 "
           ></motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence> */}
+      
     </nav>
   );
 };

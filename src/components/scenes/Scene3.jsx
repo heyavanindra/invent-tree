@@ -80,7 +80,7 @@ const image = [
   }, [disableAnimation]);
 
   return (
-    <div className='relative w-[1000vw] h-screen'>
+    <div className='relative w-[1000vw] h-screen '>
       <div className="flex items-center bg-center px-4  transition-colors duration-300">
       <div className="min-h-screen flex justify-center py-8">
         <main ref={containerRef} className="max-w-[1200px] w-full flex flex-col md:flex-row mt-2">
@@ -145,8 +145,8 @@ const image = [
                     width: '450px'
                   }}
                 >
-                  <div className="relative px-6 h-[94vh] pb-10 flex flex-col justify-between 
-                  bg-slate-100 border-x ">
+                  <div className="relative px-6 h-[94vh]  pb-10 flex flex-col justify-between 
+                  bg-slate-100  border-x ">
                     <div className="absolute left-0 top-0 h-22 w-3 bg-[#8777a9]"></div>
                     <div className={id === image[0].id ? 'text-center ' : ''}>
                       <div className="text-[2.75rem] md:text-[4.4rem] font-orbitron font-medium text-[#67577f] leading-none">
