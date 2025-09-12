@@ -66,14 +66,14 @@ export default function Home() {
 
       {/* Desktop view */}
 
-      <div className="sticky sm:block  hidden inset-0 h-screen overflow-hidden ">
+      <div className="sticky sm:block  hidden  inset-0 h-screen overflow-hidden ">
         <motion.div
           className="flex w-fit overflow-hidden"
           style={{
             translateX: x,
           }}
         >
-          <div className="w-[100vw] max-sm:hidden h-screen">
+          <div className="w-[100vw] max-sm:hidden  h-screen">
             <HomePage opacity={opacity}></HomePage>
           </div>
 
@@ -86,10 +86,10 @@ export default function Home() {
           <div className=" h-screen max-sm:hidden w-[30vw]">
             <Scene2></Scene2>
           </div>
-          <div className="h-screen max-sm:hidden w-[160vw]">
+          <div className="h-screen max-sm:hidden  w-[160vw]">
             <Scene3></Scene3>
           </div>
-          <div className="h-screen max-sm:hidden w-[115vw]">
+          <div className="h-screen max-sm:hidden w-[110vw]">
             <Scene4></Scene4>
           </div>
           
