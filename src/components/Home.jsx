@@ -4,10 +4,20 @@ import { motion } from "motion/react";
 import React from "react";
 import RoatedSVG from "./RotatedSVG";
 import Link from "next/link";
+import { useTheme } from "next-themes";
 
 const HomePage = ({ opacity }) => {
+  const { theme } = useTheme();
+ 
+   const bgImage =
+     theme === "dark"
+       ? "url('/Home-Page-Invent-Tree-Dark.png')"
+       : "url('/Home-Page-Invent-Tree.png')";
+
   return (
-    <motion.div className="relative flex w-screen bg-[url('/Home-Page-Invent-Tree.png')] h-screen items-center overflow-hidden bg-no-repeat bg-cover">
+    <motion.div className="relative flex w-screen  h-screen items-center overflow-hidden bg-no-repeat bg-cover"
+     style={{ backgroundImage: bgImage }}
+    >
       <motion.div
         className="absolute inset-0 pointer-events-none"
         style={{

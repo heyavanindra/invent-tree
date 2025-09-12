@@ -184,11 +184,10 @@
 // };
 
 // export default Scene3;
-
 'use client';
 
 import React, { useRef, useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import Image from 'next/image';
 
 const Scene3 = () => {
@@ -200,40 +199,51 @@ const Scene3 = () => {
     return window.matchMedia('(max-width: 767px)').matches;
   });
 
-  const image = [
+  const cards = [
     {
       id: '01',
-      title: 'Custom Website Design',
-      text: 'Tailored to reflect your campaign’s branding, with intuitive navigation and responsive design for all devices.',
-      img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9SRRmhH4X5N2e4QalcoxVbzYsD44C-sQv-w&s'
+      title: 'We offer a comprehensive range of polling and survey services tailored to your needs:',
+      bullets: [
+        'Voter Sentiment Polls: Gauge public opinion on candidates, issues, or policies.',
+        'Issue-Based Surveys: Deep dives into specific topics, from healthcare to economic policy.',
+        'Campaign Tracking: Monitor voter trends and campaign performance over time.',
+        'Focus Groups: Qualitative insights to complement quantitative data.',
+        'Exit Polls: Real-time data on election day to predict outcomes.',
+        'Custom Analytics: Bespoke reports and visualizations for your unique needs.'
+      ],
+      howWeWork: [
+        'Consultation: We collaborate with you to define objectives and target audiences.',
+        'Design: Our team crafts precise, unbiased questions and methodologies.',
+        'Execution: We conduct polls using phone, online, or in-person methods.',
+        'Analysis: We deliver clear, actionable reports with data visualizations.',
+        'Support: Ongoing consultation to maximize the impact of your results.'
+      ],
+      img: null 
     },
     {
       id: '02',
-      title: 'Mobile App Development',
-      text: 'Features like push notifications, event updates, and seamless donation processing enhance supporter interaction.',
-      img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9SRRmhH4X5N2e4QalcoxVbzYsD44C-sQv-w&s'
+      title: 'Recent Polls',
+      subtitle: 'Latest Insights',
+      bullets: [
+        'National Election Pulse (Oct 2025): 52% of voters prioritize economic stability over social issues.',
+        'State-Level Approval Ratings (Sep 2025): Governors in swing states face declining approval.',
+        'Issue Spotlight: Climate Policy (Aug 2025): 68% of voters support renewable energy initiatives.'
+      ],
+      img: null 
     },
     {
       id: '03',
-      title: 'Content Management',
-      text: 'Easy-to-use systems for updating content and managing multimedia without technical expertise.',
-      img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9SRRmhH4X5N2e4QalcoxVbzYsD44C-sQv-w&s'
-    },
-    {
-      id: '04',
-      title: 'Security and Compliance',
-      text: 'Robust measures to protect data and ensure regulatory compliance.',
-      img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9SRRmhH4X5N2e4QalcoxVbzYsD44C-sQv-w&s'
-    },
-    {
-      id: '05',
-      title: 'Ongoing Maintenance',
-      text: 'Regular updates and technical support to keep platforms running smoothly.',
-      img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9SRRmhH4X5N2e4QalcoxVbzYsD44C-sQv-w&s'
+      title: 'Recent Polls',
+      subtitle: 'Latest Insights',
+      bullets: [
+        'Education Policy Survey (Sep 2025): 74% support increased teacher salaries.',
+        'Healthcare Access Report (Aug 2025): 61% believe rural access is inadequate.'
+      ],
+      img: null
     }
   ];
 
-  // Handle responsive animation toggle
+
   useEffect(() => {
     function checkWidth() {
       const flag = window.innerWidth < 768;
@@ -244,7 +254,6 @@ const Scene3 = () => {
     return () => window.removeEventListener('resize', checkWidth);
   }, []);
 
-  // Intersection Observer for desktop animation
   useEffect(() => {
     if (disableAnimation) {
       setInView(false);
@@ -272,39 +281,56 @@ const Scene3 = () => {
   }, [disableAnimation]);
 
   return (
-    <div className="relative w-full h-auto md:h-screen">
-      <div className="flex items-center bg-center px-4 transition-colors duration-300">
+    <div className="relative w-full h-auto md:h-screen bg-white dark:bg-neutral-900 transition-colors duration-300">
+      <div className="flex items-center bg-center px-4">
         <div className="min-h-screen flex justify-center py-8">
           <main
             ref={containerRef}
             className="max-w-[1200px] w-full flex flex-col md:flex-row mt-2"
           >
             <div
-              className={`relative flex items-start justify-start w-full ${
+              className={`relative flex items-start justify-start w-full  ${
                 disableAnimation
                   ? 'flex-col space-y-8'
-                  : 'overflow-hidden md:overflow-visible border-x border-[#298b85]'
+                  : 'overflow-hidden md:overflow-visible border-x border-[#298b85] dark:border-[#4ccbc4]'
               }`}
             >
-              {image.map(({ id, title, text, img }, index) =>
+              {cards.map(({ id, title, subtitle, bullets, howWeWork, img }, index) =>
                 disableAnimation ? (
-                  // ✅ Mobile view → stacked cards
                   <section
                     key={id}
-                    className="relative w-full px-6 py-8 flex flex-col justify-between bg-white border border-[#8777a9] rounded-xl shadow-md"
+                    className="relative w-full px-6 py-8 flex flex-col justify-between border border-[#8777a9] dark:border-[#9b8ec2] rounded-xl shadow-md bg-white dark:bg-neutral-800 transition-colors "
                   >
-                    <div className="absolute left-0 top-0 h-20 w-3 bg-[#8777a9] rounded-r"></div>
-                    <div className="text-center">
-                      <div className="text-[2.5rem] font-orbitron font-medium text-[#8777a9] leading-none">
+                    <div className="absolute left-0 top-0 h-20 w-3 bg-[#8777a9] dark:bg-[#9b8ec2] rounded-r overflow-clip"></div>
+                    <div className="text-center ">
+                      <div className="text-[1.5rem] font-orbitron font-medium text-[#8777a9] dark:text-[#9b8ec2] leading-none">
                         {id}
                       </div>
-                      <h2 className="text-[#8777a9] text-xl md:text-3xl mb-4 font-montserrat">
+                      <h2 className="text-[#8777a9] dark:text-[#b8aee0] text-lg mb-4 font-montserrat">
                         {title}
                       </h2>
-                      <p className="text-[#2a2116] font-normal text-base md:text-lg leading-relaxed">
-                        {text}
-                      </p>
+              
+                      {subtitle && (
+                        <h3 className="text-[#67577f] dark:text-[#d2c2ef] text-base mb-2 font-semibold ">
+                          {subtitle}
+                        </h3>
+                      )}
+              
+                      <ul className="text-[#2a2116] dark:text-neutral-200 text-left space-y-2 font-normal text-base md:text-lg leading-relaxed">
+                        {bullets?.map((b, i) => (
+                          <li key={i}>• {b}</li>
+                        ))}
+                      </ul>
+              
+                      {howWeWork && (
+                        <ol className="mt-4 text-[#2a2116] dark:text-neutral-200 text-left list-decimal list-inside space-y-2">
+                          {howWeWork.map((step, i) => (
+                            <li key={i}>{step}</li>
+                          ))}
+                        </ol>
+                      )}
                     </div>
+              
                     {img && (
                       <div className="flex w-full justify-center mt-6">
                         <img
@@ -316,7 +342,6 @@ const Scene3 = () => {
                     )}
                   </section>
                 ) : (
-                  // ✅ Desktop view → animated overlapping cards
                   <motion.section
                     key={id}
                     className="absolute top-0 h-full ms-12"
@@ -330,25 +355,40 @@ const Scene3 = () => {
                       ease: 'easeInOut'
                     }}
                     style={{
-                      zIndex: image.length - index,
+                      zIndex: cards.length - index,
                       width: '450px'
                     }}
                   >
-                    <div className="relative px-6 h-[94vh] pb-10 flex flex-col justify-between bg-slate-100 border-x rounded-xl shadow-md">
-                      <div className="absolute left-0 top-0 h-22 w-3 bg-[#8777a9] rounded-r"></div>
-                      <div
-                        className={id === image[0].id ? 'text-center' : ''}
-                      >
-                        <div className="text-[2.75rem] md:text-[4.4rem] font-orbitron font-medium text-[#67577f] leading-none">
+                    <div className="relative px-6 h-[94vh] pb-10 flex flex-col justify-between bg-slate-100 dark:bg-neutral-800 border-x rounded-xl shadow-md transition-colors">
+                      <div className="absolute left-0 top-0 h-22 w-3 bg-[#8777a9] dark:bg-[#9b8ec2] rounded-r"></div>
+                      <div className={id === cards[0].id ? 'text-center' : ''}>
+                        <div className="text-[2.75rem] font-orbitron font-medium text-[#67577f] dark:text-[#b9a6d6] leading-none">
                           {id}
                         </div>
-                        <h2 className="text-[#67577f] text-lg md:text-4xl mb-4 font-montserrat">
+                        <h2 className="text-[#67577f] dark:text-[#d2c2ef] text-lg md:text-3xl mb-4 font-montserrat">
                           {title}
                         </h2>
-                        <p className="text-[#455b68] font-normal text-xl leading-relaxed">
-                          {text}
-                        </p>
+                        {subtitle && (
+                          <h3 className="text-[#67577f] dark:text-[#d2c2ef] mt-3 text-sm mb-2 font-semibold">
+                            {subtitle}
+                          </h3>
+                        )}
+              
+                        <ul className="text-[#455b68] dark:text-neutral-200 text-left space-y-2 text-md leading-relaxed">
+                          {bullets?.map((b, i) => (
+                            <li key={i}>• {b}</li>
+                          ))}
+                        </ul>
+              
+                        {howWeWork && (
+                          <ol className="mt-4 text-sm text-[#455b68] dark:text-neutral-200 list-decimal list-inside space-y-2">
+                            {howWeWork.map((step, i) => (
+                              <li key={i}>{step}</li>
+                            ))}
+                          </ol>
+                        )}
                       </div>
+              
                       {img && (
                         <div className="flex w-full justify-center mt-6">
                           <Image
@@ -364,6 +404,7 @@ const Scene3 = () => {
                   </motion.section>
                 )
               )}
+
             </div>
           </main>
         </div>

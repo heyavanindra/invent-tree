@@ -26,14 +26,14 @@ const RotatingScene = () => {
         duration: 0.2,
         ease: "easeInOut",
       }}
-      className="sticky z-50 h-[1100px] w-[1100px] bg-pink-100 -translate-y-[40%]  -translate-x-1/3 left-0 rounded-full"
+      className="sticky z-50 h-[1100px] w-[1100px] bg-pink-100  -translate-y-[40%]  -translate-x-1/3 left-0 rounded-full"
     >
       <div className="relative top-0 -translate-y-[10%] translate-x-1/3">
         <AnimatePresence mode="wait">
           {scenes.map((scene, idx) => {
             if (activeScene == scene.id) {
               return (
-                <motion.img
+                <motion.div
                   key={idx}
                   style={{ transformOrigin: "bottom left" }}
                   initial={{
@@ -49,10 +49,15 @@ const RotatingScene = () => {
                     opacity: 0,
                   }}
                   transition={{ duration: 0.4, ease: "easeInOut" }}
-                  src={scene.img}
-                  width={700}
-                  height={700}
-                ></motion.img>
+                  className="flex"
+                >
+                  <motion.img
+                    src={scene.img}
+                    width={700}
+                    height={700}
+                  ></motion.img>
+                  
+                </motion.div>
               );
             }
           })}

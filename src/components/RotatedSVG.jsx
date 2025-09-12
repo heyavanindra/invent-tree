@@ -24,11 +24,11 @@ const RoatedSVG = () => {
           />
         </defs>
         <text
-          className="fill-black tracking-[9px] "
+          className="fill-black dark:fill-white tracking-[9px] "
           fontSize="20"
           fontFamily="sans-serif"
         >
-          <textPath href="#circlePath" startOffset="0%">
+          <textPath href="#circlePath" startOffset="0%" className="dark:text-white">
             &#8226; SOLVE &#8226; ENHANCE &#8226; ACCELERATE
           </textPath>
         </text>

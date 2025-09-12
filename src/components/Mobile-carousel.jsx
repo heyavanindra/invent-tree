@@ -12,6 +12,7 @@ const sceneImages = [
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPpAh63HncAuJOC6TxWkGLYpS0WwNXswz9MA&s",
 ];
 
+
 const MobileCarousel = () => {
   const [index, setIndex] = useState(0);
 

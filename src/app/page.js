@@ -25,7 +25,7 @@ export default function Home() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset:["start start","end start"],
+    offset: ["start start", "end start"],
   });
 
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-95%"]);
@@ -34,7 +34,7 @@ export default function Home() {
   const { isInView, setIsInView } = useContext(ScrollContext);
 
   useMotionValueEvent(xGreen, "change", (latest) => {
-    if (latest < -692.1050854325657 && latest > -1933) {
+    if (latest < -400.1050854325657 && latest > -1933) {
       setIsInView(true);
     } else {
       setIsInView(false);
@@ -53,16 +53,14 @@ export default function Home() {
   return (
     <div ref={ref} className="flex relative flex-col w-full sm:h-[1800vh]">
       {/* <HomePage></HomePage> */}
-    
-    <div className="sm:hidden">
-    <HomepageMobile></HomepageMobile>
-    <ScenesSection></ScenesSection>
-    <Scene2></Scene2>
-    <Scene3></Scene3>
-    <Scene4></Scene4>
-    </div>
 
-
+      <div className="sm:hidden">
+        <HomepageMobile></HomepageMobile>
+        <ScenesSection></ScenesSection>
+        <Scene2></Scene2>
+        <Scene3></Scene3>
+        <Scene4></Scene4>
+      </div>
 
       {/* Desktop view */}
 
@@ -77,22 +75,26 @@ export default function Home() {
             <HomePage opacity={opacity}></HomePage>
           </div>
 
-          <div className="h-screen max-sm:hidden w-[8840px] ">
+          <div className="h-screen max-sm:hidden w-[12840px] ">
             <Scene1 xGreen={xGreen}></Scene1>
           </div>
           <div className="w-[80vw] flex justify-center items-center h-screen">
-            <Image src={'/Illustration-7.png'} alt="image" width={1000} height={1000}></Image>
+            <Image
+              src={"/Illustration-7.png"}
+              alt="image"
+              width={1000}
+              height={1000}
+            ></Image>
           </div>
           <div className=" h-screen max-sm:hidden w-[30vw]">
             <Scene2></Scene2>
           </div>
-          <div className="h-screen max-sm:hidden  w-[160vw]">
+          <div className="h-screen max-sm:hidden  w-[1800px]">
             <Scene3></Scene3>
           </div>
           <div className="h-screen max-sm:hidden w-[110vw]">
             <Scene4></Scene4>
           </div>
-          
         </motion.div>
         <AnimatePresence>
           {isInView && <RotatingScene></RotatingScene>}

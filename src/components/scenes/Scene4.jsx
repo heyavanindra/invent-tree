@@ -4,17 +4,16 @@ import React, { useEffect, useState } from "react";
 import RoatedSVG from "../RotatedSVG";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+
 const Scene4 = () => {
   const [news, setNews] = useState([]);
-
   const router = useRouter();
-
 
   // Fetch announcements from API
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const res = await fetch("/api/announcements"); // relative path works in Next.js
+        const res = await fetch("/api/announcements");
         if (!res.ok) throw new Error("Failed to fetch announcements");
         const data = await res.json();
         setNews(data);
@@ -33,49 +32,51 @@ const Scene4 = () => {
 
   return (
     <div className="w-fit">
-      <div className="flex flex-col lg:flex-row min-h-screen h-full w-full font-sans text-sm bg-white text-[#222] ">
+      <div className="flex flex-col lg:flex-row min-h-screen h-full w-full font-sans text-sm bg-white text-[#222] dark:bg-[#111] dark:text-[#e5e7eb]">
         {/* Left Section - NEWS */}
-        <aside className="relative w-full lg:w-1/2 flex-1.1 bg-[#f4f7ff] py-8 lg:py-12 px-5 sm:px-10">
+        <aside className="relative w-full lg:w-1/2 flex-1.1 bg-[#f4f7ff] dark:bg-[#1a1a1a] py-8 lg:py-12 px-5 sm:px-10">
           <div className="mx-0 sm:mx-5 min-md:ps-20 ps-10 mt-0 sm:mt-5 lg:mt-20">
             <div className="relative z-10 flex flex-col sm:flex-row justify-between gap-3 sm:gap-4 mb-6 lg:mb-10">
-              <h1 className="text-4xl sm:text-5xl max-md:text-center max-md:pt-10 text-[#604e84] tracking-wide">
+              <h1 className="text-4xl sm:text-5xl max-md:text-center max-md:pt-10 text-[#604e84] dark:text-[#b6a4d9] tracking-wide">
                 Announcement
               </h1>
               <div className="text-end">
                 <button
-                onClick={() => router.push("/announcements/add")}
-                className="bg-[#8777a9]  text-white text-md px-4 py-1 max-sm:w-18 rounded-lg shadow hover:opacity-80"
-              >
-                + Add
-              </button>
+                  onClick={() => router.push("/announcements/add")}
+                  className="bg-[#8777a9] text-white text-md px-4 py-1 max-sm:w-18 rounded-lg shadow hover:opacity-80"
+                >
+                  + Add
+                </button>
               </div>
             </div>
 
-            <hr className="border-t border-[#c1c7d0]/40 mb-6 lg:mb-8" />
+            <hr className="border-t border-[#c1c7d0]/40 dark:border-gray-700 mb-6 lg:mb-8" />
 
             <div className="relative z-10 space-y-4 lg:space-y-6 max-h-[50vh] overflow-y-auto pr-2">
               {news.length > 0 ? (
                 news.map((item, i) => (
                   <article
                     key={i}
-                    className="border-b border-[#c1c7d0] pb-4 lg:pb-6 hover:opacity-80"
+                    className="border-b border-[#c1c7d0] dark:border-gray-700 pb-4 lg:pb-6 hover:opacity-80"
                   >
-                    <div className="flex flex-wrap items-baseline text-xs font-bold text-gray-600 mb-1">
+                    <div className="flex flex-wrap items-baseline text-xs font-bold text-gray-600 dark:text-gray-400 mb-1">
                       <time>{item.date}</time>
                       <span className="ml-2 lg:ml-3 bg-[#8777a9] text-white px-2 py-1 text-[10px] rounded uppercase font-bold">
                         {item.tag}
                       </span>
                     </div>
-                    <h2 className="text-[#8777a9] py-1 lg:py-2 text-base lg:text-lg cursor-pointer font-semibold">
+                    <h2 className="text-[#8777a9] dark:text-[#b6a4d9] py-1 lg:py-2 text-base lg:text-lg cursor-pointer font-semibold">
                       {item.title}
                     </h2>
-                    <p className="text-sm text-[#c1c7d0] line-clamp-3 max-w-full lg:max-w-[90%]">
+                    <p className="text-sm text-[#6b7280] dark:text-gray-400 line-clamp-3 max-w-full lg:max-w-[90%]">
                       {item.description}
                     </p>
                   </article>
                 ))
               ) : (
-                <p className="text-gray-500">No announcements available.</p>
+                <p className="text-gray-500 dark:text-gray-400">
+                  No announcements available.
+                </p>
               )}
             </div>
           </div>
@@ -91,8 +92,8 @@ const Scene4 = () => {
             />
           </div>
 
-          <section className="flex flex-col md:flex-row items-center justify-between bg-[#f6f9ff]  rounded-xl p-4 lg:p-3 mb-6 lg:mb-12 gap-2">
-            <div className="flex items-center font-semibold text-lg py-1 text-[#222]">
+          <section className="flex flex-col md:flex-row items-center justify-between bg-[#f6f9ff] dark:bg-[#1f1f1f] rounded-xl p-4 lg:p-3 mb-6 lg:mb-12 gap-2">
+            <div className="flex items-center font-semibold text-lg py-1 text-[#222] dark:text-gray-200">
               <svg
                 className="w-[22px] h-[22px] mr-2"
                 viewBox="0 0 24 24"
@@ -105,17 +106,19 @@ const Scene4 = () => {
               </svg>
               <Link
                 href={"/contact"}
-                className="text-base lg:text-xl text-[#8777a9]"
+                className="text-base lg:text-xl text-[#8777a9] dark:text-[#b6a4d9]"
               >
                 contact@invent-tree.com
               </Link>
             </div>
             <div className="text-xl lg:text-3xl">
               <p className="py-2">
-                <span className="text-[#8777a9] font-semibold">TEL</span>{" "}
+                <span className="text-[#8777a9] dark:text-[#b6a4d9] font-semibold">
+                  TEL
+                </span>{" "}
                 058-322-3322
               </p>
-              <small className="text-xs -mt-1 block font-medium">
+              <small className="text-xs -mt-1 block font-medium text-gray-600 dark:text-gray-400">
                 Reception Hours: 9:00-18:00 (Mon-Fri)
               </small>
             </div>
@@ -126,9 +129,13 @@ const Scene4 = () => {
               <RoatedSVG />
             </div>
             <div>
-              <address className="not-italic leading-snug border-b pb-3 lg:pb-5">
-                <p className="py-1 dark:text-red-500 text-blue-500">Invent-Tree Inc.</p>
-                <p className="py-1">1234 Innovation Drive, Tokyo, Japan</p>
+              <address className="not-italic leading-snug border-b border-gray-300 dark:border-gray-700 pb-3 lg:pb-5">
+                <p className="py-1 text-blue-500 dark:text-red-400">
+                  Invent-Tree Inc.
+                </p>
+                <p className="py-1">
+                  1234 Innovation Drive, Tokyo, Japan
+                </p>
                 <p>TEL: 058-322-3322 / FAX: 058-322-3323</p>
               </address>
 
