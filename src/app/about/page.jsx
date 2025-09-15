@@ -1,6 +1,5 @@
 "use client";
 import { motion } from "motion/react";
-// import { useTranslations } from "next-intl";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -12,9 +11,6 @@ const fadeInUp = {
 };
 
 function Page() {
-  // const t = useTranslations("about");
-  // const team = t.raw("team");
-
   return (
     <div className="min-h-screen bg-white text-[#222] dark:bg-[#1f1f1f] dark:text-white px-3 pb-16 transition-colors duration-300">
       <motion.div
@@ -30,7 +26,7 @@ function Page() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.1, duration: 1, type: "spring" }}
         >
-          {/* {t("title")} */}gffhgf
+          About TechNova Solutions
         </motion.h1>
         <motion.p
           className="text-center text-lg mb-8 text-gray-700 dark:text-gray-300"
@@ -38,7 +34,7 @@ function Page() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
         >
-          {/* {t("subtitle")} */}gfsdgdfgdf
+          Empowering businesses with modern software solutions and digital transformation.
         </motion.p>
 
         {/* Company Mission */}
@@ -52,14 +48,13 @@ function Page() {
             variants={fadeInUp}
           >
             <p>
-              <strong>
-                {/* {t("mission.title")} */}fsdfsd
-                </strong><br />
+              <strong>Our Mission</strong><br />
               <span className="text-[#8777a9] font-semibold">
-                {/* {t("mission.highlight")} */}fgdgdf
+                Innovating for a smarter tomorrow.
               </span><br />
               <span>
-                {/* {t("mission.extra")} */}fsdfsdfg
+                At TechNova Solutions, we are committed to building scalable, secure, and user-friendly
+                applications that help businesses grow in the digital era.
               </span>
             </p>
           </motion.div>
@@ -72,24 +67,33 @@ function Page() {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.09, duration: 0.6, type: "spring" }}
         >
-          {/* {t("teamTitle")} */}fsdfgdg
+          Meet Our Team
         </motion.h2>
         <div className="grid sm:grid-cols-2 gap-6 mb-12 bg-[#f4f7ff] dark:bg-[#2e2d2d] p-6 rounded-2xl">
-          {/* {team.map((member, i) => (
-            <motion.div
-              key={member.name}
-              className="rounded-lg p-5 border border-[#c1c7d0]/40 dark:border-gray-600 shadow-lg hover:scale-105 transition-transform bg-white dark:bg-[#1f1f1f]"
-              custom={i}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-            >
-              <h3 className="text-lg font-bold mb-1">{member.name}</h3>
-              <p className="italic mb-1 text-[#8777a9]">{member.role}</p>
-              <p>{member.desc}</p>
-            </motion.div>
-          ))} */}dfsfsdfgds
+          <motion.div
+            className="rounded-lg p-5 border border-[#c1c7d0]/40 dark:border-gray-600 shadow-lg hover:scale-105 transition-transform bg-white dark:bg-[#1f1f1f]"
+            custom={0}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+          >
+            <h3 className="text-lg font-bold mb-1">Aarav Mehta</h3>
+            <p className="italic mb-1 text-[#8777a9]">CEO & Founder</p>
+            <p>Visionary leader with a passion for technology and digital innovation.</p>
+          </motion.div>
+          <motion.div
+            className="rounded-lg p-5 border border-[#c1c7d0]/40 dark:border-gray-600 shadow-lg hover:scale-105 transition-transform bg-white dark:bg-[#1f1f1f]"
+            custom={1}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+          >
+            <h3 className="text-lg font-bold mb-1">Priya Sharma</h3>
+            <p className="italic mb-1 text-[#8777a9]">CTO</p>
+            <p>Expert in cloud computing and scalable system architecture.</p>
+          </motion.div>
         </div>
 
         {/* Privacy Policy */}
@@ -102,15 +106,15 @@ function Page() {
             transition={{ delay: 0.15, duration: 0.8 }}
           >
             <h2 className="text-xl font-semibold mb-2 text-[#67577f]">
-              {/* {t("privacy.title")} */}dsfgsdg
+              Privacy Policy
             </h2>
             <ul className="list-disc pl-5 text-gray-700 dark:text-gray-300">
-              {/* {t.raw("privacy.points").map((point, index) => (
-                <li key={index}>{point}</li>
-              ))} */}dfgdfg
+              <li>We respect your privacy and protect your data.</li>
+              <li>No personal data is shared without your consent.</li>
+              <li>All transactions are secured with end-to-end encryption.</li>
             </ul>
             <div className="mt-3 underline text-[#8777a9] cursor-pointer">
-              {/* {t("privacy.link")} */}fdfggdf
+              Learn more about our privacy practices
             </div>
           </motion.div>
         </div>
@@ -125,15 +129,15 @@ function Page() {
             transition={{ delay: 0.22, duration: 0.8 }}
           >
             <h2 className="text-xl font-semibold mb-2 text-[#67577f]">
-              {/* {t("companyDetails.title")} */}cdfgdg
-              </h2>
+              Company Details
+            </h2>
             <div className="space-y-1 text-gray-700 dark:text-gray-300">
-              {/* <div>{t("companyDetails.name")}</div> */}dfsfsd
-              {/* <div>{t("companyDetails.founded")}</div> */}dsfgsdg
-              {/* <div>{t("companyDetails.hq")}</div> */}fsdfs
-              {/* <div>{t("companyDetails.email")}</div> */}sdfsdfd
-              {/* <div>{t("companyDetails.phone")}</div> */}fsdfsd
-              {/* <div>{t("companyDetails.legal")}</div> */}fasfsd
+              <div><strong>Name:</strong> TechNova Solutions Pvt. Ltd.</div>
+              <div><strong>Founded:</strong> 2020</div>
+              <div><strong>Headquarters:</strong> Bengaluru, India</div>
+              <div><strong>Email:</strong> contact@technova.com</div>
+              <div><strong>Phone:</strong> +91 98765 43210</div>
+              <div><strong>Legal:</strong> Registered under Indian Companies Act, 2013</div>
             </div>
           </motion.div>
         </div>
@@ -146,7 +150,7 @@ function Page() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.4 }}
       >
-        {/* {t("footer")} */}dsfsdfsd
+        © 2025 TechNova Solutions. All rights reserved.
       </motion.footer>
     </div>
   );
