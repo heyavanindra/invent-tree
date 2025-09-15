@@ -303,9 +303,7 @@ const Scene3 = () => {
                   >
                     <div className="absolute left-0 top-0 h-20 w-3 bg-[#8777a9] dark:bg-[#9b8ec2] rounded-r overflow-clip"></div>
                     <div className="text-center ">
-                      <div className="text-[1.5rem] font-orbitron font-medium text-[#8777a9] dark:text-[#9b8ec2] leading-none">
-                        {id}
-                      </div>
+                     
                       <h2 className="text-[#8777a9] dark:text-[#b8aee0] text-lg mb-4 font-montserrat">
                         {title}
                       </h2>
@@ -359,12 +357,10 @@ const Scene3 = () => {
                       width: '450px'
                     }}
                   >
-                    <div className="relative px-6 h-[94vh] pb-10 flex flex-col justify-between bg-slate-100 dark:bg-neutral-800 border-x rounded-xl shadow-md transition-colors">
-                      <div className="absolute left-0 top-0 h-22 w-3 bg-[#8777a9] dark:bg-[#9b8ec2] rounded-r"></div>
+                    <div className="relative p-4 overflow-hidden px-6 h-[94vh] pb-10 flex flex-col justify-between bg-slate-100 dark:bg-neutral-800 border-x rounded-xl shadow-md transition-colors">
+                      <div className="absolute  left-0 top-0 h-22 w-3 bg-[#8777a9] dark:bg-[#9b8ec2] rounded-r"></div>
                       <div className={id === cards[0].id ? 'text-center' : ''}>
-                        <div className="text-[2.75rem] font-orbitron font-medium text-[#67577f] dark:text-[#b9a6d6] leading-none">
-                          {id}
-                        </div>
+                      
                         <h2 className="text-[#67577f] dark:text-[#d2c2ef] text-lg md:text-3xl mb-4 font-montserrat">
                           {title}
                         </h2>

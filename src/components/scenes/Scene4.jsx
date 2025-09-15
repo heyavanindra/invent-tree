@@ -83,7 +83,7 @@ const Scene4 = () => {
         </aside>
 
         {/* Right Section - Contact */}
-        <main className="w-full lg:w-1/2 flex flex-col justify-start px-5 sm:px-8 lg:px-12 xl:px-18 min-md:py-8 max-md:pb-10 flex-0.9">
+        <main className="w-full lg:w-fit flex flex-col justify-start px-5 sm:px-8 lg:px-12 xl:px-18 min-md:py-8 max-md:pb-10 flex-0.9">
           <div className="mb-8 w-full max-sm:mt-4 flex justify-center">
             <img
               src="/logo/logo3.webp"
@@ -133,10 +133,12 @@ const Scene4 = () => {
                 <p className="py-1 text-blue-500 dark:text-red-400">
                   Invent-Tree Inc.
                 </p>
-                <p className="py-1">
-                  1234 Innovation Drive, Tokyo, Japan
-                </p>
+                <p className="py-1">1234 Innovation Drive, Tokyo, Japan</p>
                 <p>TEL: 058-322-3322 / FAX: 058-322-3323</p>
+                <br />
+                <p class="text-sm text-gray-500">
+                  &copy; 2025 Invent-tree. All rights reserved.
+                </p>
               </address>
 
               {/* Bottom Nav */}

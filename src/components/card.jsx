@@ -28,7 +28,6 @@ const Card = ({ desc, title, id ,ref ,points}) => {
         className="h-screen flex flex-col justify-center items-center w-[400px]"
       >
         <div className="p-4 bg-white/80 flex flex-col justify-center items-center gap-y-2 backdrop-blur-xs  rounded-2xl lg:w-[20vw] text-center">
-          <p className="text-neutral-800">{id}</p>
           <h1 className="text-3xl  font-semibold text-[#604e84]">{title}</h1>
           <p className="font-medium dark:text-neutral-600">{desc}</p>
           <div>

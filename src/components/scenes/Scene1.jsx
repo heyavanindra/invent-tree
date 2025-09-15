@@ -211,7 +211,7 @@ const Scene1 = ({ xGreen }) => {
         {scenes.map((scene, idx) => {
           const { ref, inView } = useInView({
             triggerOnce: false,
-            rootMargin:"0px -1000px 0px -100px"
+            rootMargin:"0px -600px 0px -100px"
           });
 
           useEffect(() => {

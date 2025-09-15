@@ -184,7 +184,7 @@ export default function LegalTransparency() {
           </section>
 
           <footer className="pt-6 border-t">
-            <p className="text-sm text-gray-600">These policies reflect Invent-Tree's unwavering commitment to ethics, responsibility, and accountability. For the full legal text or to request copies of any policy, please contact our legal team at <a href="mailto:legal@invent-tree.com" className="underline">legal@invent-tree.com</a>.</p>
+            <p className="text-sm text-gray-600">These policies reflect Invent-Tree's unwavering commitment to ethics, responsibility, and accountability. For the full legal text or to request copies of any policy, please contact our legal team at <a href="mailto:legal@invent-tree.com" className="underline">contact@invent-tree.in</a>.</p>
           </footer>
         </article>
       </div>
