@@ -61,7 +61,7 @@ export default function AboutUs() {
           Your trusted partner in building innovative digital experiences.
         </motion.p>
 
-        {/* Company Mission */}
+        {/* Who We Are */}
         <div className="p-6 rounded-2xl mb-10 bg-[#f4f7ff] dark:bg-[#2e2d2d]">
           <motion.div
             className="rounded-lg shadow px-6 py-6 border border-[#c1c7d0]/40 dark:border-gray-600"
@@ -82,12 +82,59 @@ export default function AboutUs() {
           </motion.div>
         </div>
 
-        {/* Team */}
+        {/* Mission */}
+        <div className="p-6 rounded-2xl mb-10 bg-[#f4f7ff] dark:bg-[#2e2d2d]">
+          <motion.div
+            className="rounded-lg shadow px-6 py-6 border border-[#c1c7d0]/40 dark:border-gray-600"
+            custom={2}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+          >
+            <p>
+              <strong>Our Mission</strong><br />
+              <span className="text-[#8777a9] font-semibold">
+                Accurate. Transparent. Timely.
+              </span><br />
+              <span>
+                To provide polling data that reflects the voice of the public,
+                enabling informed decisions in the political landscape.
+              </span>
+            </p>
+          </motion.div>
+        </div>
+
+        {/* Why Choose Us */}
         <motion.h2
           className="text-2xl font-semibold mb-6 text-center tracking-wide text-[#67577f]"
           initial={{ opacity: 0, scale: 0.92 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.09, duration: 0.6, type: "spring" }}
+        >
+          Why Choose Invent-Tree?
+        </motion.h2>
+        <div className="p-6 mb-12 bg-[#f4f7ff] dark:bg-[#2e2d2d] rounded-2xl">
+          <motion.ul
+            className="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-2"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+          >
+            <li><strong>Precision:</strong> Advanced statistical methods and representative sampling.</li>
+            <li><strong>Integrity:</strong> Strict adherence to ethical polling standards.</li>
+            <li><strong>Customization:</strong> Polls designed to answer your specific questions.</li>
+            <li><strong>Speed:</strong> Fast turnaround without compromising quality.</li>
+          </motion.ul>
+        </div>
+
+        {/* Team */}
+        <motion.h2
+          className="text-2xl font-semibold mb-6 text-center tracking-wide text-[#67577f]"
+          initial={{ opacity: 0, scale: 0.92 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.1, duration: 0.6, type: "spring" }}
         >
           Meet Our Team
         </motion.h2>
@@ -112,11 +159,12 @@ export default function AboutUs() {
         {/* Privacy Policy */}
         <div className="p-6 mb-8 bg-[#f4f7ff] dark:bg-[#2e2d2d] rounded-2xl">
           <motion.div
-            className="px-6 py-6 rounded-lg shadow-lg border border-[#c1c7d0]/40 dark:border-gray-600"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            className="rounded-lg p-5 border border-[#c1c7d0]/40 dark:border-gray-600 shadow-lg hover:scale-105 transition-transform bg-white dark:bg-[#1f1f1f]"
+            custom={0}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
-            transition={{ delay: 0.15, duration: 0.8 }}
+            variants={fadeInUp}
           >
             <h2 className="text-xl font-semibold mb-2 text-[#67577f]">Privacy Policy</h2>
             <ul className="list-disc pl-5 text-gray-700 dark:text-gray-300">
