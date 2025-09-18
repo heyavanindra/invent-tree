@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "motion/react";
-// import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -11,10 +11,30 @@ const fadeInUp = {
   })
 };
 
-function Page() {
-  // const t = useTranslations("about");
-  // const team = t.raw("team");
+const team = [
+  {
+    name: "Abhishek Kaushal",
+    role: "Founder & Lead Developer",
+    desc: "Over 4 years in web technologies (MERN stack). Clean code, efficient systems, building for scale."
+  },
+  {
+    name: "Priya Sharma",
+    role: "UI/UX Designer",
+    desc: "Intuitive user experiences, user psychology & modern design. Balances form & function."
+  },
+  {
+    name: "Ravi Verma",
+    role: "Backend Architect",
+    desc: "Builds robust backend systems using Node.js, Express, MongoDB. Focus on scale, security, and performance."
+  },
+  {
+    name: "Sneha Patel",
+    role: "Marketing & Client Relations",
+    desc: "Drives client communication and marketing. Ensures transparency and smooth collaboration."
+  }
+];
 
+export default function AboutUs() {
   return (
     <div className="min-h-screen bg-white text-[#222] dark:bg-[#1f1f1f] dark:text-white px-3 pb-16 transition-colors duration-300">
       <motion.div
@@ -30,7 +50,7 @@ function Page() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.1, duration: 1, type: "spring" }}
         >
-          {/* {t("title")} */}gffhgf
+          About Invent-Tree Solutions
         </motion.h1>
         <motion.p
           className="text-center text-lg mb-8 text-gray-700 dark:text-gray-300"
@@ -38,7 +58,7 @@ function Page() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
         >
-          {/* {t("subtitle")} */}gfsdgdfgdf
+          Your trusted partner in building innovative digital experiences.
         </motion.p>
 
         {/* Company Mission */}
@@ -52,15 +72,12 @@ function Page() {
             variants={fadeInUp}
           >
             <p>
-              <strong>
-                {/* {t("mission.title")} */}fsdfsd
-                </strong><br />
-              <span className="text-[#8777a9] font-semibold">
-                {/* {t("mission.highlight")} */}fgdgdf
-              </span><br />
-              <span>
-                {/* {t("mission.extra")} */}fsdfsdfg
-              </span>
+              Founded in 2021, our mission is to empower businesses by building
+              cutting-edge web and mobile applications. <br />
+              We specialize in full-stack development, UI/UX design, and scalable
+              cloud-based solutions. <br />
+              At TechNova, we push technology’s boundaries with a user-first
+              approach and a passion for quality.
             </p>
           </motion.div>
         </div>
@@ -72,10 +89,10 @@ function Page() {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.09, duration: 0.6, type: "spring" }}
         >
-          {/* {t("teamTitle")} */}fsdfgdg
+          Meet Our Team
         </motion.h2>
         <div className="grid sm:grid-cols-2 gap-6 mb-12 bg-[#f4f7ff] dark:bg-[#2e2d2d] p-6 rounded-2xl">
-          {/* {team.map((member, i) => (
+          {team.map((member, i) => (
             <motion.div
               key={member.name}
               className="rounded-lg p-5 border border-[#c1c7d0]/40 dark:border-gray-600 shadow-lg hover:scale-105 transition-transform bg-white dark:bg-[#1f1f1f]"
@@ -89,7 +106,7 @@ function Page() {
               <p className="italic mb-1 text-[#8777a9]">{member.role}</p>
               <p>{member.desc}</p>
             </motion.div>
-          ))} */}dfsfsdfgds
+          ))}
         </div>
 
         {/* Privacy Policy */}
@@ -101,17 +118,17 @@ function Page() {
             viewport={{ once: true }}
             transition={{ delay: 0.15, duration: 0.8 }}
           >
-            <h2 className="text-xl font-semibold mb-2 text-[#67577f]">
-              {/* {t("privacy.title")} */}dsfgsdg
-            </h2>
+            <h2 className="text-xl font-semibold mb-2 text-[#67577f]">Privacy Policy</h2>
             <ul className="list-disc pl-5 text-gray-700 dark:text-gray-300">
-              {/* {t.raw("privacy.points").map((point, index) => (
-                <li key={index}>{point}</li>
-              ))} */}dfgdfg
+              <li>We value your privacy and protect your personal information.</li>
+              <li>Data Collection: Only data necessary for improving services is collected.</li>
+              <li>Usage: Data is used only for service delivery, communications, and analytics. Not shared or sold without consent.</li>
+              <li>Security: Industry-standard encryption secures your data.</li>
+              <li>Cookies: Cookies are used for enhancing user experience; manage via your browser.</li>
             </ul>
-            <div className="mt-3 underline text-[#8777a9] cursor-pointer">
-              {/* {t("privacy.link")} */}fdfggdf
-            </div>
+            <Link href={"/policy"} className="mt-3 underline text-[#8777a9] cursor-pointer">
+              Read full Privacy Policy →
+            </Link>
           </motion.div>
         </div>
 
@@ -124,32 +141,18 @@ function Page() {
             viewport={{ once: true }}
             transition={{ delay: 0.22, duration: 0.8 }}
           >
-            <h2 className="text-xl font-semibold mb-2 text-[#67577f]">
-              {/* {t("companyDetails.title")} */}cdfgdg
-              </h2>
+            <h2 className="text-xl font-semibold mb-2 text-[#67577f]">🧾 Company Details</h2>
             <div className="space-y-1 text-gray-700 dark:text-gray-300">
-              {/* <div>{t("companyDetails.name")}</div> */}dfsfsd
-              {/* <div>{t("companyDetails.founded")}</div> */}dsfgsdg
-              {/* <div>{t("companyDetails.hq")}</div> */}fsdfs
-              {/* <div>{t("companyDetails.email")}</div> */}sdfsdfd
-              {/* <div>{t("companyDetails.phone")}</div> */}fsdfsd
-              {/* <div>{t("companyDetails.legal")}</div> */}fasfsd
+              <div>Company Name: Invent-Tree Solutions</div>
+              <div>Founded: 2021</div>
+              <div>Headquarters: Jankipuram, Lucknow, Uttar Pradesh, India</div>
+              <div>Email: contact@iventtreesolutions.com</div>
+              <div>Phone: +91-9876543210</div>
+              <div>Legal Entity: Registered under Indian Companies Act, MSME ID: IN-UP-123456789</div>
             </div>
           </motion.div>
         </div>
       </motion.div>
-
-      {/* Footer */}
-      <motion.footer
-        className="text-center mt-8 text-gray-600 dark:text-gray-400"
-        initial={{ y: 30, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 0.4 }}
-      >
-        {/* {t("footer")} */}dsfsdfsd
-      </motion.footer>
     </div>
   );
 }
-
-export default Page;

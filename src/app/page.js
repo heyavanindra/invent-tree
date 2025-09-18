@@ -28,13 +28,13 @@ export default function Home() {
     offset: ["start start", "end start"],
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-95%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-95.5%"]);
   const xGreen = useTransform(scrollYProgress, [0, 1], [0, -3000]);
   const opacity = useTransform(scrollYProgress, [0, 0.2], [0, 0.8]);
   const { isInView, setIsInView } = useContext(ScrollContext);
 
   useMotionValueEvent(xGreen, "change", (latest) => {
-    if (latest < -400.1050854325657 && latest > -1933) {
+    if (latest < -400.1050854325657 && latest > -2233) {
       setIsInView(true);
     } else {
       setIsInView(false);
@@ -78,7 +78,7 @@ export default function Home() {
           <div className="h-screen max-sm:hidden w-[12840px] ">
             <Scene1 xGreen={xGreen}></Scene1>
           </div>
-          <div className="w-[80vw] flex justify-center items-center h-screen">
+          <div className="w-[80vw] bg-[#202020] flex justify-center items-center h-screen">
             <Image
               src={"/Illustration-7.png"}
               alt="image"

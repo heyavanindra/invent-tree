@@ -185,8 +185,8 @@ const Scene1 = ({ xGreen }) => {
   
     const bgImage =
       theme === "dark"
-        ? "url('/Final-Illustration-Dark-Mode.png')"
-        : "url('/Final-Illustration-Light-Mode.png')";
+        ? "url('/assests/Illustration Invent-Tree final-51.webp')"
+        : "url('/assests/Illustration Invent-Tree final-46.webp')";
 
 
   return (

@@ -31,7 +31,7 @@ const Scene4 = () => {
   ];
 
   return (
-    <div className="w-fit">
+    <div className="w-screen">
       <div className="flex flex-col lg:flex-row min-h-screen h-full w-full font-sans text-sm bg-white text-[#222] dark:bg-[#111] dark:text-[#e5e7eb]">
         {/* Left Section - NEWS */}
         <aside className="relative w-full lg:w-1/2 flex-1.1 bg-[#f4f7ff] dark:bg-[#1a1a1a] py-8 lg:py-12 px-5 sm:px-10">
@@ -83,7 +83,7 @@ const Scene4 = () => {
         </aside>
 
         {/* Right Section - Contact */}
-        <main className="w-full lg:w-fit flex flex-col justify-start px-5 sm:px-8 lg:px-12 xl:px-18 min-md:py-8 max-md:pb-10 flex-0.9">
+        <main className="w-full lg:w-full flex flex-col justify-start px-5 sm:px-8 lg:px-12 xl:px-18 min-md:py-8 max-md:pb-10 flex-0.9">
           <div className="mb-8 w-full max-sm:mt-4 flex justify-center">
             <img
               src="/logo/logo3.webp"
@@ -136,7 +136,7 @@ const Scene4 = () => {
                 <p className="py-1">1234 Innovation Drive, Tokyo, Japan</p>
                 <p>TEL: 058-322-3322 / FAX: 058-322-3323</p>
                 <br />
-                <p class="text-sm text-gray-500">
+                <p className="text-sm text-gray-500">
                   &copy; 2025 Invent-tree. All rights reserved.
                 </p>
               </address>
