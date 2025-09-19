@@ -40,20 +40,23 @@ const Scene2 = () => {
       {/* Center content - only visible on desktop */}
 
       {/* Side scrolling columns */}
-      <div className="w-full  h-full flex">
+      <div className="w-full h-full flex">
         {/* Left column scroll */}
         <div className="w-1/2 h-full overflow-hidden">
           <motion.div
             className="flex flex-col"
-            animate={{ y: ["5%", "-100%"] }}
+            animate={{ y: ["0%", "-100%"] }}
             transition={{
               duration: 60,
               ease: "linear",
               repeat: Infinity,
+              repeatType: "loop",
             }}
+            style={{ willChange: "transform" }}
           >
+            {/* Double the content for seamless loop */}
             {[...leftColumnData, ...leftColumnData].map((item, i) => (
-              <div  key={`left-img-${i}`}>
+              <div key={`left-img-${i}`}>
                 {typeof item === "string" ? (
                   <div>
                     <Image
@@ -81,13 +84,16 @@ const Scene2 = () => {
         <div className="w-1/2 h-full overflow-hidden">
           <motion.div
             className="flex flex-col"
-            animate={{ y: ["0%", "-100%"] }}
+            animate={{ y: ["-25%", "-125%"] }}
             transition={{
               duration: 60,
               ease: "linear",
               repeat: Infinity,
+              repeatType: "loop",
             }}
+            style={{ willChange: "transform" }}
           >
+            {/* Double the content for seamless loop */}
             {[...rightColumnData, ...rightColumnData].map((item, i) =>
               typeof item === "string" ? (
                 <Image

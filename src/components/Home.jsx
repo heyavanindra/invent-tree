@@ -5,19 +5,17 @@ import React from "react";
 import RoatedSVG from "./RotatedSVG";
 import Link from "next/link";
 import { useTheme } from "next-themes";
+import Image from "next/image";
 
 const HomePage = ({ opacity }) => {
-  const { theme } = useTheme();
  
-   const bgImage =
-     theme === "dark"
-       ? "url('/Home-Page-Invent-Tree-Dark.png')"
-       : "url('/Home-Page-Invent-Tree.png')";
 
   return (
-    <motion.div className="relative flex w-screen  h-screen items-center overflow-hidden bg-no-repeat bg-cover"
-     style={{ backgroundImage: bgImage }}
+    <motion.div className="relative dark:bg-neutral-900 flex w-screen  h-screen items-center overflow-hidden bg-no-repeat bg-cover"
     >
+      <div className="absolute  bottom-12 left-12">
+        <Image src={'/Home-Page-Illustration.png'} alt="image" width={500} height={500}/>
+      </div>
       <motion.div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -33,7 +31,7 @@ const HomePage = ({ opacity }) => {
         alt="logo"
       ></Image> */}
 
-      <div className="flex ml-12 px-12 w-fit justify-end items-center gap-x-[100px]">
+      <div className="relative z-20 flex ml-12 px-12 w-fit justify-end items-center gap-x-[100px]">
         <div className="h-[400px] w-1/3  flex flex-col gap-y-1 items-center">
           <p className="dark:text-neutral-400 text-center tracking-tight sm:text-md lg:text-2xl font-semibold text-[#4f2d91]">
             To empower political leaders, candidates, and parties with

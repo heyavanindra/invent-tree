@@ -50,7 +50,7 @@ export default function AboutUs() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.1, duration: 1, type: "spring" }}
         >
-          About Invent-Tree Solutions
+          About Invent-Tree
         </motion.h1>
         <motion.p
           className="text-center text-lg mb-8 text-gray-700 dark:text-gray-300"
@@ -58,7 +58,7 @@ export default function AboutUs() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
         >
-          Your trusted partner in building innovative digital experiences.
+          Uncovering the pulse of the people through accurate, data-driven political surveys.
         </motion.p>
 
         {/* Who We Are */}
@@ -72,12 +72,11 @@ export default function AboutUs() {
             variants={fadeInUp}
           >
             <p>
-              Founded in 2021, our mission is to empower businesses by building
-              cutting-edge web and mobile applications. <br />
-              We specialize in full-stack development, UI/UX design, and scalable
-              cloud-based solutions. <br />
-              At TechNova, we push technology’s boundaries with a user-first
-              approach and a passion for quality.
+              <strong>Who We Are</strong><br />
+              Invent-Tree is a leading political survey and polling firm dedicated to providing
+              high-quality, unbiased data to inform decision-making. With over a decade of
+              experience, we’ve worked with political campaigns, advocacy groups, and media outlets
+              to deliver insights that matter.
             </p>
           </motion.div>
         </div>
@@ -191,12 +190,12 @@ export default function AboutUs() {
           >
             <h2 className="text-xl font-semibold mb-2 text-[#67577f]">🧾 Company Details</h2>
             <div className="space-y-1 text-gray-700 dark:text-gray-300">
-              <div>Company Name: Invent-Tree Solutions</div>
-              <div>Founded: 2021</div>
-              <div>Headquarters: Jankipuram, Lucknow, Uttar Pradesh, India</div>
-              <div>Email: contact@iventtreesolutions.com</div>
-              <div>Phone: +91-9876543210</div>
-              <div>Legal Entity: Registered under Indian Companies Act, MSME ID: IN-UP-123456789</div>
+              <div>Company Name: Invent-Tree</div>
+              <div>Experience: 10+ years in political survey & polling</div>
+              <div>Address: Park Street, Green Olives, Hinjewadi Phase II, Pune - 57</div>
+              <div>Email: projects@invent-tree.in</div>
+              <div>Phone: +91-9930005234</div>
+              <div>Legal Entity: Registered under Indian Companies Act, MSME Certified</div>
             </div>
           </motion.div>
         </div>

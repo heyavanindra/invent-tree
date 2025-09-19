@@ -9,22 +9,9 @@ const Card = ({ desc, title, id ,ref ,points}) => {
   return (
     <div ref={ref}>
       <motion.div
-        initial={{
-          opacity: 0,
-          y: -10,
-        }}
-        whileInView={{
-          opacity: 1,
-          y: 0,
-        }}
-        transition={{
-          delay: 0.3,
-          duration: 0.6,
-          stiffness: 800,
-        }}
-        viewport={{
-          once: false,
-        }}
+       
+       
+        
         className="h-screen flex flex-col justify-center items-center w-[400px]"
       >
         <div className="p-4 bg-white/80 flex flex-col justify-center items-center gap-y-2 backdrop-blur-xs  rounded-2xl lg:w-[20vw] text-center">
@@ -42,9 +29,24 @@ const Card = ({ desc, title, id ,ref ,points}) => {
                      )}
           </div>
         </div>
-        <div>
+        <motion.div
+          initial={{
+            y:-10,
+            opacity:0.5
+          }}
+          whileInView={{
+            y:0,
+            opacity:1
+          }}
+          transition={{
+            duration:0.3,
+            damping:300,
+            
+          }}
+          
+        >
           <img src="/logo/Invent-Tree logo Favicon-08.png" alt="pin" />
-        </div>
+        </motion.div>
       </motion.div>
     </div>
   );

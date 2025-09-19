@@ -78,14 +78,14 @@ export default function Home() {
           <div className="h-screen max-sm:hidden w-[12840px] ">
             <Scene1 xGreen={xGreen}></Scene1>
           </div>
-          <div className="w-[80vw] bg-[#202020] flex justify-center items-center h-screen">
+          {/* <div className="w-[80vw] bg-[#202020] flex justify-center items-center h-screen">
             <Image
               src={"/Illustration-7.png"}
               alt="image"
               width={1000}
               height={1000}
             ></Image>
-          </div>
+          </div>*/}
           <div className=" h-screen max-sm:hidden w-[30vw]">
             <Scene2></Scene2>
           </div>
