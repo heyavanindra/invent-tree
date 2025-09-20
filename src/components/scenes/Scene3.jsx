@@ -229,7 +229,7 @@ const Scene3 = () => {
         'State-Level Approval Ratings (Sep 2025): Governors in swing states face declining approval.',
         'Issue Spotlight: Climate Policy (Aug 2025): 68% of voters support renewable energy initiatives.'
       ],
-      img: null 
+      img: "https://res.cloudinary.com/dk2mdk9md/image/upload/v1758365678/Generated_Image_September_20_2025_-_4_22PM_f1vuj6.png" 
     },
     {
       id: '03',
@@ -239,7 +239,7 @@ const Scene3 = () => {
         'Education Policy Survey (Sep 2025): 74% support increased teacher salaries.',
         'Healthcare Access Report (Aug 2025): 61% believe rural access is inadequate.'
       ],
-      img: null
+      img: "https://res.cloudinary.com/dk2mdk9md/image/upload/v1758365930/Generated_Image_September_20_2025_-_4_26PM_qmmtpi.png"
     }
   ];
 

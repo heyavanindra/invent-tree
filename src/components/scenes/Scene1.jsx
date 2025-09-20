@@ -190,7 +190,7 @@ const Scene1 = ({ xGreen }) => {
 
 
   return (
-    <motion.div className="relative flex h-screen w-full  bg-cover bg-no-repeat "
+    <motion.div className="relative flex h-screen w-full   bg-repeat "
       style={{
         backgroundImage:bgImage
       }}
@@ -202,8 +202,8 @@ const Scene1 = ({ xGreen }) => {
         className="absolute top-0 bottom-0 z-10 bg-transparent"
       >
         <img className="h-screen w-full" src="/green.svg"></img>
-        <p className="absolute top-[40%] left-30 z-10 px-12 text-teal-200 font-semibold text-4xl">
-          To empower political leaders,<br /> candidates with data-driven consultancy.
+        <p className="absolute top-[40%] left-30 z-10 px-12 text-[#4F2D91] font-semibold text-6xl">
+          Get Started Today
         </p>
       </motion.div>
 

@@ -28,13 +28,13 @@ export default function Home() {
     offset: ["start start", "end start"],
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-95.5%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-96.5%"]);
   const xGreen = useTransform(scrollYProgress, [0, 1], [0, -3000]);
   const opacity = useTransform(scrollYProgress, [0, 0.2], [0, 0.8]);
   const { isInView, setIsInView } = useContext(ScrollContext);
 
   useMotionValueEvent(xGreen, "change", (latest) => {
-    if (latest < -400.1050854325657 && latest > -2233) {
+    if (latest < -400.1050854325657 && latest > -2333) {
       setIsInView(true);
     } else {
       setIsInView(false);
@@ -68,7 +68,7 @@ export default function Home() {
         <motion.div
           className="flex w-fit overflow-hidden"
           style={{
-            translateX: x,
+            x: x,
           }}
         >
           <div className="w-[100vw] max-sm:hidden  h-screen">
@@ -92,7 +92,7 @@ export default function Home() {
           <div className="h-screen max-sm:hidden  w-[1500px] px-2">
             <Scene3></Scene3>
           </div>
-          <div className="h-screen max-sm:hidden xl:w-fit md:w-[165vw] px-12">
+          <div className=" ">
             <Scene4></Scene4>
           </div>
         </motion.div>

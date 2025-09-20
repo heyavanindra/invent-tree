@@ -43,9 +43,12 @@ const Card = ({ desc, title, id ,ref ,points}) => {
             damping:300,
             
           }}
+          className="flex flex-col items-center"
           
         >
-          <img src="/logo/Invent-Tree logo Favicon-08.png" alt="pin" />
+          <div class="w-16 p-2 h-16 rounded-full flex items-center justify-center shadow-lg relative z-10  bg-[#8777a9] "><img src="/logo/Invent-Tree logo Favicon-08.png" alt="pin" /></div>
+          <div class=" mt-1  w-1 h-1 border-l-8 border-r-8 border-t-8  border-l-transparent border-r-transparent border-t-[#8777a9]"></div>
+          
         </motion.div>
       </motion.div>
     </div>

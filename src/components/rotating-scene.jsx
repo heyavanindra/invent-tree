@@ -26,7 +26,7 @@ const RotatingScene = () => {
         duration: 0.2,
         ease: "easeInOut",
       }}
-      className="sticky z-50 h-[1100px] w-[1100px] bg-pink-100  -translate-y-[40%]  -translate-x-1/3 left-0 rounded-full"
+      className="sticky z-50 h-[1100px] w-[1100px] bg-pink-100  -translate-y-[35%]  -translate-x-[35%] left-0 rounded-full"
     >
       <div className="relative top-0 -translate-y-[10%] translate-x-1/3">
         <AnimatePresence mode="wait">
@@ -53,8 +53,8 @@ const RotatingScene = () => {
                 >
                   <motion.img
                     src={scene.img}
-                    width={700}
-                    height={700}
+                    width={600}
+                    height={600}
                   ></motion.img>
                   
                 </motion.div>

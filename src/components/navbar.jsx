@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import { MenuButton } from "./menu-button";
 import Image from "next/image";
-import Logo from "../../public/logo/logo3.webp";
 import { AnimatePresence, motion } from "motion/react";
 import Link from "next/link";
 import {ModeToggle} from "./LightToggleButton"
@@ -13,7 +12,7 @@ const Navbar = () => {
     <nav className="">
       
         <Link href={"/"}>
-        <Image className="fixed top-0 z-30 left-0 max-sm:h-[100px] max-sm:w-[150px] " src={Logo} alt="Logo" height={200} width={200}></Image>
+        <Image className="fixed top-0 z-30 left-0 max-sm:h-[100px] max-sm:w-[150px] " src={"/assests/logo-final.webp"} alt="Logo" height={200} width={200}></Image>
         </Link>
         <div className="fixed  right-7 top-7 sm:top-7 sm:right-7 flex items-center sm:h-[40px] z-60 sm:mx-10">
           {/* <MenuButton

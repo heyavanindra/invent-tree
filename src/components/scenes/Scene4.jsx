@@ -108,7 +108,7 @@ const Scene4 = () => {
                 href={"/contact"}
                 className="text-base lg:text-xl text-[#8777a9] dark:text-[#b6a4d9]"
               >
-                projects@invent-tree.in
+                contact@invent-tree.com
               </Link>
             </div>
             <div className="text-xl lg:text-3xl">
@@ -116,7 +116,7 @@ const Scene4 = () => {
                 <span className="text-[#8777a9] dark:text-[#b6a4d9] font-semibold">
                   TEL
                 </span>{" "}
-                +91-9930005234
+                058-322-3322
               </p>
               <small className="text-xs -mt-1 block font-medium text-gray-600 dark:text-gray-400">
                 Reception Hours: 9:00-18:00 (Mon-Fri)
@@ -133,15 +133,11 @@ const Scene4 = () => {
                 <p className="py-1 text-blue-500 dark:text-red-400">
                   Invent-Tree Inc.
                 </p>
-                <p className="py-1">
-                  Park Street, Green Olives,
-                  <br />
-                  Hinjewadi Phase II, Pune - 57
-                </p>
-                <p>TEL: +91-9930005234</p>
+                <p className="py-1">1234 Innovation Drive, Tokyo, Japan</p>
+                <p>TEL: 058-322-3322 / FAX: 058-322-3323</p>
                 <br />
                 <p className="text-sm text-gray-500">
-                  &copy; 2025 Invent-Tree. All rights reserved.
+                  &copy; 2025 Invent-tree. All rights reserved.
                 </p>
               </address>
 
