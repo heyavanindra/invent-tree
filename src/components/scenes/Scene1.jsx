@@ -19,8 +19,8 @@ const scenes = [
       "VIP Experiences",
       "Corporate Events",
       "Custom Events",
-      "Event Management"
-    ]
+      "Event Management",
+    ],
   },
   {
     id: 2,
@@ -32,8 +32,8 @@ const scenes = [
       "Mobile App Development",
       "Content Management",
       "Security and Compliance",
-      "Ongoing Maintenance"
-    ]
+      "Ongoing Maintenance",
+    ],
   },
   {
     id: 3,
@@ -47,8 +47,8 @@ const scenes = [
       "Event Management",
       "Volunteer Coordination",
       "Data Analytics",
-      "Election Day Operations"
-    ]
+      "Election Day Operations",
+    ],
   },
   {
     id: 4,
@@ -61,8 +61,8 @@ const scenes = [
       "Predictive Analytics",
       "Sentiment Analysis",
       "Geographic Information Systems (GIS)",
-      "Real-time Dashboards"
-    ]
+      "Real-time Dashboards",
+    ],
   },
   {
     id: 5,
@@ -75,8 +75,8 @@ const scenes = [
       "Channel Optimization",
       "Booth Management",
       "Voter Mobilization",
-      "Data Collection"
-    ]
+      "Data Collection",
+    ],
   },
   {
     id: 6,
@@ -89,8 +89,8 @@ const scenes = [
       "Canvassing Operations",
       "Voter Education",
       "Grassroots Organizing",
-      "Digital Outreach"
-    ]
+      "Digital Outreach",
+    ],
   },
   {
     id: 7,
@@ -103,8 +103,8 @@ const scenes = [
       "Online Advertising",
       "Influencer Partnerships",
       "Analytics and Monitoring",
-      "Crisis Management"
-    ]
+      "Crisis Management",
+    ],
   },
   {
     id: 8,
@@ -117,8 +117,8 @@ const scenes = [
       "Legislative Strategy",
       "Governance Training",
       "Stakeholder Engagement",
-      "Issue Briefings"
-    ]
+      "Issue Briefings",
+    ],
   },
   {
     id: 9,
@@ -131,8 +131,8 @@ const scenes = [
       "Message Development",
       "Media Training",
       "Reputation Management",
-      "Consistency Across Platforms"
-    ]
+      "Consistency Across Platforms",
+    ],
   },
   {
     id: 10,
@@ -145,8 +145,8 @@ const scenes = [
       "Role Assignment",
       "Coordination Tools",
       "Motivation and Recognition",
-      "Leadership Development"
-    ]
+      "Leadership Development",
+    ],
   },
   {
     id: 11,
@@ -159,8 +159,8 @@ const scenes = [
       "Events and Forums",
       "Mentorship Programs",
       "Social Media Campaigns",
-      "Partnerships"
-    ]
+      "Partnerships",
+    ],
   },
   {
     id: 12,
@@ -173,26 +173,27 @@ const scenes = [
       "Rapid Response",
       "Data Integration",
       "Coordination",
-      "Scenario Planning"
-    ]
-  }
+      "Scenario Planning",
+    ],
+  },
 ];
-
 
 const Scene1 = ({ xGreen }) => {
   const { setActiveScene } = useContext(ScrollContext);
   const { theme } = useTheme();
-  
-    const bgImage =
-      theme === "dark"
-        ? "url('/assests/Illustration Invent-Tree final-51.webp')"
-        : "url('/assests/Illustration Invent-Tree final-46.webp')";
 
+  const bgImage =
+    theme === "dark"
+      ? "url('/assests/Illustration Invent-Tree final-51.webp')"
+      : "url('/assests/Illustration Invent-Tree final-46.webp')";
 
   return (
-    <motion.div className="relative flex h-screen w-full   bg-repeat "
+    <motion.div
+      className="relative flex h-screen w-full bg-repeat-x "
       style={{
-        backgroundImage:bgImage
+        backgroundImage: bgImage,
+        backgroundSize: "48% auto", // 3 times horizontally
+        backgroundPosition: "center center", // keep it centered
       }}
     >
       <motion.div
@@ -207,11 +208,11 @@ const Scene1 = ({ xGreen }) => {
         </p>
       </motion.div>
 
-      <div className="flex w-full h-screen justify-end items-center gap-x-[30rem]">
+      <div className="flex w-full h-screen justify-end items-center gap-x-[35rem]">
         {scenes.map((scene, idx) => {
           const { ref, inView } = useInView({
             triggerOnce: false,
-            rootMargin:"0px -600px 0px -100px"
+            rootMargin: "0px -300px 0px -100px",
           });
 
           useEffect(() => {
@@ -239,7 +240,7 @@ const Scene1 = ({ xGreen }) => {
 export default Scene1;
 
 /**
-  
+
 
 <div className="h-screen w-[80vh] border-2 border-black"></div>
         <div className="h-screen w-[80vh] border-2 border-black"></div>

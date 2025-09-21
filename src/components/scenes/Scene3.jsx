@@ -281,7 +281,7 @@ const Scene3 = () => {
   }, [disableAnimation]);
 
   return (
-    <div className="relative w-full h-auto md:h-screen bg-white dark:bg-neutral-900 transition-colors duration-300">
+    <div className="relative w-full h-auto md:h-screen bg-white dark:bg-neutral-900 transition-colors duration-300 ">
       <div className="flex items-center bg-center px-4">
         <div className="min-h-screen flex justify-center py-8">
           <main
