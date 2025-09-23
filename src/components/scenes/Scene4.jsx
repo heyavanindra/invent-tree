@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 const Scene4 = () => {
   const [news, setNews] = useState([]);
   const router = useRouter();
-
+  
   // Fetch announcements from API
   useEffect(() => {
     const fetchNews = async () => {
@@ -126,7 +126,16 @@ const Scene4 = () => {
 
           <div className="flex flex-col sm:flex-row gap-6 lg:gap-8 mb-8 text-sm">
             <div className="w-20 h-20 lg:w-30 lg:h-30 rounded-full p-1 flex justify-center items-center mb-4 sm:mb-0 max-md:hidden">
-              <RoatedSVG />
+              <div
+                onClick={() =>
+                  document
+                    .getElementById("home")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
+                className="cursor-pointer"
+              >
+                <RoatedSVG />
+              </div>
             </div>
             <div>
               <address className="not-italic leading-snug border-b border-gray-300 dark:border-gray-700 pb-3 lg:pb-5">

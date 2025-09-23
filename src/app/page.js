@@ -45,7 +45,6 @@ export default function Home() {
     offset: ["start start", "end start"],
   });
 
-  // Map scroll → horizontal movement
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-100%"]);
 
   const xGreen = useTransform(scrollYProgress, [0, 1], [0, -3000]);

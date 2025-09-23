@@ -1,12 +1,23 @@
 "use client";
 import scenes from "@/constants/scene";
 import { ScrollContext } from "@/context/scrollcontext";
-import { AnimatePresence, motion } from "motion/react";
-
-import React, { useContext, useEffect } from "react";
+import { AnimatePresence, motion, useScroll, useMotionValueEvent } from "motion/react";
+import React, { useContext, useEffect, useState } from "react";
 
 const RotatingScene = () => {
   const { activeScene } = useContext(ScrollContext);
+  const [scrollDirection, setScrollDirection] = useState('down');
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious();
+    if (latest > previous) {
+      setScrollDirection('down');
+    } else {
+      setScrollDirection('up');
+    }
+  });
+
   useEffect(() => {
     console.log("active", activeScene);
   }, [activeScene]);
@@ -26,9 +37,9 @@ const RotatingScene = () => {
         duration: 0.2,
         ease: "easeInOut",
       }}
-      className="sticky z-50 h-[1100px] w-[1100px] bg-pink-100  -translate-y-[40%]  -translate-x-[35%] left-0 rounded-full"
+      className="sticky z-50 h-[1100px] w-[1100px] bg-pink-100  -translate-y-[35%]  -translate-x-[35%] left-0 rounded-full"
     >
-      <div className="relative top-0 -translate-y-[15%] translate-x-1/3">
+      <div className="relative top-0 -translate-y-[10%] translate-x-1/3">
         <AnimatePresence mode="wait">
           {scenes.map((scene, idx) => {
             if (activeScene == scene.id) {
@@ -37,7 +48,7 @@ const RotatingScene = () => {
                   key={idx}
                   style={{ transformOrigin: "bottom left" }}
                   initial={{
-                    rotate: 60,
+                    rotate: scrollDirection === 'down' ? 60 : -60,
                     opacity: 0,
                   }}
                   animate={{
@@ -45,18 +56,20 @@ const RotatingScene = () => {
                     opacity: 1,
                   }}
                   exit={{
-                    rotate: -60,
+                    rotate: scrollDirection === 'down' ? -60 : 60,
                     opacity: 0,
                   }}
                   transition={{ duration: 0.4, ease: "easeInOut" }}
-                  className="flex"
+                  className=""
                 >
                   <motion.img
                     src={scene.img}
                     width={600}
                     height={600}
                   ></motion.img>
-                  
+                  <motion.h1 className="absolute bottom-0 text-neutral-700 right-[40%] text-2xl font-bold">
+                    {scene.title}
+                  </motion.h1>
                 </motion.div>
               );
             }

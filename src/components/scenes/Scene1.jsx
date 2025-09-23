@@ -189,10 +189,10 @@ const Scene1 = ({ xGreen }) => {
 
   return (
     <motion.div
-      className="relative flex h-screen w-full bg-repeat-x "
+      className="relative flex h-screen w-full bg-repeat "
       style={{
         backgroundImage: bgImage,
-        backgroundSize: "48% auto", // 3 times horizontally
+        backgroundSize: "25% auto", // 3 times horizontally
         backgroundPosition: "center center", // keep it centered
       }}
     >

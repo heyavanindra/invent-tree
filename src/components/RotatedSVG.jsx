@@ -1,12 +1,27 @@
 import React from "react";
 import { motion } from "motion/react";
-const RoatedSVG = () => {
+import { cn } from "@/lib/utils";
+import { Link } from "react-scroll";
+
+const RotatedSVG = ({
+  className,
+  svgClassName,
+  size = 128, // 👈 numeric size in px for simplicity
+  logoSize = 40, // 👈 optional: control logo size separately
+}) => {
   return (
-    <div className="relative flex h-screen items-center justify-center">
+    <div
+      className={cn(
+        "relative flex items-center justify-center",
+        `h-[${size}px] w-[${size}px]`, // dynamic parent size
+        className
+      )}
+      style={{ width: size, height: size }} // fallback if arbitrary size is passed
+    >
       {/* Rotating SVG Circle with text using framer-motion */}
       <motion.svg
         viewBox="0 0 300 300"
-        className="h-[128px] w-[128px]"
+        className={cn("w-full h-full", svgClassName)}
         animate={{ rotate: 360 }}
         transition={{
           repeat: Infinity,
@@ -24,26 +39,27 @@ const RoatedSVG = () => {
           />
         </defs>
         <text
-          className="fill-black dark:fill-white tracking-[9px] "
+          className="fill-black dark:fill-white tracking-[9px]"
           fontSize="20"
           fontFamily="sans-serif"
         >
-          <textPath href="#circlePath" startOffset="0%" className="dark:text-white">
+          <textPath href="#circlePath" startOffset="0%">
             &#8226; SOLVE &#8226; ENHANCE &#8226; ACCELERATE
           </textPath>
         </text>
       </motion.svg>
 
       {/* Centered logo */}
-      <div className="absolute text-5xl">
+      <div className="absolute flex items-center justify-center">
         <img
           src="/logo/Invent-Tree logo Favicon-08.png"
           alt="nj logo"
-          className="h-10 w-10 object-contain"
+          style={{ width: logoSize, height: logoSize }}
+          className="object-contain"
         />
       </div>
     </div>
   );
 };
 
-export default RoatedSVG;
+export default RotatedSVG;

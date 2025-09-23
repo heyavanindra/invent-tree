@@ -14,7 +14,7 @@ const Card = ({ desc, title, id, ref, points }) => {
           y: 0,
           opacity: 1,
         }}
-        viewport={{margin:"0px -400px 0px -100px",}}
+        viewport={{margin:"0px -300px 0px -100px",}}
         transition={{
           duration: 0.3,
           damping: 300,
@@ -25,10 +25,10 @@ const Card = ({ desc, title, id, ref, points }) => {
          
           className="flex flex-col items-center mb-3"
         >
-          <div class="w-16 p-2 h-16 rounded-full flex items-center justify-center shadow-lg relative z-10  bg-[#BED5E9] ">
+          <div className="w-16 p-2 h-16 rounded-full flex items-center justify-center shadow-lg relative z-10  bg-[#BED5E9] ">
             <img src="/logo/Invent-Tree logo Favicon-08.png" alt="pin" />
           </div>
-          <div class=" mt-1  w-1 h-1 border-l-8 border-r-8 border-t-8  border-l-transparent border-r-transparent border-t-[#8777a9]"></div>
+          <div className=" mt-1  w-1 h-1 border-l-8 border-r-8 border-t-8  border-l-transparent border-r-transparent border-t-[#8777a9]"></div>
         </motion.div>
         <div className="p-4 bg-white/80 flex flex-col justify-center items-center gap-y-2 backdrop-blur-xs  rounded-2xl lg:w-[20vw] text-center">
           <h1 className="text-3xl  font-semibold text-[#604e84]">{title}</h1>
