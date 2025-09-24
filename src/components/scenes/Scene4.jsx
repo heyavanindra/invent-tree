@@ -142,8 +142,9 @@ const Scene4 = () => {
                 <p className="py-1 text-blue-500 dark:text-red-400">
                   Invent-Tree Inc.
                 </p>
-                <p className="py-1">1234 Innovation Drive, Tokyo, Japan</p>
-                <p>TEL: 058-322-3322 / FAX: 058-322-3323</p>
+                <p className="py-1">Park Street, Green Olives,</p>
+                <p className="py-1">Hinjewadi Phase II, Pune - 57</p>
+                <p>TEL: +91-9930005234</p>
                 <br />
                 <p className="text-sm text-gray-500">
                   &copy; 2025 Invent-tree. All rights reserved.
