@@ -36,14 +36,20 @@ export default function Home() {
   ];
 
   // Calculate scroll sections based on widths
-  const sectionWidths = [
-    { width: window?.innerWidth || 1920, name: 'home' }, // 100vw
-    { width: 12840, name: 'scene1' }, // Scene1 width
-    { width: (30 / 100) * (window?.innerWidth || 1920), name: 'scene2' }, // 30vw
-    { width: 1500, name: 'scene3' }, // Scene3 width
-    { width: 800, name: 'scene4' }, // Approximate Scene4 width
-  ];
+ 
+  const [sectionWidths, setSectionWidths] = useState([]);
   
+  useEffect(() => {
+    const vw = window.innerWidth;
+    setSectionWidths([
+      { width: vw, name: 'home' },
+      { width: 12840, name: 'scene1' },
+      { width: (30 / 100) * vw, name: 'scene2' },
+      { width: 1500, name: 'scene3' },
+      { width: 800, name: 'scene4' },
+    ]);
+  }, []);
+
   useEffect(() => {
     const calcScrollHeight = () => {
       if (!scrollWrapperRef.current) return;
