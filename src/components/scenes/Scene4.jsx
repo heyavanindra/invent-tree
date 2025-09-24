@@ -31,7 +31,7 @@ const Scene4 = () => {
   ];
 
   return (
-    <div className="w-screen">
+    <div className="w-full ml-6">
       <div className="flex flex-col lg:flex-row min-h-screen h-full w-full font-sans text-sm bg-white text-[#222] dark:bg-[#111] dark:text-[#e5e7eb]">
         {/* Left Section - NEWS */}
         <aside className="relative w-full lg:w-1/2 flex-1.1 bg-[#f4f7ff] dark:bg-[#1a1a1a] py-8 lg:py-12 px-5 sm:px-10">
@@ -104,12 +104,12 @@ const Scene4 = () => {
                   d="M2 6a2 2 0 012-2h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6zm2 .4l7.5 4.5a.5.5 0 00.5 0L20 6.4V6H4v.4z"
                 />
               </svg>
-              <Link
-                href={"/contact"}
+              <a
+                href="mailto:contact@invent-tree.com"
                 className="text-base lg:text-xl text-[#8777a9] dark:text-[#b6a4d9]"
               >
                 contact@invent-tree.com
-              </Link>
+              </a>
             </div>
             <div className="text-xl lg:text-3xl">
               <p className="py-2">
@@ -124,7 +124,7 @@ const Scene4 = () => {
             </div>
           </section>
 
-          <div className="flex flex-col sm:flex-row gap-6 lg:gap-8 mb-8 text-sm">
+          <div className="flex flex-col justify-center  sm:flex-row gap-6 lg:gap-8 mb-8 text-sm">
             <div className="w-20 h-20 lg:w-30 lg:h-30 rounded-full p-1 flex justify-center items-center mb-4 sm:mb-0 max-md:hidden">
               <div
                 onClick={() =>

@@ -17,7 +17,7 @@ const ScrollingCarousel = () => {
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbnUheL6Gz4BOy-uR6-BZ8KFIYVVDn-18ciQ&s"
   ];
 
-  const textWords = ["Solve", "Enhance", "Accelerate"];
+  const textWords = ["https://www.shutterstock.com/shutterstock/photos/2443608149/display_1500/stock-vector-lotus-flower-orange-green-bjp-symbol-bhartiya-janta-party-indian-political-party-election-campaign-2443608149.jpg", "https://www.shutterstock.com/shutterstock/photos/2382987411/display_1500/stock-vector-indian-national-congress-party-symbol-2382987411.jpg", "https://www.shutterstock.com/shutterstock/photos/2382987411/display_1500/stock-vector-indian-national-congress-party-symbol-2382987411.jpg"];
 
   // Function to insert random text boxes into image array
   const insertRandomTexts = (imageArray) => {
@@ -25,7 +25,7 @@ const ScrollingCarousel = () => {
     
     textWords.forEach(word => {
       const randomIndex = Math.floor(Math.random() * result.length);
-      result.splice(randomIndex, 0, { type: 'text', content: word });
+      result.splice(randomIndex, 0, { type: 'image', content: word });
     });
     
     return result;

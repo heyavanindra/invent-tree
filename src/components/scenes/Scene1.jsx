@@ -208,7 +208,7 @@ const Scene1 = ({ xGreen }) => {
         </p>
       </motion.div>
 
-      <div className="flex w-full h-screen justify-end items-center gap-x-[35rem]">
+      <div className="flex w-full h-screen justify-end items-center gap-x-[30rem] mr-[600px]">
         {scenes.map((scene, idx) => {
           const { ref, inView } = useInView({
             triggerOnce: false,

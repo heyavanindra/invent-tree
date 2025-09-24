@@ -27,19 +27,16 @@ const HomePage = ({ opacity }) => {
         }}
       ></motion.div>
 
-      <div className="relative flex ml-96 px-12 w-fit justify-center items-center gap-x-[100px]">
-        <div className="h-[400px] w-1/3 flex flex-col gap-y-1 items-center">
-          <p className="dark:text-neutral-400 text-center tracking-tight sm:text-md lg:text-2xl font-semibold text-[#4f2d91]">
-            To empower political leaders, candidates, and parties with
-            strategic, data-driven consultancy and innovative digital tools that
-            enhance voter engagement, streamline campaign management, and drive
-            successful election outcomes.
+      <div className="relative flex ml-56 px-12 w-fit justify-center items-center gap-x-[100px]">
+        <div className="h-[400px] w-1/2 flex flex-col gap-y-1 items-center justify-center">
+          <p className="dark:text-neutral-400 text-center tracking-tight sm:text-md lg:text-7xl font-semibold text-[#4f2d91]">
+            Your objective is our <br/> goal
           </p>
           <span className="h-px w-[200px] bg-neutral-600 mask-l-from-0 mask-r-from-0"></span>
           <h3 className="">Our Mission</h3>
         </div>
 
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col ml-40 justify-center items-center">
           <div>
             <RotatedSVG size={300} logoSize={80} />
           </div>

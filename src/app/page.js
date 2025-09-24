@@ -96,9 +96,7 @@ export default function Home() {
             <Scene1 xGreen={xGreen} />
           </div>
 
-          <div className="relative w-[30vw] flex justify-center items-center h-screen bg-[url('/assests/bg-vinyl.webp')]">
-            <div className="absolute inset-0 bg-white opacity-90" />
-          </div>
+        
 
           <div className="h-screen w-[30vw]">
             <Scene2 />
@@ -108,7 +106,7 @@ export default function Home() {
             <Scene3 />
           </div>
 
-          <div className="h-screen w-[100vw]">
+          <div className="h-screen w-fit">
             <Scene4 />
           </div>
         </motion.div>
