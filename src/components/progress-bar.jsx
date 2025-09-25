@@ -41,7 +41,7 @@ const ProgressBarNavigation = ({
     <div className={`hidden md:block fixed ${getPositionClasses()} z-50 ${className}`}>
       <div className="flex items-center justify-center">
         <motion.div 
-          className="relative flex items-center w-fit backdrop-blur-xl bg-white/10 dark:bg-black/20 border border-white/20 dark:border-white/10 rounded-full px-6 py-4 shadow-2xl"
+          className="relative flex items-center w-fit  bg-white/10 dark:bg-black/20 border border-white/20 dark:border-white/10 rounded-full px-6 py-4 shadow-2xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}

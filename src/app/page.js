@@ -29,10 +29,9 @@ export default function Home() {
   // Define steps for navigation
   const steps = [
     { number: '01', label: 'Home' },
-    { number: '02', label: 'Scene 1' },
-    { number: '03', label: 'Scene 2' },
-    { number: '04', label: 'Scene 3' },
-    { number: '05', label: 'Scene 4' },
+    { number: '02', label: 'Scenes' },
+    { number: '03', label: 'Polls' },
+    { number: '04', label: 'Announcement' },
   ];
 
   // Calculate scroll sections based on widths
@@ -43,10 +42,9 @@ export default function Home() {
     const vw = window.innerWidth;
     setSectionWidths([
       { width: vw, name: 'home' },
-      { width: 12840, name: 'scene1' },
-      { width: (30 / 100) * vw, name: 'scene2' },
-      { width: 1500, name: 'scene3' },
-      { width: 800, name: 'scene4' },
+      { width: 12840 +  (30 / 100) * vw, name: 'scene1' },
+      { width: 1500, name: 'scene2' },
+      { width: 800, name: 'scene3' },
     ]);
   }, []);
 
@@ -114,7 +112,7 @@ export default function Home() {
     
     // Add half of the target section width to center it
     if (stepIndex < sectionWidths.length) {
-      targetPosition += sectionWidths[stepIndex].width / 2;
+      targetPosition += sectionWidths[stepIndex].width / 1000;
     }
     
     const targetProgress = targetPosition / totalWidth;
