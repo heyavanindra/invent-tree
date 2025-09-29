@@ -7,18 +7,16 @@ const ProgressBarNavigation = ({
   activeStep = 1,
   onStepClick,
   className = "",
-  position = "bottom-right" // "bottom-right", "bottom-left", "bottom-center"
+  position = "bottom-right"
 }) => {
   const [hoveredStep, setHoveredStep] = useState(null);
   const [progressWidth, setProgressWidth] = useState(0);
 
-  // Calculate progress width based on active step
   useEffect(() => {
     const progress = steps.length > 1 ? (activeStep / (steps.length )) * 100 : 0;
     setProgressWidth(progress);
   }, [activeStep, steps.length]);
 
-  // Position classes
   const getPositionClasses = () => {
     switch (position) {
       case "bottom-left":
@@ -47,10 +45,8 @@ const ProgressBarNavigation = ({
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
           
-          {/* Background progress line */}
           <div className="absolute top-1/2 left-6 right-6 h-[2px] bg-gradient-to-r from-white/30 to-white/10 dark:from-white/20 dark:to-white/5 rounded-full z-0" />
           
-          {/* Active progress line with gradient */}
           <motion.div
             className="absolute top-1/2 left-6 h-[2px] bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 rounded-full z-10 shadow-lg shadow-blue-500/30"
             initial={{ width: "0%" }}
@@ -58,7 +54,6 @@ const ProgressBarNavigation = ({
             transition={{ duration: 0.6, ease: "easeOut" }}
           />
           
-          {/* Animated progress glow */}
           <motion.div
             className="absolute top-1/2 left-6 h-[4px] bg-gradient-to-r from-blue-400/50 via-purple-400/50 to-pink-400/50 rounded-full blur-sm z-5"
             initial={{ width: "0%" }}
@@ -66,10 +61,8 @@ const ProgressBarNavigation = ({
             transition={{ duration: 0.6, ease: "easeOut" }}
           />
           
-          {/* Step indicators */}
           {steps.map((step, index) => (
             <div key={index} className="relative z-20 flex flex-col items-center mx-3">
-              {/* Enhanced Tooltip */}
               <motion.div
                 className="absolute bottom-16 px-4 py-2 rounded-xl backdrop-blur-lg bg-white/90 dark:bg-gray-900/90 text-gray-800 dark:text-white shadow-2xl border border-white/20 dark:border-gray-700/50 whitespace-nowrap"
                 initial={{ opacity: 0, y: 10, scale: 0.8 }}
@@ -89,7 +82,6 @@ const ProgressBarNavigation = ({
                 </div>
               </motion.div>
               
-              {/* Enhanced Step button */}
               <motion.button
                 aria-label={`Go to ${step.label}`}
                 className={`relative w-12 h-12 flex items-center justify-center font-medium text-sm rounded-full transition-all duration-300 group overflow-hidden
@@ -103,7 +95,6 @@ const ProgressBarNavigation = ({
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
-                {/* Button background with gradient */}
                 <motion.div
                   className={`absolute inset-0 rounded-full ${
                     index <= activeStep
@@ -117,7 +108,6 @@ const ProgressBarNavigation = ({
                   transition={{ duration: 0.3 }}
                 />
                 
-                {/* Animated border ring for active step */}
                 {index === activeStep && (
                   <motion.div
                     className="absolute inset-0 rounded-full border-2 border-white/50"
@@ -133,7 +123,6 @@ const ProgressBarNavigation = ({
                   />
                 )}
                 
-                {/* Button glow effect */}
                 <motion.div
                   className={`absolute inset-0 rounded-full blur-lg ${
                     index <= activeStep
@@ -147,7 +136,6 @@ const ProgressBarNavigation = ({
                   transition={{ duration: 0.3 }}
                 />
                 
-                {/* Step number with enhanced typography */}
                 <span className="relative z-10 font-semibold tracking-wider">
                   {step.number || (index + 1).toString().padStart(2, '0')}
                 </span>

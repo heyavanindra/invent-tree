@@ -6,19 +6,18 @@ import { Link } from "react-scroll";
 const RotatedSVG = ({
   className,
   svgClassName,
-  size = 128, // 👈 numeric size in px for simplicity
-  logoSize = 40, // 👈 optional: control logo size separately
+  size = 128, 
+  logoSize = 40,
 }) => {
   return (
     <div
       className={cn(
         "relative flex items-center justify-center",
-        `h-[${size}px] w-[${size}px]`, // dynamic parent size
+        `h-[${size}px] w-[${size}px]`, 
         className
       )}
-      style={{ width: size, height: size }} // fallback if arbitrary size is passed
+      style={{ width: size, height: size }} 
     >
-      {/* Rotating SVG Circle with text using framer-motion */}
       <motion.svg
         viewBox="0 0 300 300"
         className={cn("w-full h-full", svgClassName)}
@@ -49,7 +48,6 @@ const RotatedSVG = ({
         </text>
       </motion.svg>
 
-      {/* Centered logo */}
       <div className="absolute flex items-center justify-center">
         <img
           src="/logo/Invent-Tree logo Favicon-08.png"

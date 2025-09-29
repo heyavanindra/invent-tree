@@ -77,47 +77,69 @@ export default function AboutUs() {
         </motion.p>
 
         {/* Who We Are */}
-        <div className="p-6 rounded-2xl mb-10 bg-[#f4f7ff] dark:bg-[#2e2d2d]">
-          <motion.div
-            className="rounded-lg shadow px-6 py-6 border border-[#c1c7d0]/40 dark:border-gray-600"
-            custom={1}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-          >
-            <p>
-              <strong>Who We Are</strong><br />
-              Invent-Tree is a leading political survey and polling firm dedicated to providing
-              high-quality, unbiased data to inform decision-making. With over a decade of
-              experience, we’ve worked with political campaigns, advocacy groups, and media outlets
-              to deliver insights that matter.
-            </p>
-          </motion.div>
-        </div>
+      {/* Who We Are */}
+<div className="p-6 rounded-2xl mb-10 bg-[#f4f7ff] dark:bg-[#2e2d2d]">
+  <motion.div
+    className="rounded-lg shadow px-6 py-6 border border-[#c1c7d0]/40 dark:border-gray-600"
+    custom={1}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true }}
+    variants={fadeInUp}
+  >
+    <p>
+      <strong>Who We Are</strong><br />
+      Invent-Tree is a leading political survey and polling firm dedicated to providing
+      high-quality, unbiased data to inform decision-making. With over a decade of
+      experience, we’ve worked with political campaigns, advocacy groups, and media outlets
+      to deliver insights that matter.
+    </p>
+    <p className="mt-3">
+      We are a multidisciplinary team of data scientists, statisticians, political analysts, and
+      communication experts who share one mission — to decode public opinion. Our focus is on 
+      combining traditional research with cutting-edge digital methodologies to ensure accuracy 
+      and reliability.
+    </p>
+    <p className="mt-3">
+      From grassroots-level surveys in rural regions to large-scale nationwide polls, 
+      Invent-Tree ensures every voice is heard. We take pride in our neutrality and commitment 
+      to evidence-based insights that empower stakeholders to take informed actions.
+    </p>
+  </motion.div>
+</div>
 
-        {/* Mission */}
-        <div className="p-6 rounded-2xl mb-10 bg-[#f4f7ff] dark:bg-[#2e2d2d]">
-          <motion.div
-            className="rounded-lg shadow px-6 py-6 border border-[#c1c7d0]/40 dark:border-gray-600"
-            custom={2}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-          >
-            <p>
-              <strong>Our Mission</strong><br />
-              <span className="text-[#8777a9] font-semibold">
-                Accurate. Transparent. Timely.
-              </span><br />
-              <span>
-                To provide polling data that reflects the voice of the public,
-                enabling informed decisions in the political landscape.
-              </span>
-            </p>
-          </motion.div>
-        </div>
+{/* Mission */}
+<div className="p-6 rounded-2xl mb-10 bg-[#f4f7ff] dark:bg-[#2e2d2d]">
+  <motion.div
+    className="rounded-lg shadow px-6 py-6 border border-[#c1c7d0]/40 dark:border-gray-600"
+    custom={2}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true }}
+    variants={fadeInUp}
+  >
+    <p>
+      <strong>Our Mission</strong><br />
+      <span className="text-[#8777a9] font-semibold">
+        Accurate. Transparent. Timely.
+      </span><br />
+      <span>
+        To provide polling data that reflects the voice of the public,
+        enabling informed decisions in the political landscape.
+      </span>
+    </p>
+    <p className="mt-3">
+      At Invent-Tree, we believe data should inspire trust and clarity. 
+      Our mission is not only to measure public opinion but also to make it accessible 
+      and understandable for policymakers, organizations, and the public at large.
+    </p>
+    <p className="mt-3">
+      By embracing innovation in data collection and analytics, we strive to bridge the 
+      gap between people and decision-makers. Our ultimate goal is to foster a transparent 
+      democratic process where evidence, not assumption, drives progress.
+    </p>
+  </motion.div>
+</div>
 
         {/* Why Choose Us */}
         <motion.h2

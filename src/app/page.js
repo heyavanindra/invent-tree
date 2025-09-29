@@ -26,7 +26,6 @@ export default function Home() {
   const [scrollHeight, setScrollHeight] = useState("200vh");
   const [activeStep, setActiveStep] = useState(0);
   
-  // Define steps for navigation
   const steps = [
     { number: '01', label: 'Home' },
     { number: '02', label: 'Services' },
@@ -34,7 +33,6 @@ export default function Home() {
     { number: '04', label: 'Announcement' },
   ];
 
-  // Calculate scroll sections based on widths
  
   const [sectionWidths, setSectionWidths] = useState([]);
   
@@ -73,9 +71,7 @@ export default function Home() {
 
   const { isInView, setIsInView } = useContext(ScrollContext);
 
-  // Update active step based on scroll progress
   useMotionValueEvent(scrollYProgress, "change", (progress) => {
-    // Calculate total width and current position
     const totalWidth = sectionWidths.reduce((acc, section) => acc + section.width, 0);
     const currentPosition = progress * totalWidth;
     
@@ -93,7 +89,6 @@ export default function Home() {
       accumulatedWidth += sectionWidths[i].width;
     }
     
-    // Ensure last section is active at the very end
     if (currentPosition >= totalWidth - 5) {
       newActiveStep = sectionWidths.length - 1;
     }
@@ -109,24 +104,20 @@ export default function Home() {
     }
   });
 
-  // Handle step navigation
   const handleStepClick = (stepIndex) => {
     const totalWidth = sectionWidths.reduce((acc, section) => acc + section.width, 0);
     let targetPosition = 0;
     
-    // Calculate target position based on step
     for (let i = 0; i < stepIndex; i++) {
       targetPosition += sectionWidths[i].width;
     }
     
-    // Add half of the target section width to center it
     if (stepIndex < sectionWidths.length) {
       targetPosition += sectionWidths[stepIndex].width / 1000;
     }
     
     const targetProgress = targetPosition / totalWidth;
     
-    // Smooth scroll to target position
     const targetScrollY = targetProgress * (ref.current.offsetHeight - window.innerHeight);
     window.scrollTo({
       top: targetScrollY,
@@ -134,7 +125,6 @@ export default function Home() {
     });
   };
 
-  // Smooth scroll
   useEffect(() => {
     const lenis = new Lenis();
     function raf(time) {
@@ -147,7 +137,7 @@ export default function Home() {
   return (
     <div ref={ref} className="flex relative flex-col w-full" style={{ height: scrollHeight }}>
       {/* Mobile */}
-      <div className="sm:hidden">
+      <div className="md:hidden">
         <HomepageMobile />
         <ScenesSection />
         <Scene2 />
@@ -156,7 +146,7 @@ export default function Home() {
       </div>
 
       {/* Desktop */}
-      <div className="sticky sm:block hidden inset-0 h-screen overflow-hidden">
+      <div className="sticky md:block hidden inset-0 h-screen overflow-hidden">
         <motion.div
           ref={scrollWrapperRef}
           className="flex w-fit overflow-hidden"
@@ -183,7 +173,6 @@ export default function Home() {
           {isInView && <RotatingScene />}
         </AnimatePresence>
 
-        {/* Progress Bar Navigation - Desktop Only */}
         <ProgressBarNavigation
           steps={steps}
           activeStep={activeStep}

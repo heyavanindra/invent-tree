@@ -487,7 +487,6 @@ export default function PoliciesComponent() {
         </p>
       </header>
 
-      {/* Tab Navigation */}
       <div className="mb-6 sm:mb-8">
         <div className="relative">
           <button
@@ -535,7 +534,6 @@ export default function PoliciesComponent() {
         </div>
       </div>
 
-      {/* Tab Content with Sidebar */}
       <div className="bg-white dark:bg-neutral-900 rounded-lg shadow-sm border border-neutral-200 dark:border-neutral-700">
         {Object.entries(policies).map(([tabId, tabContent]) => (
           <div
@@ -543,7 +541,6 @@ export default function PoliciesComponent() {
             className={`${activeTab === tabId ? 'block' : 'hidden'}`}
           >
             <div className="flex flex-col lg:flex-row">
-              {/* Left sidebar menu */}
               <div className="lg:w-80 border-b lg:border-b-0 lg:border-r border-neutral-200 dark:border-neutral-700 p-4 sm:p-6 bg-neutral-50 dark:bg-neutral-800">
                 <div className="mb-4 sm:mb-6">
                   <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
@@ -573,7 +570,6 @@ export default function PoliciesComponent() {
                 </nav>
               </div>
 
-              {/* Right content area */}
               <div className="flex-1 p-4 sm:p-6 lg:p-8">
                 <div className="max-w-4xl">
                   {tabContent.items[activePolicy] && (
@@ -583,7 +579,6 @@ export default function PoliciesComponent() {
                       </h3>
                       <div className="space-y-4 sm:space-y-6">
                         {tabContent.items[activePolicy].sections ? (
-                          // Render sections for core legal documents
                           tabContent.items[activePolicy].sections.map((section, idx) => (
                             <div key={idx} className="border-l-4 border-[#BDD5E9] dark:border-[#BDD5E9] pl-4 sm:pl-6 py-2">
                               <h4 className="text-base sm:text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2">
@@ -595,7 +590,6 @@ export default function PoliciesComponent() {
                             </div>
                           ))
                         ) : (
-                          // Render single content for other policies
                           <div className="prose prose-sm sm:prose-lg max-w-none prose-neutral dark:prose-invert">
                             <p className="text-sm sm:text-base text-neutral-700 dark:text-neutral-300 leading-relaxed text-justify">
                               {tabContent.items[activePolicy].content}
@@ -612,7 +606,6 @@ export default function PoliciesComponent() {
         ))}
       </div>
 
-      {/* Footer */}
       <footer className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-neutral-200 dark:border-neutral-700 text-center">
         <div className="bg-neutral-50 dark:bg-neutral-800 rounded-lg p-4 sm:p-6">
           <p className="text-sm sm:text-base text-neutral-700 dark:text-neutral-300 mb-4">

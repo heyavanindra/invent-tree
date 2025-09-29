@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import RoatedSVG from "../RotatedSVG";
+import RotatedSVG from "../RotatedSVG";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ArrowRight } from "lucide-react";
@@ -10,7 +10,6 @@ const Scene4 = () => {
   const [news, setNews] = useState([]);
   const router = useRouter();
 
-  // Fetch announcements from API
   useEffect(() => {
     const fetchNews = async () => {
       try {
@@ -32,19 +31,19 @@ const Scene4 = () => {
   ];
 
   return (
-    <div className="w-full ml-6">
-      <div className="flex flex-col lg:flex-row min-h-screen h-full w-full font-sans text-sm bg-white text-[#222] dark:bg-[#111] dark:text-[#e5e7eb]">
+    <div className="w-full sm:ml-6">
+      <div className="flex flex-col sm:flex-row min-h-screen h-full w-full font-sans text-sm bg-white text-[#222] dark:bg-[#111] dark:text-[#e5e7eb]">
         {/* Left Section - NEWS */}
-        <aside className="relative w-full lg:w-1/2 flex-1.1 bg-[#f4f7ff] dark:bg-[#1a1a1a] py-8 lg:py-12 px-5 sm:px-10">
-          <div className="mx-0 sm:mx-5 min-md:ps-20 ps-10 mt-0 sm:mt-5 lg:mt-20">
-            <div className="relative z-10 flex flex-col sm:flex-row justify-between gap-3 sm:gap-4 mb-6 lg:mb-10">
-              <h1 className="text-4xl sm:text-5xl max-md:text-center max-md:pt-10 text-[#604e84] dark:text-[#b6a4d9] tracking-wide">
+        <aside className="relative w-full sm:w-1/2 flex-1.1 bg-[#f4f7ff] dark:bg-[#1a1a1a] py-8 sm:py-12 px-5 sm:px-10">
+          <div className="mx-0 sm:mx-5 md:ps-20 sm:ps-10 mt-0 sm:mt-5 lg:mt-20">
+            <div className="relative z-10 flex flex-col items-center sm:flex-row sm:justify-between gap-3 sm:gap-4 mb-6 lg:mb-10">
+              <h1 className="text-4xl sm:text-5xl text-center sm:text-left pt-10 sm:pt-0 text-[#604e84] dark:text-[#b6a4d9] tracking-wide">
                 Announcement
               </h1>
               <div className="text-end">
                 <button
                   onClick={() => router.push("/announcements/add")}
-                  className="bg-[#8777a9] text-white text-md px-4 py-1 max-sm:w-18 rounded-lg shadow hover:opacity-80"
+                  className="bg-[#8777a9] text-white text-md px-4 py-1 rounded-lg shadow hover:opacity-80"
                 >
                   + Add
                 </button>
@@ -80,20 +79,19 @@ const Scene4 = () => {
                 </p>
               )}
             </div>
-            <div  className="dark:text-neutral-300 text-neutral-900 py-4 flex">
-            <Link
-              href={"/about"}
-              className="flex justify-between gap-x-2 items-center"
-            >
-              Learn More <ArrowRight></ArrowRight>
-            </Link>
+            <div className="dark:text-neutral-300 text-neutral-900 py-4 flex">
+              <Link
+                href={"/about"}
+                className="flex justify-between gap-x-2 items-center"
+              >
+                Learn More <ArrowRight />
+              </Link>
             </div>
           </div>
         </aside>
 
-        {/* Right Section - Contact */}
-        <main className="w-full lg:w-full flex flex-col justify-start px-5 sm:px-8 lg:px-12 xl:px-18 min-md:py-8 max-md:pb-4 flex-0.9">
-          <div className="mb-8 w-full max-sm:mt-4 flex justify-center">
+        <main className="w-full sm:w-full flex flex-col justify-start px-5 sm:px-8 lg:px-12 xl:px-18 py-8 sm:py-8 pb-4 flex-0.9">
+          <div className="mb-8 w-full mt-4 sm:mt-0 flex justify-center">
             <img
               src="/logo/logo3.webp"
               className="lg:h-[300px] h-[100px]"
@@ -101,12 +99,12 @@ const Scene4 = () => {
             />
           </div>
 
-          <section className="flex flex-col md:flex-row items-center justify-between bg-[#f6f9ff] dark:bg-[#1f1f1f] rounded-xl p-4 lg:p-3 mb-6 lg:mb-3 gap-2">
+          <section className="flex flex-col items-center sm:flex-row sm:items-center sm:justify-between bg-[#f6f9ff] dark:bg-[#1f1f1f] rounded-xl p-4 lg:p-3 mb-6 lg:mb-3 gap-2">
             <div className="flex items-center font-semibold text-lg py-1 text-[#222] dark:text-gray-200">
               <svg
                 className="w-[22px] h-[22px] mr-2"
                 viewBox="0 0 24 24"
-                xmlns="http:www.w3.org/2000/svg"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
                   fill="#13837d"
@@ -120,7 +118,7 @@ const Scene4 = () => {
                 contact@invent-tree.com
               </a>
             </div>
-            <div className="text-xl lg:text-3xl">
+            <div className="text-xl lg:text-3xl text-center sm:text-right">
               <p className="py-2">
                 <span className="text-[#8777a9] dark:text-[#b6a4d9] font-semibold">
                   TEL
@@ -133,8 +131,8 @@ const Scene4 = () => {
             </div>
           </section>
 
-          <div className="flex flex-col justify-center  sm:flex-row gap-6 lg:gap-8 mb-8 text-sm">
-            <div className="w-20 h-20 lg:w-30 lg:h-30 rounded-full p-1 flex justify-center items-center mb-4 sm:mb-0 max-md:hidden">
+          <div className="flex flex-col items-center sm:items-start sm:flex-row gap-6 lg:gap-8 mb-8 text-sm">
+            <div className="w-20 h-20 lg:w-30 lg:h-30 rounded-full p-1 flex justify-center items-center mb-4 sm:mb-0 hidden sm:flex">
               <div
                 onClick={() =>
                   document
@@ -143,7 +141,7 @@ const Scene4 = () => {
                 }
                 className="cursor-pointer"
               >
-                <RoatedSVG />
+                <RotatedSVG />
               </div>
             </div>
             <div>
@@ -160,7 +158,6 @@ const Scene4 = () => {
                 </p>
               </address>
 
-              {/* Bottom Nav */}
               <nav className="flex flex-wrap gap-x-6 gap-y-3 lg:gap-x-8 lg:gap-y-4 text-xs lg:text-sm mb-6 lg:mb-20 max-w-[500px] mt-4 lg:mt-5">
                 {footerLinks.map((link, idx) => (
                   <Link

@@ -12,7 +12,6 @@ const Card = ({ desc, title, id, ref, points }) => {
         viewport={{ margin: "0px -300px 0px -100px" }}
         transition={{ duration: 0.2 }}
       >
-        {/* Pin with spring animation - appears first */}
         <motion.div
           className="flex flex-col items-center mb-3"
           initial={{
@@ -40,7 +39,6 @@ const Card = ({ desc, title, id, ref, points }) => {
           <div className="mt-1 w-1 h-1 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-[#8777a9]"></div>
         </motion.div>
 
-        {/* Card - appears after pin with delay */}
         <motion.div
           className="p-4 bg-white/80 flex flex-col justify-center items-center gap-y-2 backdrop-blur-xs rounded-2xl lg:w-[20vw] text-center"
           initial={{
@@ -58,7 +56,7 @@ const Card = ({ desc, title, id, ref, points }) => {
             type: "spring",
             stiffness: 150,
             damping: 20,
-            delay: 0.3, // Delay to appear after pin animation
+            delay: 0.3, 
           }}
         >
           <h1 className="text-3xl font-semibold text-[#604e84]">{title}</h1>

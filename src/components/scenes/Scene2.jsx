@@ -31,11 +31,9 @@ const ScrollingCarousel = () => {
     return result;
   };
 
-  // Create data for left and right columns with random text insertions
   const leftColumnData = insertRandomTexts(images);
   const rightColumnData = insertRandomTexts(images);
 
-  // Duplicate arrays for seamless loop
   const leftItems = [...leftColumnData, ...leftColumnData];
   const rightItems = [...rightColumnData, ...rightColumnData];
 
@@ -73,7 +71,6 @@ const ScrollingCarousel = () => {
           </motion.div>
         </div>
 
-        {/* Right Column */}
         <div className="w-1/2 h-full overflow-hidden">
           <motion.div
             className="flex flex-col"
