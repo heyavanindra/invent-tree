@@ -475,7 +475,7 @@ export default function PoliciesComponent() {
 
   return (
     <main className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-12">
-      <header className="mb-8 sm:mb-12 text-center">
+      <header className="mb-8 mt-12 sm:mb-12 text-center">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
           Policies & Legal Transparency
         </h1>
