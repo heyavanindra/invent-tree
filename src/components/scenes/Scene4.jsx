@@ -4,11 +4,12 @@ import React, { useEffect, useState } from "react";
 import RoatedSVG from "../RotatedSVG";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { ArrowRight } from "lucide-react";
 
 const Scene4 = () => {
   const [news, setNews] = useState([]);
   const router = useRouter();
-  
+
   // Fetch announcements from API
   useEffect(() => {
     const fetchNews = async () => {
@@ -52,7 +53,7 @@ const Scene4 = () => {
 
             <hr className="border-t border-[#c1c7d0]/40 dark:border-gray-700 mb-6 lg:mb-8" />
 
-            <div className="relative z-10 space-y-4 lg:space-y-6 max-h-[50vh] overflow-y-auto pr-2">
+            <div className="relative z-10 space-y-4 lg:space-y-6 max-h-[50vh] overflow-y-hidden pr-2">
               {news.length > 0 ? (
                 news.map((item, i) => (
                   <article
@@ -79,11 +80,19 @@ const Scene4 = () => {
                 </p>
               )}
             </div>
+            <div  className="dark:text-neutral-300 text-neutral-900 py-4 flex">
+            <Link
+              href={"/about"}
+              className="flex justify-between gap-x-2 items-center"
+            >
+              Learn More <ArrowRight></ArrowRight>
+            </Link>
+            </div>
           </div>
         </aside>
 
         {/* Right Section - Contact */}
-        <main className="w-full lg:w-full flex flex-col justify-start px-5 sm:px-8 lg:px-12 xl:px-18 min-md:py-8 max-md:pb-10 flex-0.9">
+        <main className="w-full lg:w-full flex flex-col justify-start px-5 sm:px-8 lg:px-12 xl:px-18 min-md:py-8 max-md:pb-4 flex-0.9">
           <div className="mb-8 w-full max-sm:mt-4 flex justify-center">
             <img
               src="/logo/logo3.webp"
@@ -92,7 +101,7 @@ const Scene4 = () => {
             />
           </div>
 
-          <section className="flex flex-col md:flex-row items-center justify-between bg-[#f6f9ff] dark:bg-[#1f1f1f] rounded-xl p-4 lg:p-3 mb-6 lg:mb-12 gap-2">
+          <section className="flex flex-col md:flex-row items-center justify-between bg-[#f6f9ff] dark:bg-[#1f1f1f] rounded-xl p-4 lg:p-3 mb-6 lg:mb-3 gap-2">
             <div className="flex items-center font-semibold text-lg py-1 text-[#222] dark:text-gray-200">
               <svg
                 className="w-[22px] h-[22px] mr-2"

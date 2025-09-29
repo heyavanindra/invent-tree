@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "motion/react";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -35,6 +36,20 @@ const team = [
 ];
 
 export default function AboutUs() {
+   const [news, setNews] = useState([]);
+  useEffect(() => {
+    const fetchNews = async () => {
+      try {
+        const res = await fetch("/api/announcements");
+        if (!res.ok) throw new Error("Failed to fetch announcements");
+        const data = await res.json();
+        setNews(data);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    fetchNews();
+  }, []);
   return (
     <div className="min-h-screen bg-white text-[#222] dark:bg-[#1f1f1f] dark:text-white px-3 pb-16 transition-colors duration-300">
       <motion.div
@@ -178,6 +193,36 @@ export default function AboutUs() {
             </Link>
           </motion.div>
         </div>
+       <div >
+         <h1 className=" pb-4 font-semibold text-2xl text-[#67577F]">Annoucement</h1>
+         <div className="relative z-10 space-y-4 lg:space-y-6 max-h-[50vh] overflow-y-auto pr-2">
+           {news.length > 0 ? (
+             news.map((item, i) => (
+               <article
+                 key={i}
+                 className="border-b border-[#c1c7d0] dark:border-gray-700 pb-4 lg:pb-6 hover:opacity-80"
+               >
+                 <div className="flex flex-wrap items-baseline text-xs font-bold text-gray-600 dark:text-gray-400 mb-1">
+                   <time>{item.date}</time>
+                   <span className="ml-2 lg:ml-3 bg-[#8777a9] text-white px-2 py-1 text-[10px] rounded uppercase font-bold">
+                     {item.tag}
+                   </span>
+                 </div>
+                 <h2 className="text-[#8777a9] dark:text-[#b6a4d9] py-1 lg:py-2 text-base lg:text-lg cursor-pointer font-semibold">
+                   {item.title}
+                 </h2>
+                 <p className="text-sm text-[#6b7280] dark:text-gray-400 line-clamp-3 max-w-full lg:max-w-[90%]">
+                   {item.description}
+                 </p>
+               </article>
+             ))
+           ) : (
+             <p className="text-gray-500 dark:text-gray-400">
+               No announcements available.
+             </p>
+           )}
+         </div>
+       </div>
 
         {/* Company Details */}
         <div className="p-6 bg-[#f4f7ff] dark:bg-[#2e2d2d] rounded-2xl">

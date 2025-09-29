@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 
 const ProgressBarNavigation = ({ 
   steps, 
-  activeStep = 0,
+  activeStep = 1,
   onStepClick,
   className = "",
   position = "bottom-right" // "bottom-right", "bottom-left", "bottom-center"
@@ -14,7 +14,7 @@ const ProgressBarNavigation = ({
 
   // Calculate progress width based on active step
   useEffect(() => {
-    const progress = steps.length > 1 ? (activeStep / (steps.length - 1)) * 100 : 0;
+    const progress = steps.length > 1 ? (activeStep / (steps.length )) * 100 : 0;
     setProgressWidth(progress);
   }, [activeStep, steps.length]);
 
@@ -27,7 +27,7 @@ const ProgressBarNavigation = ({
         return "bottom-8 left-1/2 -translate-x-1/2";
       case "bottom-right":
       default:
-        return "bottom-8 right-6";
+        return "bottom-0 right-1";
     }
   };
 
@@ -41,13 +41,11 @@ const ProgressBarNavigation = ({
     <div className={`hidden md:block fixed ${getPositionClasses()} z-50 ${className}`}>
       <div className="flex items-center justify-center">
         <motion.div 
-          className="relative flex items-center w-fit  bg-white/10 dark:bg-black/20 border border-white/20 dark:border-white/10 rounded-full px-6 py-4 shadow-2xl"
+          className="relative flex items-center w-fit bg-transparent rounded-full px-6 py-4 shadow-none"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
-          {/* Glassmorphism background glow */}
-          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 blur-xl opacity-60" />
           
           {/* Background progress line */}
           <div className="absolute top-1/2 left-6 right-6 h-[2px] bg-gradient-to-r from-white/30 to-white/10 dark:from-white/20 dark:to-white/5 rounded-full z-0" />

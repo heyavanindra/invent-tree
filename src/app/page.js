@@ -29,7 +29,7 @@ export default function Home() {
   // Define steps for navigation
   const steps = [
     { number: '01', label: 'Home' },
-    { number: '02', label: 'Scenes' },
+    { number: '02', label: 'Services' },
     { number: '03', label: 'Polls' },
     { number: '04', label: 'Announcement' },
   ];
@@ -45,6 +45,7 @@ export default function Home() {
       { width: 12840 +  (30 / 100) * vw, name: 'scene1' },
       { width: 1500, name: 'scene2' },
       { width: 800, name: 'scene3' },
+      { width: 1500, name: 'announcement' }, 
     ]);
   }, []);
 
@@ -82,11 +83,19 @@ export default function Home() {
     let newActiveStep = 0;
     
     for (let i = 0; i < sectionWidths.length; i++) {
-      if (currentPosition >= accumulatedWidth && currentPosition < accumulatedWidth + sectionWidths[i].width) {
+      if (
+        currentPosition >= accumulatedWidth &&
+        currentPosition < accumulatedWidth + sectionWidths[i].width
+      ) {
         newActiveStep = i;
         break;
       }
       accumulatedWidth += sectionWidths[i].width;
+    }
+    
+    // Ensure last section is active at the very end
+    if (currentPosition >= totalWidth - 5) {
+      newActiveStep = sectionWidths.length - 1;
     }
     
     setActiveStep(newActiveStep);

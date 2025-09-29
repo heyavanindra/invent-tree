@@ -185,15 +185,15 @@ const Scene1 = ({ xGreen }) => {
   const bgImage =
     theme === "dark"
       ? "url('/assests/Illustration Invent-Tree final-51.webp')"
-      : "url('/assests/Illustration Invent-Tree final-46.webp')";
+      : "url('/IT-Illustration.png')";
 
   return (
     <motion.div
-      className="relative flex h-screen w-full bg-repeat "
+      className="relative flex h-screen w-full bg-cover bg-no-repeat "
       style={{
         backgroundImage: bgImage,
-        backgroundSize: "25% auto", // 3 times horizontally
-        backgroundPosition: "center center", // keep it centered
+        backgroundSize: "auto 100%", // fit height, crop width
+        backgroundPosition: "center",
       }}
     >
       <motion.div
@@ -203,38 +203,45 @@ const Scene1 = ({ xGreen }) => {
         className="absolute top-0 bottom-0 z-10 bg-transparent"
       >
         <img className="h-screen w-full" src="/green.svg" />
-      
+
         {/* Text Section */}
-        <div className="absolute top-[5%] left-[10%] z-10 px-12 text-[#4F2D91]">
+        <div className="absolute grid grid-cols-2   top-[5%] left-[10%] z-10 px-12 text-[#4F2D91]">
           {/* Solve */}
-          <h2 className="font-bold text-5xl mb-4">Solve</h2>
-          <ul className="list-disc list-inside text-2xl font-medium space-y-2">
-            <li>Event Services</li>
-            <li>End-to-End Campaign Management</li>
-            <li>Data Analysis & Surveys</li>
-            <li>Micro-targeting & Booth Strategy</li>
-            <li>Public Outreach & Mobilization</li>
-            <li>Volunteer Training & Deployment</li>
-            <li>War Room Monitoring & Control</li>
-          </ul>
-      
+          <div>
+            <h2 className="font-bold text-5xl mb-4">Solve</h2>
+            <ul className="list-disc list-inside text-2xl font-medium space-y-2">
+              <li>Event Services</li>
+              <li>End-to-End Campaign Management</li>
+              <li>Data Analysis & Surveys</li>
+              <li>Micro-targeting & Booth Strategy</li>
+              <li>Public Outreach & Mobilization</li>
+              <li>Volunteer Training & Deployment</li>
+              <li>War Room Monitoring & Control</li>
+            </ul>
+          </div>
+
           {/* Enhance */}
-          <h2 className="font-bold text-5xl mt-10 mb-4">Enhance</h2>
-          <ul className="list-disc list-inside text-2xl font-medium space-y-2">
-            <li>Website/App Development & Upkeep</li>
-            <li>Digital & Social Media Strategy</li>
-            <li>Leader & Party Branding</li>
-            <li>Policy & Governance Consulting</li>
-          </ul>
-      
+          <div>
+            <h2 className="font-bold text-5xl  mb-4">Enhance</h2>
+            <ul className="list-disc list-inside text-2xl font-medium space-y-2">
+              <li>Website/App Development & Upkeep</li>
+              <li>Digital & Social Media Strategy</li>
+              <li>Leader & Party Branding</li>
+              <li>Policy & Governance Consulting</li>
+            </ul>
+          </div>
+
           {/* Accelerate */}
-          <h2 className="font-bold text-5xl mt-10 mb-4">Accelerate</h2>
-          <ul className="list-disc list-inside text-2xl font-medium space-y-2">
-            <li>Youth & Women Engagement</li>
-          </ul>
+          <div className="col-span-2 flex justify-center">
+            <div>
+              <h2 className="font-bold text-5xl mt-10 mb-4">Accelerate</h2>
+              <ul className="list-disc list-inside text-2xl font-medium space-y-2">
+                <li>Youth & Women Engagement</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </motion.div>
-
 
       <div className="flex w-full h-screen justify-end items-center gap-x-[30rem] mr-[600px]">
         {scenes.map((scene, idx) => {

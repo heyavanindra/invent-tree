@@ -1,10 +1,11 @@
 "use client"
 
 import { useState, useRef } from 'react';
-import { Shield, Users, FileText, Lock, Globe, BarChart3, Heart, AlertCircle, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Shield, Users, FileText, Lock, Globe, BarChart3, Heart, AlertCircle, ChevronLeft, ChevronRight, DollarSign } from 'lucide-react';
 
 export default function PoliciesComponent() {
   const [activeTab, setActiveTab] = useState('core-legal');
+  const [activePolicy, setActivePolicy] = useState(0);
   const scrollContainerRef = useRef(null);
 
   const scrollLeft = () => {
@@ -19,6 +20,11 @@ export default function PoliciesComponent() {
     }
   };
 
+  const handleTabChange = (tabId) => {
+    setActiveTab(tabId);
+    setActivePolicy(0);
+  };
+
   const tabs = [
     { id: 'core-legal', label: 'Core Legal', icon: FileText },
     { id: 'governance', label: 'Governance', icon: Shield },
@@ -27,7 +33,9 @@ export default function PoliciesComponent() {
     { id: 'media-communication', label: 'Media & Communication', icon: Globe },
     { id: 'survey-research', label: 'Survey & Research', icon: BarChart3 },
     { id: 'specialized', label: 'Specialized Services', icon: AlertCircle },
-    { id: 'health-safety', label: 'Health & Safety', icon: Heart }
+    { id: 'health-safety', label: 'Health & Safety', icon: Heart },
+    { id: 'hr-policies', label: 'HR Policies', icon: Users },
+    { id: 'finance', label: 'Finance', icon: DollarSign }
   ];
 
   const policies = {
@@ -37,19 +45,53 @@ export default function PoliciesComponent() {
       items: [
         {
           title: 'Terms & Conditions',
-          content: 'Our comprehensive Terms & Conditions establish the legal foundation for all client engagements. These terms outline the scope of services, payment obligations, intellectual property rights, liability limitations, and dispute resolution mechanisms. We ensure clarity in service delivery expectations, project timelines, and deliverable specifications. All contracts include force majeure provisions, termination clauses, and amendment procedures. These terms are regularly updated to reflect current legal standards and industry best practices, providing both parties with clear guidelines for successful collaboration.'
+          sections: [
+            { heading: 'Eligibility', text: 'You must be at least 18 years old or have parental/guardian consent to use our Services. By using the Services, you represent and warrant that you meet this requirement.' },
+            { heading: 'Services Offered', text: 'We provide consultancy, digital development, event planning, research, and related professional services. Specific deliverables, timelines, and fees will be governed by separate service agreements.' },
+            { heading: 'User Responsibilities', text: 'You agree to use our Services only for lawful purposes. You must not misuse our Services, attempt unauthorized access, or engage in activities that harm our systems, data, or reputation.' },
+            { heading: 'Intellectual Property', text: 'All content, branding, designs, text, graphics, and software are owned by Invent-Tree or its licensors. You may not copy, modify, distribute, or exploit any material without prior written consent.' },
+            { heading: 'Payments', text: 'For paid services, you agree to pay fees as per the agreed terms. All charges are non-refundable unless covered by our Refund & Cancellation Policy.' },
+            { heading: 'Limitation of Liability', text: 'Our Services are provided on an "as is" basis. To the maximum extent permitted by law, we are not liable for indirect, incidental, or consequential damages arising from use of our Services.' },
+            { heading: 'Indemnification', text: 'You agree to indemnify and hold us harmless from any claims, damages, or liabilities arising from your misuse of our Services.' },
+            { heading: 'Third-Party Links', text: 'Our Services may include links to third-party sites. We are not responsible for their content, policies, or practices.' },
+            { heading: 'Governing Law', text: 'These Terms shall be governed by and construed in accordance with the laws of India, with exclusive jurisdiction of courts in Lucknow, Uttar Pradesh.' },
+            { heading: 'Changes to Terms', text: 'We reserve the right to modify these Terms at any time. Updates will be posted on this page with a revised date.' }
+          ]
         },
         {
           title: 'Privacy Policy',
-          content: 'Our Privacy Policy demonstrates our unwavering commitment to protecting personal information collected through our services, website, and client interactions. We detail what information we collect, how it\'s used, stored, and protected. The policy covers data retention periods, third-party sharing limitations, user rights regarding their data, and procedures for data access or deletion requests. We comply with international privacy laws including GDPR, CCPA, and local data protection regulations, ensuring transparency in all data processing activities.'
+          sections: [
+            { heading: 'Information We Collect', text: 'Personal details (name, email, phone, address) provided when contacting us or signing up. Payment information for services. Usage data (IP address, browser type, access times, pages visited). Data from surveys, polls, or campaigns (with explicit consent).' },
+            { heading: 'How We Use Your Data', text: 'To provide and improve our Services. To communicate updates, offers, and insights. To process transactions and manage accounts. For analytics, research, and compliance with legal obligations.' },
+            { heading: 'Data Sharing', text: 'We do not sell your personal data. We may share data only with: Trusted service providers under confidentiality agreements. Legal or regulatory authorities where required. Clients, in anonymized and aggregated form, for research/polling insights.' },
+            { heading: 'Data Security', text: 'We implement strict technical and organizational measures to protect data, including encryption, restricted access, and regular audits.' },
+            { heading: 'Cookies & Tracking', text: 'We use cookies to enhance your browsing experience. You may disable cookies in your browser, but some features may not work properly.' },
+            { heading: 'User Rights', text: 'Under the DPDP Act, you have the right to: Access, correct, or delete your personal data. Withdraw consent for data use. Lodge complaints with the Data Protection Board of India.' },
+            { heading: 'Retention', text: 'We retain personal data only as long as necessary for the purposes stated above or as required by law.' },
+            { heading: 'International Data Transfers', text: 'If data is transferred outside India, we ensure adequate protection through legal safeguards.' },
+            { heading: 'Updates', text: 'We may update this Privacy Policy. Please check this page regularly for updates.' }
+          ]
         },
         {
           title: 'Terms of Use',
-          content: 'Our Terms of Use govern the access and use of Invent-Tree\'s digital platforms, including our website, client portals, and digital tools. These terms establish user responsibilities, acceptable use guidelines, intellectual property protections, and access restrictions. We outline prohibited activities, content standards, and consequences for policy violations. The terms also cover account security requirements, service availability, and our rights to modify or discontinue services. Regular compliance monitoring ensures adherence to these standards.'
+          sections: [
+            { heading: 'Acceptable Use', text: 'You agree not to: Violate applicable laws or regulations. Engage in harassment, hate speech, or defamatory activities. Upload harmful code or attempt to disrupt our systems. Use our platform for unauthorized political propaganda or unlawful fundraising.' },
+            { heading: 'User Accounts', text: 'If you create an account, you are responsible for maintaining its confidentiality and for all activities under it. We reserve the right to suspend accounts for misuse.' },
+            { heading: 'Intellectual Property', text: 'All content provided on our platform is protected by copyright, trademark, and other intellectual property laws. Unauthorized use is strictly prohibited.' },
+            { heading: 'Termination', text: 'We may suspend or terminate your access without notice if you violate these Terms of Use.' },
+            { heading: 'Disclaimer', text: 'We make no guarantees that the website will be error-free, uninterrupted, or fully secure at all times.' }
+          ]
         },
         {
           title: 'Refund & Cancellation Policy',
-          content: 'Our transparent Refund & Cancellation Policy protects both client investments and our operational integrity. We provide clear guidelines for service cancellations, refund eligibility criteria, and processing timelines. The policy distinguishes between different service types, project phases, and cancellation circumstances. We offer flexible solutions including partial refunds, service credits, and rescheduling options where appropriate. All refund decisions consider work completed, resources allocated, and contractual obligations, ensuring fair outcomes for all parties involved.'
+          sections: [
+            { heading: 'Service Contracts', text: 'Once a project agreement is signed and payment made, cancellation requests must be made in writing. Refund eligibility will depend on the stage of work completed.' },
+            { heading: 'Event Services', text: 'Cancellations made 30 days before an event may be eligible for a partial refund (excluding non-refundable deposits and expenses). No refunds will be issued for cancellations made within 7 days of the event.' },
+            { heading: 'Digital/Website Development', text: 'Refunds are not available once design, coding, or development work has started. If work is canceled before initiation, a refund minus administrative charges may be issued.' },
+            { heading: 'Consultancy & Polling Services', text: 'Fees for surveys, polling, and consultancy are non-refundable once data collection or advisory has commenced.' },
+            { heading: 'Exceptions', text: 'Refunds may be issued in cases of proven service failure or non-delivery, subject to management approval.' },
+            { heading: 'Contact for Refunds', text: 'All refund/cancellation requests should be sent to our support team for review and processing.' }
+          ]
         }
       ]
     },
@@ -59,19 +101,76 @@ export default function PoliciesComponent() {
       items: [
         {
           title: 'Code of Conduct & Ethics Policy',
-          content: 'Our comprehensive Code of Conduct establishes the ethical foundation for all Invent-Tree operations. This policy outlines expected behaviors, professional standards, and moral obligations for all team members and stakeholders. We address conflicts of interest, fair dealing practices, respect for diversity and inclusion, and commitment to honest communication. The code includes reporting mechanisms for ethical concerns, protection for whistleblowers, and clear consequences for violations. Regular training and assessment ensure consistent application across all levels of our organization.'
-        },
-        {
-          title: 'Anti-Bribery & Anti-Corruption Policy',
-          content: 'Invent-Tree maintains zero tolerance for bribery and corruption in all forms. Our policy provides clear definitions of prohibited activities, including facilitation payments, kickbacks, and conflicts of interest. We establish robust due diligence procedures for clients, vendors, and partners. The policy includes gift and entertainment guidelines, political contribution restrictions, and third-party risk assessments. Comprehensive training programs ensure all team members understand their responsibilities, and regular audits monitor compliance with anti-corruption laws across all jurisdictions where we operate.'
-        },
-        {
-          title: 'Legal & Regulatory Compliance Policy',
-          content: 'Our Legal & Regulatory Compliance Policy ensures adherence to all applicable laws, regulations, and industry standards. This comprehensive framework covers election laws, campaign finance regulations, data protection requirements, and professional polling standards. We maintain current knowledge of regulatory changes, conduct regular compliance assessments, and implement necessary policy updates. The policy establishes clear accountability structures, reporting mechanisms, and corrective action procedures. Our legal compliance team monitors regulatory developments and provides ongoing guidance to ensure all activities meet the highest legal standards.'
+          sections: [
+            { heading: 'Integrity & Honesty', text: 'We act with fairness, transparency, and honesty in all dealings with clients, vendors, and stakeholders.' },
+            { heading: 'Political Neutrality', text: 'While we provide political consultancy, we do not promote any personal or organizational bias. Our services are data-driven, impartial, and professional.' },
+            { heading: 'Confidentiality', text: 'All employees must maintain strict confidentiality regarding client data, strategies, or internal processes.' },
+            { heading: 'Conflict of Interest', text: 'Employees must disclose any personal or professional conflict of interest and refrain from activities that compromise Invent-Tree\'s integrity.' },
+            { heading: 'Respect & Professionalism', text: 'We promote a respectful, harassment-free workplace. Discrimination, hate speech, or offensive behavior will not be tolerated.' },
+            { heading: 'Compliance', text: 'All staff are required to comply with laws, regulations, and company policies.' }
+          ]
         },
         {
           title: 'Whistleblower Policy',
-          content: 'Our Whistleblower Policy creates a safe environment for reporting unethical behavior, legal violations, or policy breaches. We guarantee protection against retaliation for good-faith reports and provide multiple confidential reporting channels. The policy outlines investigation procedures, response timelines, and resolution processes. We ensure thorough, impartial investigations while maintaining confidentiality and protecting reporter identities. This policy demonstrates our commitment to accountability and continuous improvement in ethical practices, encouraging a culture of transparency and responsibility throughout our organization.'
+          sections: [
+            { heading: 'Purpose', text: 'To provide a safe channel for reporting misconduct without fear of retaliation.' },
+            { heading: 'Scope', text: 'Covers fraud, corruption, discrimination, harassment, misuse of resources, or violations of law and company policy.' },
+            { heading: 'Reporting Process', text: 'Reports may be made confidentially via compliance@invent-tree.com. Anonymous complaints will also be considered, but detailed information is encouraged.' },
+            { heading: 'Protection', text: 'Whistleblowers will not face retaliation or adverse action for raising genuine concerns in good faith.' },
+            { heading: 'Investigation', text: 'All reports will be investigated by the compliance team or designated officers, with findings shared with management.' }
+          ]
+        },
+        {
+          title: 'Anti-Bribery & Anti-Corruption Policy',
+          sections: [
+            { heading: 'Prohibition', text: 'Employees must not offer, solicit, or accept bribes, kickbacks, or improper benefits. Political donations on behalf of Invent-Tree are prohibited unless approved by management and permitted by law.' },
+            { heading: 'Gifts & Hospitality', text: 'Reasonable, customary business courtesies are permitted, but extravagant or suspicious gifts must be reported to HR/compliance.' },
+            { heading: 'Reporting', text: 'Suspected violations must be reported under the Whistleblower Policy.' },
+            { heading: 'Consequences', text: 'Violations may result in disciplinary action, termination, and legal penalties.' }
+          ]
+        },
+        {
+          title: 'Legal & Regulatory Compliance Policy',
+          sections: [
+            { heading: 'Applicable Laws', text: 'The Information Technology Act, 2000 and rules thereunder. The Digital Personal Data Protection Act, 2023. Election Commission of India regulations regarding political consulting, advertising, and funding. Tax, GST, labor, and corporate governance laws.' },
+            { heading: 'Responsibilities', text: 'Employees must be aware of and comply with applicable laws. Management ensures training, monitoring, and enforcement of compliance.' }
+          ]
+        },
+        {
+          title: 'Client Engagement Policy',
+          sections: [
+            { heading: 'Contracts', text: 'All services are formalized via written agreements defining scope, deliverables, timelines, and fees.' },
+            { heading: 'Confidentiality', text: 'Client data and strategies are protected under NDAs and strict internal confidentiality protocols.' },
+            { heading: 'Transparency', text: 'We provide accurate project status updates and billing clarity.' },
+            { heading: 'Dispute Resolution', text: 'Disputes will first be attempted to be resolved amicably. If unresolved, matters will be referred to arbitration under the Arbitration and Conciliation Act, 1996 (India).' }
+          ]
+        },
+        {
+          title: 'Event Safety & Risk Management Policy',
+          sections: [
+            { heading: 'Venue Compliance', text: 'All venues must meet fire safety, legal occupancy, and local authority requirements.' },
+            { heading: 'Emergency Preparedness', text: 'Evacuation plans must be communicated to staff and volunteers. Medical assistance and security must be available on-site.' },
+            { heading: 'Risk Assessment', text: 'Events will undergo risk analysis covering crowd control, VIP security, and technical safety.' },
+            { heading: 'Insurance', text: 'Event insurance will be arranged where required, covering liability and accidents.' }
+          ]
+        },
+        {
+          title: 'Vendor & Partner Policy',
+          sections: [
+            { heading: 'Vendor Selection', text: 'Vendors are selected based on merit, quality, and compliance—not favoritism or kickbacks.' },
+            { heading: 'Agreements', text: 'All vendor relationships will be documented in contracts covering service levels, confidentiality, and compliance.' },
+            { heading: 'Compliance', text: 'Vendors must comply with our Anti-Corruption, Privacy, and Event Safety policies.' },
+            { heading: 'Monitoring', text: 'Vendor performance will be periodically reviewed.' }
+          ]
+        },
+        {
+          title: 'Quality Assurance & Project Delivery Policy',
+          sections: [
+            { heading: 'Standards', text: 'All projects follow industry best practices in design, development, event management, and consulting.' },
+            { heading: 'Timeliness', text: 'We commit to delivering on agreed timelines, with proactive communication of any delays.' },
+            { heading: 'Accuracy', text: 'Data, reports, and analyses provided to clients will be fact-checked, validated, and unbiased.' },
+            { heading: 'Continuous Improvement', text: 'We maintain a feedback loop to improve processes and client experience.' }
+          ]
         }
       ]
     },
@@ -103,19 +202,43 @@ export default function PoliciesComponent() {
       items: [
         {
           title: 'Data Privacy & Protection Policy',
-          content: 'Our Data Privacy & Protection Policy establishes comprehensive safeguards for all personal and sensitive information under our stewardship. This policy outlines data collection principles, processing limitations, storage requirements, and retention schedules. We detail individual rights including access, correction, deletion, and portability requests. The policy addresses international data transfers, third-party sharing restrictions, and consent management procedures. Regular privacy impact assessments, staff training programs, and compliance audits ensure adherence to global privacy regulations while maintaining the trust clients and respondents place in our data handling practices.'
+          sections: [
+            { heading: 'Purpose', text: 'This policy ensures lawful, fair, and transparent processing of personal data collected through surveys, consultancy, digital platforms, and events.' },
+            { heading: 'Scope', text: 'Applies to all employees, contractors, vendors, and volunteers handling data for Invent-Tree.' },
+            { heading: 'Data Principles', text: 'Consent-based collection. Purpose limitation – data used only for stated objectives. Minimal collection – only what is necessary. Retention control – data retained only as long as necessary. Secure disposal – anonymization or deletion after use.' },
+            { heading: 'Roles & Responsibilities', text: 'Data Protection Officer (DPO) – oversees compliance and responds to user rights requests. Employees – must handle data securely and report incidents.' },
+            { heading: 'User Rights', text: 'Data principals (users) may request access, correction, deletion, or withdrawal of consent at any time by writing to privacy@invent-tree.com.' }
+          ]
         },
         {
           title: 'Information Security Policy',
-          content: 'Our Information Security Policy provides a robust framework for protecting all organizational and client information assets. This comprehensive policy covers access controls, authentication requirements, network security, and physical security measures. We detail classification systems for sensitive information, secure communication protocols, and device management standards. The policy includes regular security assessments, vulnerability management, and incident response procedures. Continuous monitoring, staff training, and technology updates ensure our information security measures evolve with emerging threats while maintaining the confidentiality, integrity, and availability of critical data.'
+          sections: [
+            { heading: 'Objectives', text: 'Protect confidentiality, integrity, and availability of information. Prevent unauthorized access, loss, or misuse of company or client data.' },
+            { heading: 'Controls', text: 'Access Control – role-based permissions, 2FA for sensitive systems. Encryption – all sensitive data stored/transmitted in encrypted form. Backups – secure, tested backups maintained regularly. Device Security – company devices must have updated antivirus, firewalls, and restricted USB access.' },
+            { heading: 'Responsibilities', text: 'All employees must follow secure password practices. IT team must monitor systems and perform vulnerability scans.' },
+            { heading: 'Compliance', text: 'Violations of this policy may result in disciplinary action or termination.' }
+          ]
         },
         {
           title: 'Cybersecurity & Incident Response Policy',
-          content: 'Our Cybersecurity & Incident Response Policy establishes proactive defense mechanisms and rapid response capabilities for cyber threats. This policy outlines threat detection systems, prevention strategies, and response protocols for various incident types. We detail notification procedures, containment strategies, evidence preservation, and recovery processes. The policy includes regular security drills, staff training programs, and system updates to maintain strong cyber defenses. Our incident response team follows established protocols to minimize impact, preserve evidence, and restore operations quickly while maintaining transparency with affected clients and regulatory authorities.'
+          sections: [
+            { heading: 'Objective', text: 'To ensure preparedness and rapid response in case of cyber threats, breaches, or attacks.' },
+            { heading: 'Threat Management', text: 'Prevention – firewalls, intrusion detection, security audits. Detection – continuous monitoring of systems, suspicious login alerts. Response – incidents reported immediately to the Cybersecurity Team. Recovery – affected systems isolated, restored from backups, vulnerabilities patched.' },
+            { heading: 'Incident Reporting', text: 'All employees must report suspected cyber incidents within 2 hours to security@invent-tree.com.' },
+            { heading: 'Escalation', text: 'Serious breaches involving personal data must be reported to regulators within 72 hours as per DPDP Act requirements.' },
+            { heading: 'Awareness & Training', text: 'All staff undergo regular cybersecurity awareness programs.' }
+          ]
         },
         {
           title: 'Confidentiality & NDA Policy',
-          content: 'Our Confidentiality & NDA Policy ensures the absolute protection of sensitive client information, strategic plans, and proprietary methodologies. This policy establishes classification levels for confidential information, access controls, and handling procedures. We detail Non-Disclosure Agreement requirements for all personnel, contractors, and partners with access to sensitive information. The policy covers information sharing restrictions, secure communication protocols, and confidentiality breach response procedures. Regular training and awareness programs ensure all team members understand their confidentiality obligations and the critical importance of protecting client trust through absolute discretion.'
+          sections: [
+            { heading: 'Objective', text: 'To protect sensitive client, survey, campaign, and company information from unauthorized disclosure.' },
+            { heading: 'Scope', text: 'Applies to employees, contractors, interns, volunteers, vendors, and any third party with access to confidential information.' },
+            { heading: 'Definition of Confidential Information', text: 'Includes (but is not limited to): Client strategies, polling data, campaign plans. Survey results and analytics. Proprietary tools, code, and designs. Contracts, financial data, and internal communications.' },
+            { heading: 'Obligations', text: 'Confidential information must only be used for authorized purposes. No disclosure to third parties without written approval. All documents/files must be stored securely.' },
+            { heading: 'Non-Disclosure Agreement (NDA)', text: 'All employees and vendors must sign NDAs before accessing sensitive information.' },
+            { heading: 'Duration', text: 'Confidentiality obligations extend beyond employment/contract termination.' }
+          ]
         }
       ]
     },
@@ -125,15 +248,32 @@ export default function PoliciesComponent() {
       items: [
         {
           title: 'Social Media Policy',
-          content: 'Our Social Media Policy establishes professional standards for all digital communications and online presence. This policy covers official organizational accounts, employee personal accounts, and client-related communications across all social media platforms. We outline content guidelines, approval processes, crisis communication protocols, and privacy protection measures. The policy addresses professional conduct, brand representation, political neutrality, and confidentiality maintenance in digital spaces. Regular training ensures all team members understand appropriate social media use while protecting both organizational reputation and client interests in the dynamic digital landscape.'
+          sections: [
+            { heading: 'Purpose', text: 'To ensure professional, consistent, and compliant use of social media by Invent-Tree staff, interns, volunteers, and partners.' },
+            { heading: 'Official Accounts', text: 'Only authorized staff may post on official company accounts. All posts must align with the company\'s brand values and legal compliance.' },
+            { heading: 'Employee/Volunteer Use', text: 'Employees may mention Invent-Tree in personal posts but must include disclaimers (e.g., "views are my own"). Sharing confidential client or campaign data on personal accounts is strictly prohibited.' },
+            { heading: 'Prohibited Content', text: 'Hate speech, offensive remarks, or politically partisan posts on official handles. False or misleading claims. Unauthorized leaks of survey, campaign, or strategy data.' },
+            { heading: 'Crisis Management', text: 'In case of online controversy, only authorized spokespersons may respond. Employees must not engage in public arguments.' }
+          ]
         },
         {
           title: 'Media Interaction & Public Statement Policy',
-          content: 'Our Media Interaction & Public Statement Policy ensures accurate, professional, and consistent communication with media outlets and public forums. This policy designates authorized spokespersons, establishes approval processes for public statements, and outlines message consistency requirements. We detail interview preparation procedures, fact-checking protocols, and crisis communication strategies. The policy ensures all public communications maintain political neutrality, protect client confidentiality, and accurately represent our research findings. Media training and regular communication reviews maintain high standards for public representation while building trust in our expertise and integrity.'
+          sections: [
+            { heading: 'Objective', text: 'To regulate interactions with media and ensure consistent, accurate communication.' },
+            { heading: 'Authorized Spokespersons', text: 'Only designated representatives (approved by management) may give interviews, statements, or press releases. Other employees/volunteers must direct media inquiries to the PR/Communications team.' },
+            { heading: 'Guidelines for Communication', text: 'All media responses must be factual, professional, and non-partisan unless otherwise contracted. Sensitive matters must be cleared with legal/compliance before being shared. "No comment" is acceptable when appropriate.' },
+            { heading: 'Confidentiality', text: 'Under no circumstances should internal documents, polling data, or strategy discussions be disclosed to media without written approval.' }
+          ]
         },
         {
           title: 'Content & Branding Policy',
-          content: 'Our Content & Branding Policy maintains consistent, professional representation across all communication channels and materials. This policy establishes brand guidelines, messaging standards, visual identity requirements, and content approval processes. We detail quality standards for publications, presentations, websites, and marketing materials. The policy ensures all content reflects our professional values, maintains political neutrality, and accurately represents our capabilities. Regular brand audits and content reviews ensure consistent quality and messaging while protecting our reputation and building recognition as a trusted authority in political research and consulting services.'
+          sections: [
+            { heading: 'Purpose', text: 'To ensure consistent branding and content across all platforms, services, and campaigns handled by Invent-Tree.' },
+            { heading: 'Brand Guidelines', text: 'Use official logos, colors, and taglines only in approved formats. All marketing and campaign material must follow Invent-Tree\'s brand style guide.' },
+            { heading: 'Content Standards', text: 'All content must be accurate, non-defamatory, and respectful. Political messaging must comply with Election Commission guidelines. Plagiarism is prohibited; original or licensed content must be used.' },
+            { heading: 'Approval Process', text: 'Campaign content must be approved by the communications lead before publication. Sensitive political or event content requires legal and compliance review.' },
+            { heading: 'Consistency Across Platforms', text: 'Messaging, tone, and visuals must remain consistent across websites, apps, social media, events, and printed materials.' }
+          ]
         }
       ]
     },
@@ -143,15 +283,31 @@ export default function PoliciesComponent() {
       items: [
         {
           title: 'Polling & Survey Ethics Policy',
-          content: 'Our Polling & Survey Ethics Policy establishes the highest standards for research integrity and methodological rigor. This comprehensive policy outlines scientific sampling methods, question design principles, and bias prevention strategies. We detail respondent rights, voluntary participation requirements, and fair representation protocols. The policy ensures transparent methodology disclosure, appropriate statistical analysis, and accurate result interpretation. Regular training on research ethics, methodology reviews, and quality assessments maintain our reputation for producing reliable, unbiased research that serves democratic processes and informed decision-making while respecting all participants.'
+          sections: [
+            { heading: 'Objective', text: 'To ensure that all surveys, polls, and research conducted by Invent-Tree are accurate, impartial, and ethical.' },
+            { heading: 'Ethical Standards', text: 'Surveys must be designed and conducted without manipulation or bias. Sample groups must represent the target population fairly. Results will not be fabricated, distorted, or selectively reported.' },
+            { heading: 'Transparency', text: 'Methodologies, sample sizes, and margins of error will be disclosed where appropriate. Sponsorships or affiliations influencing research will be declared.' },
+            { heading: 'Prohibited Practices', text: 'Push polling or misleading questions designed to manipulate respondents. Suppression or alteration of unfavorable results.' },
+            { heading: 'Oversight', text: 'All surveys will be reviewed by the Research & Compliance team before release.' }
+          ]
         },
         {
           title: 'Consent & Anonymity Policy',
-          content: 'Our Consent & Anonymity Policy guarantees voluntary participation and complete privacy protection for all research respondents. This policy establishes informed consent procedures, anonymity safeguards, and data de-identification protocols. We detail participant rights including withdrawal options, data access requests, and privacy protections. The policy covers secure data collection methods, identity protection measures, and confidentiality maintenance throughout the research process. Rigorous consent documentation and anonymity verification ensure all participants understand their rights while enabling valuable research that contributes to democratic discourse and policy development.'
+          sections: [
+            { heading: 'Informed Consent', text: 'Respondents must be informed about the purpose, use, and storage of their data before participation. Participation is voluntary, and consent must be explicitly obtained (written, digital, or verbal recorded).' },
+            { heading: 'Anonymity', text: 'Individual responses will remain confidential unless explicit consent is given for attribution. Survey data will be aggregated to prevent identification of individuals.' },
+            { heading: 'Right to Withdraw', text: 'Respondents may withdraw participation at any stage without penalty.' },
+            { heading: 'Sensitive Data', text: 'Collection of sensitive political, religious, or personal information will require heightened safeguards under the DPDP Act.' }
+          ]
         },
         {
           title: 'Data Reporting & Analysis Integrity Policy',
-          content: 'Our Data Reporting & Analysis Integrity Policy ensures accurate, unbiased presentation of all research findings and analytical insights. This policy establishes standards for statistical analysis, result verification, and transparent reporting. We detail methodology disclosure requirements, margin of error communication, and limitation acknowledgment protocols. The policy prevents data manipulation, selective reporting, and misleading interpretations while ensuring complete accuracy in all published findings. Independent verification processes, peer review mechanisms, and transparency standards maintain the credibility and reliability of our research outputs, supporting informed decision-making across the political spectrum.'
+          sections: [
+            { heading: 'Accuracy', text: 'Data analysis must follow industry-standard statistical methods. Errors discovered post-publication must be corrected promptly and transparently.' },
+            { heading: 'Objectivity', text: 'Reports must present findings factually, without distortion to favor a particular client or agenda. Subjective interpretations must be clearly distinguished from data-driven insights.' },
+            { heading: 'Publication', text: 'Reports intended for public release must be reviewed and approved by the Research Director and Compliance Officer. Confidential client-specific reports will not be shared externally without authorization.' },
+            { heading: 'Data Security', text: 'All raw data and analytics must be stored securely and only accessible to authorized personnel.' }
+          ]
         }
       ]
     },
@@ -161,11 +317,40 @@ export default function PoliciesComponent() {
       items: [
         {
           title: 'Campaign Compliance Policy',
-          content: 'Our Campaign Compliance Policy ensures strict adherence to all election laws, campaign finance regulations, and political activity requirements. This comprehensive policy covers contribution limits, expenditure reporting, disclosure obligations, and coordination restrictions. We detail compliance monitoring procedures, regulatory filing requirements, and violation prevention strategies. The policy addresses conflict of interest management, client screening processes, and ethical boundary maintenance in political engagements. Regular legal updates, compliance training, and audit procedures ensure all campaign-related activities meet the highest legal and ethical standards while supporting democratic processes and fair elections.'
+          sections: [
+            { heading: 'Objective', text: 'To ensure all campaign-related activities managed by Invent-Tree comply with Indian electoral laws and ethical standards.' },
+            { heading: 'Legal Compliance', text: 'Adherence to the Representation of People Act, 1951. Compliance with Election Commission of India (ECI) guidelines, including Model Code of Conduct. Transparency in campaign financing, advertising, and expenditure reporting.' },
+            { heading: 'Prohibited Activities', text: 'Use of government resources for campaign purposes. Promotion of hate speech, communal targeting, or unlawful propaganda. Acceptance of foreign funding without FCRA approval.' },
+            { heading: 'Documentation', text: 'All campaign strategies, finances, and outreach activities must be documented for audit and regulatory purposes.' }
+          ]
+        },
+        {
+          title: 'War Room Monitoring Policy',
+          sections: [
+            { heading: 'Purpose', text: 'To define the rules and processes for Invent-Tree\'s War Room operations during campaigns.' },
+            { heading: 'Operations', text: 'Centralized command center for real-time monitoring of events, media, and voter sentiment. Daily situation reports (SitReps) shared with campaign leadership. Escalation of urgent issues to the Crisis Response Team.' },
+            { heading: 'Monitoring Areas', text: 'Media tracking: news, social media, and online discussions. Opposition monitoring: fact-checking and rapid counter-strategies. Election-day tracking: turnout, booth operations, and volunteer coordination.' },
+            { heading: 'Confidentiality', text: 'War room data and discussions are highly confidential and must not be shared externally.' }
+          ]
+        },
+        {
+          title: 'Micro-Targeting & Booth Strategy Policy',
+          sections: [
+            { heading: 'Objective', text: 'To guide ethical voter engagement through data-driven micro-targeting and booth-level strategy.' },
+            { heading: 'Voter Segmentation', text: 'Segmentation based on lawful demographic, behavioral, and polling data. Strict prohibition of using illegally obtained personal data.' },
+            { heading: 'Messaging', text: 'Messages tailored to voter groups must remain truthful and respectful. No disinformation, fake news, or hate-oriented content permitted.' },
+            { heading: 'Booth Strategy', text: 'Volunteers must be trained in lawful booth management. Transportation, voter reminders, and turnout efforts must comply with ECI guidelines.' },
+            { heading: 'Data Handling', text: 'Booth-level data must be securely stored and anonymized where required.' }
+          ]
         },
         {
           title: 'Public Outreach & Community Engagement Policy',
-          content: 'Our Public Outreach & Community Engagement Policy establishes frameworks for meaningful, respectful interaction with diverse communities and stakeholders. This policy outlines engagement strategies, cultural sensitivity requirements, and inclusive participation protocols. We detail community partnership approaches, feedback incorporation mechanisms, and long-term relationship building strategies. The policy ensures equitable access to our research and services while respecting community values and priorities. Regular community assessment, partnership evaluation, and engagement effectiveness reviews ensure our outreach efforts genuinely serve public interests and contribute to informed democratic participation across all communities.'
+          sections: [
+            { heading: 'Objective', text: 'To ensure that outreach activities strengthen voter trust and comply with laws.' },
+            { heading: 'Outreach Activities', text: 'Town halls, rallies, and fundraising events. Door-to-door canvassing and phone banking. Voter education initiatives about election processes.' },
+            { heading: 'Ethical Guidelines', text: 'Outreach must avoid discriminatory or divisive messaging. No voter intimidation or inducements (cash, gifts, liquor, etc.). Respect for local communities, traditions, and sensitivities.' },
+            { heading: 'Volunteer Conduct', text: 'Volunteers must carry proper ID when representing campaigns. All interactions should be polite, factual, and non-aggressive.' }
+          ]
         }
       ]
     },
@@ -175,27 +360,126 @@ export default function PoliciesComponent() {
       items: [
         {
           title: 'Workplace Health & Safety Policy',
-          content: 'Our Workplace Health & Safety Policy creates a secure, healthy environment for all team members, clients, and visitors. This comprehensive policy covers physical safety protocols, ergonomic standards, emergency procedures, and health protection measures. We detail hazard identification processes, safety training requirements, and incident reporting procedures. The policy addresses both office environments and field operations, ensuring appropriate safety measures for all work situations. Regular safety assessments, employee wellness programs, and continuous improvement initiatives demonstrate our commitment to maintaining the highest safety standards while supporting productive, healthy work environments.'
+          sections: [
+            { heading: 'Objective', text: 'To provide a safe and healthy workplace for all employees, interns, and volunteers of Invent-Tree.' },
+            { heading: 'Responsibilities', text: 'Management: Ensure compliance with workplace safety laws and maintain safe facilities. Employees: Follow safety protocols, report hazards, and use equipment responsibly.' },
+            { heading: 'Safety Measures', text: 'Fire safety equipment must be installed and regularly tested. First aid kits available at all offices and event sites. Regular workplace inspections to identify and mitigate hazards.' },
+            { heading: 'Training', text: 'Employees and volunteers will receive safety training relevant to their roles (e.g., event safety, tech/data handling).' },
+            { heading: 'Reporting', text: 'Accidents, injuries, or unsafe conditions must be reported immediately to HR or the designated Safety Officer.' }
+          ]
         },
         {
           title: 'Travel & Security Policy',
-          content: 'Our Travel & Security Policy ensures the safety and security of team members during business travel and field operations. This policy establishes pre-travel risk assessments, security protocol requirements, and emergency communication procedures. We detail travel approval processes, insurance requirements, and safety equipment standards. The policy covers domestic and international travel considerations, including political risk assessments and cultural awareness requirements. Regular security briefings, travel updates, and incident response protocols ensure all team members remain safe while conducting essential research and client services across diverse environments and locations.'
+          sections: [
+            { heading: 'Purpose', text: 'To ensure the safety and security of employees, volunteers, and partners while traveling for work or events.' },
+            { heading: 'Travel Guidelines', text: 'Travel must be booked through approved vendors where possible. Accommodation must meet safety standards. Employees must share travel itineraries with their reporting manager.' },
+            { heading: 'Security Protocols', text: 'High-risk travel (political events, VIP rallies, sensitive areas) requires advance security planning. Identity cards must be carried at all times during official travel. Emergency contacts and support must be available 24/7 for field staff.' },
+            { heading: 'Expenses', text: 'Reimbursements will be processed under the Expense Reimbursement Policy.' }
+          ]
         },
         {
           title: 'Mental Health & Wellness Policy',
-          content: 'Our Mental Health & Wellness Policy recognizes the importance of psychological well-being for team effectiveness and personal fulfillment. This policy establishes support resources, wellness programs, and mental health awareness initiatives. We detail confidential counseling services, stress management resources, and work-life balance support measures. The policy addresses workplace stress factors, burnout prevention strategies, and stigma reduction efforts. Regular wellness assessments, mental health training, and support program evaluations ensure our team members have access to comprehensive mental health resources while maintaining a supportive, understanding work environment that prioritizes both professional success and personal well-being.'
+          sections: [
+            { heading: 'Objective', text: 'To support the mental well-being of employees and volunteers working under high-pressure conditions such as campaigns, deadlines, and events.' },
+            { heading: 'Commitment', text: 'Encourage work-life balance and reasonable working hours. Provide access to counseling support (internal or external). Foster an open, stigma-free environment for discussing mental health.' },
+            { heading: 'Preventive Measures', text: 'Managers must monitor workload distribution to prevent burnout. Regular breaks and rest periods encouraged during long campaigns or events.' },
+            { heading: 'Confidentiality', text: 'All mental health discussions will be treated as confidential.' },
+            { heading: 'Support Channels', text: 'Employees may reach out to HR or designated wellness officers for assistance.' }
+          ]
+        }
+      ]
+    },
+    'hr-policies': {
+      title: 'Human Resources & People Management',
+      description: 'Policies governing recruitment, employee relations, volunteer management, and workplace practices.',
+      items: [
+        {
+          title: 'Recruitment & Equal Opportunity Policy',
+          sections: [
+            { heading: 'Objective', text: 'Invent-Tree is committed to fair, transparent, and merit-based recruitment practices.' },
+            { heading: 'Equal Opportunity', text: 'We provide equal employment opportunities regardless of caste, religion, gender, age, disability, or political affiliation.' },
+            { heading: 'Recruitment Process', text: 'Open positions will be advertised publicly. Candidates will be evaluated based on skills, qualifications, and cultural fit. Background verification may be conducted for sensitive roles.' },
+            { heading: 'Anti-Discrimination', text: 'Bias, favoritism, or discrimination in hiring is strictly prohibited.' },
+            { heading: 'Confidentiality', text: 'All applicant information will be treated as confidential.' }
+          ]
+        },
+        {
+          title: 'Volunteer Management Policy',
+          sections: [
+            { heading: 'Role of Volunteers', text: 'Volunteers play a vital role in surveys, events, campaigns, and outreach programs.' },
+            { heading: 'Recruitment', text: 'Volunteers will be recruited through campaigns, outreach, or referrals. A screening process will be applied where necessary.' },
+            { heading: 'Training', text: 'All volunteers will receive orientation on company values, safety, and specific tasks.' },
+            { heading: 'Conduct', text: 'Volunteers must maintain confidentiality of client/campaign information. Misconduct, hate speech, or violence will result in termination of volunteer engagement.' },
+            { heading: 'Recognition', text: 'Outstanding volunteers may be recognized through certificates, recommendations, or stipends where applicable.' }
+          ]
+        },
+        {
+          title: 'Employee Conduct & Leave Policy',
+          sections: [
+            { heading: 'Code of Conduct', text: 'Employees must: Act with professionalism and integrity. Respect colleagues and clients. Avoid conflicts of interest. Abide by confidentiality and security policies.' },
+            { heading: 'Working Hours', text: 'Standard office hours: 9:00 AM - 6:00 PM (flexible for campaign/event schedules). Remote work permitted for designated roles, with prior approval.' },
+            { heading: 'Leave Types', text: 'Casual Leave (CL): 12 days annually. Sick Leave (SL): 10 days annually. Earned Leave (EL): As per statutory requirements. Maternity/Paternity Leave: As per Indian labor laws.' },
+            { heading: 'Leave Procedure', text: 'Employees must apply via the HR system or email at least 3 days in advance (except emergencies).' },
+            { heading: 'Disciplinary Action', text: 'Misconduct, insubordination, or policy violations may lead to warnings, suspension, or termination.' }
+          ]
+        },
+        {
+          title: 'Internship Policy',
+          sections: [
+            { heading: 'Objective', text: 'To provide structured learning opportunities for students and young professionals while contributing to Invent-Tree\'s projects.' },
+            { heading: 'Duration & Engagement', text: 'Internship periods: 1–6 months. Interns may work on research, tech, events, and communication projects.' },
+            { heading: 'Stipend & Benefits', text: 'Interns may receive stipends as per company discretion and scheme eligibility (UP Startup Policy, NAPS, AICTE, etc.). Certificates will be issued on successful completion.' },
+            { heading: 'Supervision', text: 'Interns will be assigned mentors and provided feedback on performance.' },
+            { heading: 'Confidentiality & Conduct', text: 'Interns must sign NDAs and adhere to company\'s Code of Conduct.' },
+            { heading: 'Conversion to Employment', text: 'Outstanding interns may be offered permanent roles.' }
+          ]
+        }
+      ]
+    },
+    'finance': {
+      title: 'Financial Management & Compliance',
+      description: 'Policies governing financial operations, accounting standards, expense management, and fundraising compliance.',
+      items: [
+        {
+          title: 'Financial Management & Accounting Policy',
+          sections: [
+            { heading: 'Objective', text: 'To ensure accurate, transparent, and accountable financial practices at Invent-Tree.' },
+            { heading: 'Accounting Standards', text: 'All accounts will be maintained in compliance with Indian Accounting Standards and Companies Act requirements. Books of accounts will be updated regularly and subject to internal/external audits.' },
+            { heading: 'Financial Controls', text: 'Dual authorization for major expenses. Segregation of duties between approval, payment, and accounting functions. Regular reconciliation of bank accounts.' },
+            { heading: 'Budgeting', text: 'Annual budgets will be prepared and reviewed by management. Any unplanned expenditure above ₹50,000 requires management approval.' },
+            { heading: 'Record Retention', text: 'Financial records will be retained for at least 8 years or as required by law.' }
+          ]
+        },
+        {
+          title: 'Expense Reimbursement Policy',
+          sections: [
+            { heading: 'Eligibility', text: 'Employees, contractors, interns, and volunteers may claim reimbursement for approved business expenses (travel, accommodation, food, event logistics).' },
+            { heading: 'Conditions', text: 'Expenses must be work-related and approved by the reporting manager. Claims must be supported by original receipts/invoices. Claims must be submitted within 30 days of the expense.' },
+            { heading: 'Non-Reimbursable Expenses', text: 'Personal purchases, entertainment, or leisure costs. Alcoholic beverages (unless specifically approved for client events). Fines, penalties, or illegal payments.' },
+            { heading: 'Payment', text: 'Approved reimbursements will be processed within 15 working days via bank transfer.' }
+          ]
+        },
+        {
+          title: 'Fundraising & Donation Compliance Policy',
+          sections: [
+            { heading: 'Objective', text: 'To ensure all fundraising activities and donations comply with applicable laws and regulations.' },
+            { heading: 'Legal Compliance', text: 'All fundraising activities must comply with the Foreign Contribution (Regulation) Act (FCRA) 2010, Income Tax Act provisions, and other applicable regulations.' },
+            { heading: 'Documentation', text: 'Proper records must be maintained for all donations received, including donor details, amounts, and purposes. All donations must be properly acknowledged and receipted.' },
+            { heading: 'Reporting', text: 'Regular reports on fundraising activities and fund utilization must be prepared for management and regulatory authorities as required.' },
+            { heading: 'Transparency', text: 'Financial statements and fundraising reports will be made available for audit and regulatory review.' }
+          ]
         }
       ]
     }
   };
 
   return (
-    <main className="max-w-7xl mx-auto p-6 lg:p-12">
-      <header className="mb-12 text-center">
-        <h1 className="text-4xl dark:text-neutral-400 lg:text-5xl font-bold text-gray-900 mb-4">
+    <main className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-12">
+      <header className="mb-8 sm:mb-12 text-center">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
           Policies & Legal Transparency
         </h1>
-        <p className="text-xl dark:text-neutral-500 text-gray-600 max-w-4xl mx-auto leading-relaxed">
+        <p className="text-lg sm:text-xl text-neutral-600 dark:text-neutral-400 max-w-4xl mx-auto leading-relaxed px-4">
           At Invent-Tree, transparency and accountability form the cornerstone of our operations. 
           Our comprehensive policy framework ensures ethical practices, legal compliance, and 
           unwavering commitment to client trust across all aspects of our political consulting 
@@ -204,30 +488,28 @@ export default function PoliciesComponent() {
       </header>
 
       {/* Tab Navigation */}
-      <div className="mb-8">
+      <div className="mb-6 sm:mb-8">
         <div className="relative">
-          {/* Left Arrow */}
           <button
             onClick={scrollLeft}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-2 hover:bg-gray-50 transition-colors border"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-neutral-800 shadow-lg rounded-full p-2 hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-colors border border-neutral-200 dark:border-neutral-700"
             aria-label="Scroll left"
           >
-            <ChevronLeft size={20} className="text-gray-600" />
+            <ChevronLeft size={20} className="text-neutral-600 dark:text-neutral-400" />
           </button>
 
-          {/* Right Arrow */}
           <button
             onClick={scrollRight}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-2 hover:bg-gray-50 transition-colors border"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-neutral-800 shadow-lg rounded-full p-2 hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-colors border border-neutral-200 dark:border-neutral-700"
             aria-label="Scroll right"
           >
-            <ChevronRight size={20} className="text-gray-600" />
+            <ChevronRight size={20} className="text-neutral-600 dark:text-neutral-400" />
           </button>
 
-          <div className="border-b border-gray-200">
+          <div className="border-b border-neutral-200 dark:border-neutral-700">
             <nav 
               ref={scrollContainerRef}
-              className="flex space-x-8 overflow-x-auto scrollbar-hide px-12"
+              className="flex space-x-4 sm:space-x-8 overflow-x-auto scrollbar-hide px-8 sm:px-12"
               style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
               {tabs.map((tab) => {
@@ -235,15 +517,16 @@ export default function PoliciesComponent() {
                 return (
                   <button
                     key={tab.id}
-                    onClick={() => setActiveTab(tab.id)}
-                    className={`flex items-center space-x-2 py-4 px-1 border-b-2 font-medium text-sm transition-colors whitespace-nowrap ${
+                    onClick={() => handleTabChange(tab.id)}
+                    className={`flex items-center space-x-1 sm:space-x-2 py-3 sm:py-4 px-1 border-b-2 font-medium text-xs sm:text-sm transition-colors whitespace-nowrap ${
                       activeTab === tab.id
-                        ? 'border-blue-600 text-blue-600'
-                        : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                        ? 'border-[#BDD5E9] text-[#BDD5E9] dark:text-[#BDD5E9] dark:border-[#BDD5E9]'
+                        : 'border-transparent text-neutral-500 dark:text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-300 hover:border-neutral-300 dark:hover:border-neutral-600'
                     }`}
                   >
-                    <Icon size={18} />
-                    <span>{tab.label}</span>
+                    <Icon size={16} className="sm:w-[18px] sm:h-[18px]" />
+                    <span className="hidden xs:inline">{tab.label}</span>
+                    <span className="xs:hidden">{tab.label.split(' ')[0]}</span>
                   </button>
                 );
               })}
@@ -252,57 +535,99 @@ export default function PoliciesComponent() {
         </div>
       </div>
 
-      {/* Tab Content */}
-      <div className="bg-white dark:bg-neutral-950 rounded-lg shadow-sm border">
+      {/* Tab Content with Sidebar */}
+      <div className="bg-white dark:bg-neutral-900 rounded-lg shadow-sm border border-neutral-200 dark:border-neutral-700">
         {Object.entries(policies).map(([tabId, tabContent]) => (
           <div
             key={tabId}
-            className={`p-8 ${activeTab === tabId ? 'block' : 'hidden'}`}
+            className={`${activeTab === tabId ? 'block' : 'hidden'}`}
           >
-            <div className="mb-8">
-              <h2 className="text-3xl dark:text-neutral-300 font-bold text-gray-900 mb-3">
-                {tabContent.title}
-              </h2>
-              <p className="text-lg text-gray-600">
-                {tabContent.description}
-              </p>
-            </div>
-
-            <div className="space-y-8">
-              {tabContent.items.map((policy, index) => (
-                <div
-                  key={index}
-                  className="border-l-4 border-blue-600 pl-6 py-2"
-                >
-                  <h3 className="text-xl font-semibold dark:text-neutral-300 text-gray-900 mb-3">
-                    {policy.title}
-                  </h3>
-                  <p className="text-gray-700 dark:text-neutral-300 leading-relaxed">
-                    {policy.content}
+            <div className="flex flex-col lg:flex-row">
+              {/* Left sidebar menu */}
+              <div className="lg:w-80 border-b lg:border-b-0 lg:border-r border-neutral-200 dark:border-neutral-700 p-4 sm:p-6 bg-neutral-50 dark:bg-neutral-800">
+                <div className="mb-4 sm:mb-6">
+                  <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
+                    {tabContent.title}
+                  </h2>
+                  <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400">
+                    {tabContent.description}
                   </p>
                 </div>
-              ))}
+                
+                <nav className="space-y-2">
+                  {tabContent.items.map((policy, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setActivePolicy(index)}
+                      className={`w-full text-left px-3 sm:px-4 py-2 sm:py-3 rounded-lg transition-all text-xs sm:text-sm ${
+                        activePolicy === index
+                          ? 'bg-[#BDD5E9] dark:bg-[#BDD5E9] text-neutral-900 dark:text-neutral-900 shadow-md'
+                          : 'bg-white dark:bg-neutral-900 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-700 border border-neutral-200 dark:border-neutral-600'
+                      }`}
+                    >
+                      <div className="font-medium leading-tight">
+                        {policy.title}
+                      </div>
+                    </button>
+                  ))}
+                </nav>
+              </div>
+
+              {/* Right content area */}
+              <div className="flex-1 p-4 sm:p-6 lg:p-8">
+                <div className="max-w-4xl">
+                  {tabContent.items[activePolicy] && (
+                    <>
+                      <h3 className="text-2xl sm:text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-4 sm:mb-6">
+                        {tabContent.items[activePolicy].title}
+                      </h3>
+                      <div className="space-y-4 sm:space-y-6">
+                        {tabContent.items[activePolicy].sections ? (
+                          // Render sections for core legal documents
+                          tabContent.items[activePolicy].sections.map((section, idx) => (
+                            <div key={idx} className="border-l-4 border-[#BDD5E9] dark:border-[#BDD5E9] pl-4 sm:pl-6 py-2">
+                              <h4 className="text-base sm:text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2">
+                                {section.heading}
+                              </h4>
+                              <p className="text-sm sm:text-base text-neutral-700 dark:text-neutral-300 leading-relaxed">
+                                {section.text}
+                              </p>
+                            </div>
+                          ))
+                        ) : (
+                          // Render single content for other policies
+                          <div className="prose prose-sm sm:prose-lg max-w-none prose-neutral dark:prose-invert">
+                            <p className="text-sm sm:text-base text-neutral-700 dark:text-neutral-300 leading-relaxed text-justify">
+                              {tabContent.items[activePolicy].content}
+                            </p>
+                          </div>
+                        )}
+                      </div>
+                    </>
+                  )}
+                </div>
+              </div>
             </div>
           </div>
         ))}
       </div>
 
       {/* Footer */}
-      <footer className="mt-12 pt-8 border-t border-gray-200 text-center">
-        <div className="bg-gray-50 rounded-lg p-6">
-          <p className="text-gray-700 mb-4">
+      <footer className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-neutral-200 dark:border-neutral-700 text-center">
+        <div className="bg-neutral-50 dark:bg-neutral-800 rounded-lg p-4 sm:p-6">
+          <p className="text-sm sm:text-base text-neutral-700 dark:text-neutral-300 mb-4">
             These policies reflect Invent-Tree's unwavering commitment to ethics, responsibility, 
             and accountability in all aspects of our operations. We regularly review and update 
             our policies to ensure they meet the highest professional standards and regulatory requirements.
           </p>
-          <p className="text-sm text-gray-600">
+          <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400">
             For complete policy documents, legal clarifications, or specific questions about our 
             governance framework, please contact our legal team at{" "}
-            <a href="mailto:legal@invent-tree.com" className="text-blue-600 hover:underline font-medium">
+            <a href="mailto:legal@invent-tree.com" className="text-[#BDD5E9] dark:text-[#BDD5E9] hover:underline font-medium">
               legal@invent-tree.com
             </a>
             {" "}or our compliance officer at{" "}
-            <a href="mailto:compliance@invent-tree.com" className="text-blue-600 hover:underline font-medium">
+            <a href="mailto:compliance@invent-tree.com" className="text-[#BDD5E9] dark:text-[#BDD5E9] hover:underline font-medium">
               compliance@invent-tree.com
             </a>
           </p>
