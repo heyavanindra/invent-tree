@@ -27,9 +27,9 @@ const HomePage = ({ opacity }) => {
         }}
       ></motion.div>
 
-      <div className="relative flex flex-col sm:flex-row w-full px-4 sm:ml-12 md:ml-24 lg:ml-36 sm:px-8 md:px-12 justify-center items-center gap-y-8 sm:gap-x-12 md:gap-x-20 lg:gap-x-[100px] py-12 sm:py-0">
-        <div className="w-full sm:w-1/2 sm:h-[400px] flex flex-col gap-y-1 items-center justify-center text-center">
-          <p className="dark:text-neutral-400 tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-semibold text-[#4f2d91] px-4">
+      <div className="relative flex flex-col sm:flex-row w-full px-4 sm:ml-12 md:ml-24 lg:ml-24 sm:px-8 md:px-12 justify-center items-center gap-y-8 sm:gap-x-12 md:gap-x-20 lg:gap-x-[100px] py-12 sm:py-0">
+        <div className="w-full sm:w-1/2 sm:h-[400px] mb-12 flex flex-col gap-y-1 items-center justify-center text-center">
+          <p className="dark:text-neutral-400  w-full tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-semibold text-[#4f2d91] px-4">
             Your objective is our goal
           </p>
           <span className="h-px w-32 sm:w-40 md:w-[200px] bg-neutral-600 mask-l-from-0 mask-r-from-0 my-2"></span>

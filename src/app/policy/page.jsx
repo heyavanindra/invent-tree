@@ -28,7 +28,7 @@ export default function PoliciesComponent() {
   const tabs = [
     { id: 'core-legal', label: 'Core Legal', icon: FileText },
     { id: 'governance', label: 'Governance', icon: Shield },
-    { id: 'client-service', label: 'Client & Service', icon: Users },
+    // { id: 'client-service', label: 'Client & Service', icon: Users },
     { id: 'data-protection', label: 'Data Protection', icon: Lock },
     { id: 'media-communication', label: 'Media & Communication', icon: Globe },
     { id: 'survey-research', label: 'Survey & Research', icon: BarChart3 },
@@ -472,6 +472,7 @@ export default function PoliciesComponent() {
       ]
     }
   };
+
 
   return (
     <main className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-12">

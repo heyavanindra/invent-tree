@@ -4,13 +4,14 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
+
 const scenes = [
   {
     id: 1,
     label: "Scene 2",
     title: "Event Services",
     desc: "We offer a range of services to create unforgettable celebrity experiences:",
-    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80",
+    image: "https://res.cloudinary.com/dpbpu5b0v/image/upload/v1756308501/Illustration-2_jyxahw.png",
     points: [
       "Celebrity Conventions",
       "Meet-and-Greets",
@@ -25,7 +26,7 @@ const scenes = [
     label: "Scene 3",
     title: "Website/App Development & Upkeep",
     desc: "In today's digital era, a robust online presence is critical for political campaigns.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+    image: "https://res.cloudinary.com/dk2mdk9md/image/upload/v1758362400/Artboard_1_fegryq.webp",
     points: [
       "Custom Website Design",
       "Mobile App Development",
@@ -39,7 +40,7 @@ const scenes = [
     label: "Scene 4",
     title: "End-to-End Campaign Management",
     desc: "Our comprehensive campaign management services guide your political journey from inception to victory.",
-    image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80",
+    image: "https://res.cloudinary.com/dk2mdk9md/image/upload/v1758362400/Artboard_1_2_s5d167.webp",
     points: [
       "Strategic Planning",
       "Fundraising and Compliance",
@@ -55,7 +56,7 @@ const scenes = [
     label: "Scene 5",
     title: "Data Analysis & Surveys",
     desc: "Data-driven decision-making is essential for modern campaigns.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+    image: "https://res.cloudinary.com/dk2mdk9md/image/upload/v1758362400/Artboard_1_3_onafpv.webp",
     points: [
       "Voter Profiling",
       "Survey Design",
@@ -70,7 +71,7 @@ const scenes = [
     label: "Scene 6",
     title: "Micro-targeting & Booth Strategy",
     desc: "Connecting with voters personally and ensuring turnout is key to victory.",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80",
+    image: "https://res.cloudinary.com/dk2mdk9md/image/upload/v1758362407/Artboard_1_11_adyq60.webp",
     points: [
       "Voter Segmentation",
       "Tailored Messaging",
@@ -85,7 +86,7 @@ const scenes = [
     label: "Scene 7",
     title: "Public Outreach & Mobilization",
     desc: "Building voter relationships and driving participation are central to success.",
-    image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800&q=80",
+    image: "https://res.cloudinary.com/dk2mdk9md/image/upload/v1758362400/Artboard_1_5_se6b6z.webp",
     points: [
       "Community Engagement",
       "Event Planning",
@@ -100,7 +101,7 @@ const scenes = [
     label: "Scene 8",
     title: "Digital & Social Media Strategy",
     desc: "A strong online presence is vital for modern campaigns.",
-    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80",
+    image: "https://res.cloudinary.com/dk2mdk9md/image/upload/v1758362400/Artboard_1_6_oo4yys.webp",
     points: [
       "Social Media Management",
       "Content Creation",
@@ -115,7 +116,7 @@ const scenes = [
     label: "Scene 9",
     title: "Policy & Governance Consulting",
     desc: "Effective governance requires informed policies.",
-    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80",
+    image: "https://res.cloudinary.com/dk2mdk9md/image/upload/v1758362400/Artboard_1_7_nyz0w3.webp",
     points: [
       "Policy Research",
       "Policy Development",
@@ -130,7 +131,7 @@ const scenes = [
     label: "Scene 10",
     title: "Leader & Party Branding",
     desc: "Perception shapes political success.",
-    image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&q=80",
+    image: "https://res.cloudinary.com/dk2mdk9md/image/upload/v1758362402/Artboard_1_8_bzovsm.webp",
     points: [
       "Brand Strategy",
       "Visual Identity",
@@ -145,7 +146,7 @@ const scenes = [
     label: "Scene 11",
     title: "Volunteer Training & Deployment",
     desc: "Volunteers are the backbone of campaigns.",
-    image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&q=80",
+    image: "https://res.cloudinary.com/dk2mdk9md/image/upload/v1758362401/Artboard_1_9_xr3guh.webp",
     points: [
       "Recruitment Campaigns",
       "Training Programs",
@@ -160,7 +161,7 @@ const scenes = [
     label: "Scene 12",
     title: "Youth & Women Engagement",
     desc: "Engaging youth and women is crucial for broad support.",
-    image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80",
+    image: "https://res.cloudinary.com/dpbpu5b0v/image/upload/v1756308514/Illustration-5_g2slgv.png",
     points: [
       "Targeted Outreach",
       "Issue Advocacy",
@@ -175,7 +176,7 @@ const scenes = [
     label: "Scene 13",
     title: "War Room Monitoring & Control",
     desc: "Swift responses to campaign developments are critical.",
-    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80",
+    image: "https://res.cloudinary.com/dk2mdk9md/image/upload/v1758362401/Artboard_1_10_subv8c.webp",
     points: [
       "Central Command Center",
       "Media Monitoring",
@@ -186,6 +187,7 @@ const scenes = [
     ],
   },
 ];
+
 
 const ScenesSection = () => {
   const [index, setIndex] = useState(0);

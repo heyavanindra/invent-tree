@@ -30,7 +30,6 @@ const Card = ({ desc, title, id, ref, points }) => {
             stiffness: 900,
             damping: 15,
             mass: 0.8,
-            delay: 0.1,
           }}
         >
           <div className="w-16 p-2 h-16 rounded-full flex items-center justify-center shadow-lg relative z-10 bg-[#BED5E9]">
@@ -56,7 +55,7 @@ const Card = ({ desc, title, id, ref, points }) => {
             type: "spring",
             stiffness: 150,
             damping: 20,
-            delay: 0.3, 
+            delay: 0.1, 
           }}
         >
           <h1 className="text-3xl font-semibold text-[#604e84]">{title}</h1>

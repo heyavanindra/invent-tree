@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import RotatedSVG from "../RotatedSVG";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, FileText } from "lucide-react";
 
 const Scene4 = () => {
   const [news, setNews] = useState([]);
@@ -53,6 +53,40 @@ const Scene4 = () => {
             <hr className="border-t border-[#c1c7d0]/40 dark:border-gray-700 mb-6 lg:mb-8" />
 
             <div className="relative z-10 space-y-4 lg:space-y-6 max-h-[50vh] overflow-y-hidden pr-2">
+              {/* PDF Brochure - Always First */}
+              <article className="border-b border-[#c1c7d0] dark:border-gray-700 pb-4 lg:pb-6">
+                <div className="flex flex-wrap items-baseline text-xs font-bold text-gray-600 dark:text-gray-400 mb-1">
+                  <time>{new Date().toLocaleDateString()}</time>
+                  <span className="ml-2 lg:ml-3 bg-[#8777a9] text-white px-2 py-1 text-[10px] rounded uppercase font-bold">
+                    BROCHURE
+                  </span>
+                </div>
+                <a
+                  href="/Brochure.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block group hover:opacity-80"
+                >
+                  <div className="flex items-start gap-3">
+                    <div className="mt-1 p-2 bg-[#8777a9]/10 rounded-lg">
+                      <FileText className="w-6 h-6 text-[#8777a9] dark:text-[#b6a4d9]" />
+                    </div>
+                    <div className="flex-1">
+                      <h2 className="text-[#8777a9] dark:text-[#b6a4d9] py-1 lg:py-2 text-base lg:text-lg font-semibold group-hover:underline">
+                        Company Brochure
+                      </h2>
+                      <p className="text-sm text-[#6b7280] dark:text-gray-400 line-clamp-3 max-w-full lg:max-w-[90%]">
+                        Download our latest company brochure to learn more about our services and solutions.
+                      </p>
+                      <span className="inline-flex items-center gap-1 mt-2 text-xs text-[#8777a9] dark:text-[#b6a4d9] font-medium">
+                        View PDF <ArrowRight className="w-3 h-3" />
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+
+              {/* Regular Announcements from Backend */}
               {news.length > 0 ? (
                 news.map((item, i) => (
                   <article
@@ -131,7 +165,7 @@ const Scene4 = () => {
             </div>
           </section>
 
-          <div className="flex flex-col items-center sm:items-start sm:flex-row gap-6 lg:gap-8 mb-8 text-sm">
+          <div className="flex flex-col items-center justify-center sm:items-start sm:flex-row gap-6 lg:gap-8 mb-8 text-sm">
             <div className="w-20 h-20 lg:w-30 lg:h-30 rounded-full p-1 flex justify-center items-center mb-4 sm:mb-0 hidden sm:flex">
               <div
                 onClick={() =>
