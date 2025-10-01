@@ -197,47 +197,51 @@ const Scene1 = ({ xGreen }) => {
       }}
     >
       <motion.div
-        style={{
-          translateX: xGreen,
-        }}
-        className="absolute top-0 bottom-0 z-10 bg-transparent"
-      >
-        <img className="h-screen w-full" src="/green.svg" />
-        {/* Text Section */}
-        <div className="absolute grid grid-cols-3 gap-8 top-[5%] left-[10%] right-[10%] z-10 px-12 text-[#4F2D91]">
-          {/* Solve */}
-          <div>
-            <h2 className="font-bold text-5xl mb-4">Solve</h2>
-            <ul className="list-disc list-inside text-2xl font-medium space-y-2">
-              <li>Event Services</li>
-              <li>End-to-End Campaign Management</li>
-              <li>Data Analysis & Surveys</li>
-              <li>Micro-targeting & Booth Strategy</li>
-              <li>Public Outreach & Mobilization</li>
-              <li>Volunteer Training & Deployment</li>
-              <li>War Room Monitoring & Control</li>
-            </ul>
-          </div>
-          {/* Enhance */}
-          <div>
-            <h2 className="font-bold text-5xl mb-4">Enhance</h2>
-            <ul className="list-disc list-inside text-2xl font-medium space-y-2">
-              <li>Website/App Development & Upkeep</li>
-              <li>Digital & Social Media Strategy</li>
-              <li>Leader & Party Branding</li>
-              <li>Policy & Governance Consulting</li>
-            </ul>
-          </div>
-          {/* Accelerate */}
-          <div>
-            <h2 className="font-bold text-5xl mb-4">Accelerate</h2>
-            <ul className="list-disc list-inside text-2xl font-medium space-y-2">
-              <li>Youth & Women Engagement</li>
-            </ul>
-          </div>
-        </div>
-      </motion.div>
-
+              style={{
+                translateX: xGreen,
+              }}
+              className="absolute top-0 bottom-0 z-10 bg-transparent"
+            >
+              <img className="h-screen w-full" src="/green.svg" />
+              {/* Text Section */}
+              <div className="absolute top-[5%] left-[10%] right-[10%] z-10 px-12 text-[#4F2D91]">
+                {/* Headers in one line */}
+                <div className="flex items-center gap-4 mb-8">
+                  <h2 className="font-bold text-5xl">SOLVE</h2>
+                  <span className="text-5xl font-bold">.</span>
+                  <h2 className="font-bold text-5xl">ENHANCE</h2>
+                  <span className="text-5xl font-bold">.</span>
+                  <h2 className="font-bold text-5xl">ACCELERATE</h2>
+                </div>
+                
+                {/* Three Column Layout for Points */}
+                <div className="grid grid-cols-3 gap-8">
+                  {/* Solve Points */}
+                  <ul className="list-disc list-inside text-2xl font-medium space-y-2">
+                    <li>Event Services</li>
+                    <li>End-to-End Campaign Management</li>
+                    <li>Data Analysis & Surveys</li>
+                    <li>Micro-targeting & Booth Strategy</li>
+                    <li>Public Outreach & Mobilization</li>
+                    <li>Volunteer Training & Deployment</li>
+                    <li>War Room Monitoring & Control</li>
+                  </ul>
+                  
+                  {/* Enhance Points */}
+                  <ul className="list-disc list-inside text-2xl font-medium space-y-2">
+                    <li>Website/App Development & Upkeep</li>
+                    <li>Digital & Social Media Strategy</li>
+                    <li>Leader & Party Branding</li>
+                    <li>Policy & Governance Consulting</li>
+                  </ul>
+                  
+                  {/* Accelerate Points */}
+                  <ul className="list-disc list-inside text-2xl font-medium space-y-2">
+                    <li>Youth & Women Engagement</li>
+                  </ul>
+                </div>
+              </div>
+            </motion.div>
       <div className="flex w-full h-screen justify-end items-center gap-x-[30rem] mr-[600px]">
         {scenes.map((scene, idx) => {
           const { ref, inView } = useInView({

@@ -17,15 +17,19 @@ const ScrollingCarousel = () => {
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbnUheL6Gz4BOy-uR6-BZ8KFIYVVDn-18ciQ&s"
   ];
 
-  const textWords = ["https://res.cloudinary.com/dk2mdk9md/image/upload/v1758735865/3e25f99d-9210-4130-be1e-84bc5f3abe39_suvvoe.jpg", "https://res.cloudinary.com/dk2mdk9md/image/upload/v1758735865/b423c3e1-e1fe-454a-b445-04206456b312_ji0jtw.jpg", "https://res.cloudinary.com/dk2mdk9md/image/upload/v1758735851/0e8bef40-05ab-494d-b3b9-31adc69288df_bz6uj0.jpg"];
+  const textWords = [
+    "https://res.cloudinary.com/dk2mdk9md/image/upload/v1758735865/3e25f99d-9210-4130-be1e-84bc5f3abe39_suvvoe.jpg", 
+    "https://res.cloudinary.com/dk2mdk9md/image/upload/v1758735865/b423c3e1-e1fe-454a-b445-04206456b312_ji0jtw.jpg", 
+    "https://res.cloudinary.com/dk2mdk9md/image/upload/v1758735851/0e8bef40-05ab-494d-b3b9-31adc69288df_bz6uj0.jpg"
+  ];
 
   // Function to insert random text boxes into image array
   const insertRandomTexts = (imageArray) => {
-    const result = [...imageArray.map(url => ({ type: 'image', content: url }))];
+    const result = [...imageArray.map(url => ({ type: 'image', content: url, isSquare: false }))];
     
     textWords.forEach(word => {
       const randomIndex = Math.floor(Math.random() * result.length);
-      result.splice(randomIndex, 0, { type: 'image', content: word });
+      result.splice(randomIndex, 0, { type: 'image', content: word, isSquare: true });
     });
     
     return result;
@@ -55,16 +59,20 @@ const ScrollingCarousel = () => {
           >
             {leftItems.map((item, index) => (
               <div key={`left-${index}`} className="flex-shrink-0">
-                {item.type === 'image' ? (
+                {item.isSquare ? (
+                  <div className="w-full aspect-square">
+                    <img
+                      src={item.content}
+                      alt={`carousel-square-${index}`}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                ) : (
                   <img
                     src={item.content}
                     alt={`carousel-image-${index}`}
                     className="w-full h-32 md:h-40 object-cover"
                   />
-                ) : (
-                  <div className="w-full h-32 md:h-40 flex items-center justify-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white text-xl md:text-2xl font-bold">
-                    {item.content}
-                  </div>
                 )}
               </div>
             ))}
@@ -85,16 +93,20 @@ const ScrollingCarousel = () => {
           >
             {rightItems.map((item, index) => (
               <div key={`right-${index}`} className="flex-shrink-0">
-                {item.type === 'image' ? (
+                {item.isSquare ? (
+                  <div className="w-full aspect-square">
+                    <img
+                      src={item.content}
+                      alt={`carousel-square-${index}`}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                ) : (
                   <img
                     src={item.content}
                     alt={`carousel-image-${index}`}
                     className="w-full h-32 md:h-40 object-cover"
                   />
-                ) : (
-                  <div className="w-full h-32 md:h-40 flex items-center justify-center bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white text-xl md:text-2xl font-bold">
-                    {item.content}
-                  </div>
                 )}
               </div>
             ))}
@@ -103,6 +115,6 @@ const ScrollingCarousel = () => {
       </div>
     </div>
   );
-};
+}; 
 
 export default ScrollingCarousel;
