@@ -58,7 +58,7 @@ const Scene4 = () => {
                 <div className="flex flex-wrap items-baseline text-xs font-bold text-gray-600 dark:text-gray-400 mb-1">
                   <time>{new Date().toLocaleDateString()}</time>
                   <span className="ml-2 lg:ml-3 bg-[#8777a9] text-white px-2 py-1 text-[10px] rounded uppercase font-bold">
-                    BROCHURE
+                    WEB DEVELOPMENT BROCHURE
                   </span>
                 </div>
                 <a
