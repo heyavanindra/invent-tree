@@ -73,7 +73,7 @@ const Scene4 = () => {
                     </div>
                     <div className="flex-1">
                       <h2 className="text-[#8777a9] dark:text-[#b6a4d9] py-1 lg:py-2 text-base lg:text-lg font-semibold group-hover:underline">
-                        Company Brochure
+                         Brochure
                       </h2>
                       <p className="text-sm text-[#6b7280] dark:text-gray-400 line-clamp-3 max-w-full lg:max-w-[90%]">
                         Download our latest company brochure to learn more about our services and solutions.
