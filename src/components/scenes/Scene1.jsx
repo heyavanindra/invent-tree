@@ -203,9 +203,8 @@ const Scene1 = ({ xGreen }) => {
         className="absolute top-0 bottom-0 z-10 bg-transparent"
       >
         <img className="h-screen w-full" src="/green.svg" />
-
         {/* Text Section */}
-        <div className="absolute grid grid-cols-2   top-[5%] left-[10%] z-10 px-12 text-[#4F2D91]">
+        <div className="absolute grid grid-cols-3 gap-8 top-[5%] left-[10%] right-[10%] z-10 px-12 text-[#4F2D91]">
           {/* Solve */}
           <div>
             <h2 className="font-bold text-5xl mb-4">Solve</h2>
@@ -219,10 +218,9 @@ const Scene1 = ({ xGreen }) => {
               <li>War Room Monitoring & Control</li>
             </ul>
           </div>
-
           {/* Enhance */}
           <div>
-            <h2 className="font-bold text-5xl  mb-4">Enhance</h2>
+            <h2 className="font-bold text-5xl mb-4">Enhance</h2>
             <ul className="list-disc list-inside text-2xl font-medium space-y-2">
               <li>Website/App Development & Upkeep</li>
               <li>Digital & Social Media Strategy</li>
@@ -230,15 +228,12 @@ const Scene1 = ({ xGreen }) => {
               <li>Policy & Governance Consulting</li>
             </ul>
           </div>
-
           {/* Accelerate */}
-          <div className="col-span-2 flex justify-center">
-            <div>
-              <h2 className="font-bold text-5xl mt-10 mb-4">Accelerate</h2>
-              <ul className="list-disc list-inside text-2xl font-medium space-y-2">
-                <li>Youth & Women Engagement</li>
-              </ul>
-            </div>
+          <div>
+            <h2 className="font-bold text-5xl mb-4">Accelerate</h2>
+            <ul className="list-disc list-inside text-2xl font-medium space-y-2">
+              <li>Youth & Women Engagement</li>
+            </ul>
           </div>
         </div>
       </motion.div>
