@@ -58,7 +58,7 @@ const Scene4 = () => {
                 <div className="flex flex-wrap items-baseline text-xs font-bold text-gray-600 dark:text-gray-400 mb-1">
                   <time>{new Date().toLocaleDateString()}</time>
                   <span className="ml-2 lg:ml-3 bg-[#8777a9] text-white px-2 py-1 text-[10px] rounded uppercase font-bold">
-                    WEB DEVELOPMENT BROCHURE
+                   BROCHURE
                   </span>
                 </div>
                 <a
@@ -72,8 +72,8 @@ const Scene4 = () => {
                       <FileText className="w-6 h-6 text-[#8777a9] dark:text-[#b6a4d9]" />
                     </div>
                     <div className="flex-1">
-                      <h2 className="text-[#8777a9] dark:text-[#b6a4d9] py-1 lg:py-2 text-base lg:text-lg font-semibold group-hover:underline">
-                         Brochure
+                      <h2 className="text-[#8777a9] dark:text-[#b6a4d9] py-1 lg:py-2 text-base lg:text-lg font-semibold group-hover:underline uppercase">
+                          WEB DEVELOPMENT BROCHURE
                       </h2>
                       <p className="text-sm text-[#6b7280] dark:text-gray-400 line-clamp-3 max-w-full lg:max-w-[90%]">
                         Download our latest company brochure to learn more about our services and solutions.
