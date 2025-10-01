@@ -157,7 +157,7 @@ const Scene4 = () => {
                 <span className="text-[#8777a9] dark:text-[#b6a4d9] font-semibold">
                   TEL
                 </span>{" "}
-                058-322-3322
+                +91-8169916799
               </p>
               <small className="text-xs -mt-1 block font-medium text-gray-600 dark:text-gray-400">
                 Reception Hours: 9:00-18:00 (Mon-Fri)
@@ -185,7 +185,7 @@ const Scene4 = () => {
                 </p>
                 <p className="py-1">Park Street, Green Olives,</p>
                 <p className="py-1">Hinjewadi Phase II, Pune - 57</p>
-                <p>TEL: +91-9930005234</p>
+                <p>TEL: +91-8169916799</p>
                 <br />
                 <p className="text-sm text-gray-500">
                   &copy; 2025 Invent-tree. All rights reserved.

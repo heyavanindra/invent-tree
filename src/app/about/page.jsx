@@ -215,7 +215,7 @@ export default function AboutUs() {
             </Link>
           </motion.div>
         </div>
-       <div >
+       <div className="mt-16">
          <h1 className=" pb-4 font-semibold text-2xl text-[#67577F]">Annoucement</h1>
          <div className="relative z-10 space-y-4 lg:space-y-6 max-h-[50vh] overflow-y-auto pr-2">
            {news.length > 0 ? (
@@ -247,7 +247,7 @@ export default function AboutUs() {
        </div>
 
         {/* Company Details */}
-        <div className="p-6 bg-[#f4f7ff] dark:bg-[#2e2d2d] rounded-2xl">
+        <div className="p-6 mt-16 bg-[#f4f7ff] dark:bg-[#2e2d2d] rounded-2xl">
           <motion.div
             className="rounded-lg px-6 py-6 shadow-lg border border-[#c1c7d0]/40 dark:border-gray-600"
             initial={{ opacity: 0, x: 60 }}

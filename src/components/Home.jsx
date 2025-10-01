@@ -14,7 +14,7 @@ const HomePage = ({ opacity }) => {
           alt="image"
           width={500}
           height={500}
-          className="w-64 h-64 md:w-96 md:h-96 lg:w-[400px] lg:h-[400px]"
+          className="w-64 h-64 md:w-96 md:h-96 lg:w-[500px] lg:h-[400px]"
         />
       </div>
 
