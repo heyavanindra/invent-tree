@@ -2,7 +2,6 @@
 
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/navbar";
 import { ScrollContextWraper } from "@/context/scrollcontext";
 import { ThemeProvider } from "@/components/theme-provider";
 
@@ -27,17 +26,16 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <ScrollContextWraper>
-            <Navbar />
-            {children}
-          </ScrollContextWraper>
-        </ThemeProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <ScrollContextWraper>
+              {children}
+            </ScrollContextWraper>
+          </ThemeProvider>
       </body>
     </html>
   );

@@ -6,6 +6,8 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
 import Link from "next/link";
 import {ModeToggle} from "./LightToggleButton"
+import { LanguageToggler } from "./language-toggle";
+
 const Navbar = () => {
   // const [open, setOpen] = useState(false);
   return (
@@ -27,6 +29,10 @@ const Navbar = () => {
           ></MenuButton> */}
           
     <ModeToggle/>
+   <div className="p-2">
+
+   <LanguageToggler></LanguageToggler>
+   </div>
         </div>
       {/* on open */}
       {/* <AnimatePresence>

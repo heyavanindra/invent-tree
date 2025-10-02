@@ -5,8 +5,10 @@ import RotatedSVG from "../RotatedSVG";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ArrowRight, FileText } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 const Scene4 = () => {
+  const t = useTranslations();
   const [news, setNews] = useState([]);
   const router = useRouter();
 
@@ -25,9 +27,9 @@ const Scene4 = () => {
   }, []);
 
   const footerLinks = [
-    { label: "About", href: "/about" },
-    { label: "Privacy Policy", href: "/policy" },
-    { label: "Terms of Service", href: "/policy" },
+    { label: t('Home.Scene4.footer.links.0'), href: "/about" },
+    { label: t('Home.Scene4.footer.links.1'), href: "/policy" },
+    { label: t('Home.Scene4.footer.links.2'), href: "/policy" },
   ];
 
   return (
@@ -38,14 +40,14 @@ const Scene4 = () => {
           <div className="mx-0 sm:mx-5 md:ps-20 sm:ps-10 mt-0 sm:mt-5 lg:mt-20">
             <div className="relative z-10 flex flex-col items-center sm:flex-row sm:justify-between gap-3 sm:gap-4 mb-6 lg:mb-10">
               <h1 className="text-4xl sm:text-5xl text-center sm:text-left pt-10 sm:pt-0 text-[#604e84] dark:text-[#b6a4d9] tracking-wide">
-                Announcement
+                {t('Home.Scene4.announcements.title')}
               </h1>
               <div className="text-end">
                 <button
                   onClick={() => router.push("/announcements/add")}
                   className="bg-[#8777a9] text-white text-md px-4 py-1 rounded-lg shadow hover:opacity-80"
                 >
-                  + Add
+                  {t('Home.Scene4.announcements.addButton')}
                 </button>
               </div>
             </div>
@@ -58,7 +60,7 @@ const Scene4 = () => {
                 <div className="flex flex-wrap items-baseline text-xs font-bold text-gray-600 dark:text-gray-400 mb-1">
                   <time>{new Date().toLocaleDateString()}</time>
                   <span className="ml-2 lg:ml-3 bg-[#8777a9] text-white px-2 py-1 text-[10px] rounded uppercase font-bold">
-                   BROCHURE
+                   {t('Home.Scene4.announcements.brochure.tag')}
                   </span>
                 </div>
                 <a
@@ -73,13 +75,13 @@ const Scene4 = () => {
                     </div>
                     <div className="flex-1">
                       <h2 className="text-[#8777a9] dark:text-[#b6a4d9] py-1 lg:py-2 text-base lg:text-lg font-semibold group-hover:underline uppercase">
-                          WEB DEVELOPMENT BROCHURE
+                          {t('Home.Scene4.announcements.brochure.title')}
                       </h2>
                       <p className="text-sm text-[#6b7280] dark:text-gray-400 line-clamp-3 max-w-full lg:max-w-[90%]">
-                        Download our latest company brochure to learn more about our services and solutions.
+                        {t('Home.Scene4.announcements.brochure.description')}
                       </p>
                       <span className="inline-flex items-center gap-1 mt-2 text-xs text-[#8777a9] dark:text-[#b6a4d9] font-medium">
-                        View PDF <ArrowRight className="w-3 h-3" />
+                        {t('Home.Scene4.announcements.brochure.viewPdf')} <ArrowRight className="w-3 h-3" />
                       </span>
                     </div>
                   </div>
@@ -109,7 +111,7 @@ const Scene4 = () => {
                 ))
               ) : (
                 <p className="text-gray-500 dark:text-gray-400">
-                  No announcements available.
+                  {t('Home.Scene4.announcements.noAnnouncements')}
                 </p>
               )}
             </div>
@@ -118,7 +120,7 @@ const Scene4 = () => {
                 href={"/about"}
                 className="flex justify-between gap-x-2 items-center"
               >
-                Learn More <ArrowRight />
+                {t('Home.Scene4.announcements.learnMore')} <ArrowRight />
               </Link>
             </div>
           </div>
@@ -149,18 +151,18 @@ const Scene4 = () => {
                 href="mailto:contact@invent-tree.com"
                 className="text-base lg:text-xl text-[#8777a9] dark:text-[#b6a4d9]"
               >
-                contact@invent-tree.com
+                {t('Home.Scene4.contact.email')}
               </a>
             </div>
             <div className="text-xl lg:text-3xl text-center sm:text-right">
               <p className="py-2">
                 <span className="text-[#8777a9] dark:text-[#b6a4d9] font-semibold">
-                  TEL
+                  {t('Home.Scene4.contact.tel')}
                 </span>{" "}
-                +91-8169916799
+                {t('Home.Scene4.contact.phone')}
               </p>
               <small className="text-xs -mt-1 block font-medium text-gray-600 dark:text-gray-400">
-                Reception Hours: 9:00-18:00 (Mon-Fri)
+                {t('Home.Scene4.contact.receptionHours')}
               </small>
             </div>
           </section>
@@ -181,14 +183,14 @@ const Scene4 = () => {
             <div>
               <address className="not-italic leading-snug border-b border-gray-300 dark:border-gray-700 pb-3 lg:pb-5">
                 <p className="py-1 text-blue-500 dark:text-red-400">
-                  Invent-Tree Inc.
+                  {t('Home.Scene4.company.name')}
                 </p>
-                <p className="py-1">Park Street, Green Olives,</p>
-                <p className="py-1">Hinjewadi Phase II, Pune - 57</p>
-                <p>TEL: +91-8169916799</p>
+                <p className="py-1">{t('Home.Scene4.company.address.line1')}</p>
+                <p className="py-1">{t('Home.Scene4.company.address.line2')}</p>
+                <p>TEL: {t('Home.Scene4.contact.phone')}</p>
                 <br />
                 <p className="text-sm text-gray-500">
-                  &copy; 2025 Invent-tree. All rights reserved.
+                  {t('Home.Scene4.company.copyright')}
                 </p>
               </address>
 

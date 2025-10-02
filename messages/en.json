@@ -1,0 +1,281 @@
+{
+  "Home": {
+    "title": "Your objective is our goal",
+    "tagline": "Our Mission",
+    "whatwedo": {
+      "trustedData": {
+        "description": "Our polls are conducted with rigorous standards to reflect true public sentiment.",
+        "title": "Trusted Data:"
+      },
+      "expertAnalysis": {
+        "title": "Expert Analysis:",
+        "description": "Our team of seasoned analysts provides clear, actionable insights."
+      },
+      "customSolutions": {
+        "title": "Custom Solutions:",
+        "description": "Tailored polling services to meet your campaign or policy needs."
+      }
+    },
+    "learnMore": "Learn More",
+    "Scene1": {
+      "headers": {
+        "solve": "SOLVE",
+        "enhance": "ENHANCE",
+        "accelerate": "ACCELERATE"
+      },
+      "sections": {
+        "solve": {
+          "title": "Solve",
+          "points": [
+            "Event Services",
+            "End-to-End Campaign Management",
+            "Data Analysis & Surveys",
+            "Micro-targeting & Booth Strategy",
+            "Public Outreach & Mobilization",
+            "Volunteer Training & Deployment"
+          ]
+        },
+        "enhance": {
+          "title": "Enhance",
+          "points": [
+            "Website/App Development & Upkeep",
+            "Digital & Social Media Strategy",
+            "Leader & Party Branding",
+            "Policy & Governance Consulting",
+            "War Room Monitoring & Control"
+          ]
+        },
+        "accelerate": {
+          "title": "Accelerate",
+          "points": [
+            "Youth & Women Engagement",
+            "Polls"
+          ]
+        }
+      }
+    },
+    "Scene3": {
+      "cards": {
+        "card1": {
+          "id": "01",
+          "title": "We offer a comprehensive range of polling and survey services tailored to your needs:",
+          "bullets": [
+            "Voter Sentiment Polls: Gauge public opinion on candidates, issues, or policies.",
+            "Issue-Based Surveys: Deep dives into specific topics, from healthcare to economic policy.",
+            "Campaign Tracking: Monitor voter trends and campaign performance over time.",
+            "Focus Groups: Qualitative insights to complement quantitative data.",
+            "Exit Polls: Real-time data on election day to predict outcomes.",
+            "Custom Analytics: Bespoke reports and visualizations for your unique needs."
+          ],
+          "howWeWork": [
+            "Consultation: We collaborate with you to define objectives and target audiences.",
+            "Design: Our team crafts precise, unbiased questions and methodologies.",
+            "Execution: We conduct polls using phone, online, or in-person methods.",
+            "Analysis: We deliver clear, actionable reports with data visualizations.",
+            "Support: Ongoing consultation to maximize the impact of your results."
+          ]
+        },
+        "card2": {
+          "id": "02",
+          "title": "Recent Polls",
+          "subtitle": "Latest Insights",
+          "bullets": [
+            "National Election Pulse (Oct 2025): 52% of voters prioritize economic stability over social issues.",
+            "State-Level Approval Ratings (Sep 2025): Governors in swing states face declining approval.",
+            "Issue Spotlight: Climate Policy (Aug 2025): 68% of voters support renewable energy initiatives."
+          ]
+        },
+        "card3": {
+          "id": "03",
+          "title": "Recent Polls",
+          "subtitle": "Latest Insights",
+          "bullets": [
+            "Education Policy Survey (Sep 2025): 74% support increased teacher salaries.",
+            "Healthcare Access Report (Aug 2025): 61% believe rural access is inadequate."
+          ]
+        }
+      }
+    },
+    "Scene4": {
+      "announcements": {
+        "title": "Announcement",
+        "addButton": "+ Add",
+        "brochure": {
+          "tag": "BROCHURE",
+          "title": "WEB DEVELOPMENT BROCHURE",
+          "description": "Download our latest company brochure to learn more about our services and solutions.",
+          "viewPdf": "View PDF"
+        },
+        "noAnnouncements": "No announcements available.",
+        "learnMore": "Learn More"
+      },
+      "contact": {
+        "email": "contact@invent-tree.com",
+        "tel": "TEL",
+        "phone": "+91-8169916799",
+        "receptionHours": "Reception Hours: 9:00-18:00 (Mon-Fri)"
+      },
+      "company": {
+        "name": "Invent-Tree Inc.",
+        "address": {
+          "line1": "Park Street, Green Olives,",
+          "line2": "Hinjewadi Phase II, Pune - 57"
+        },
+        "copyright": "© 2025 Invent-tree. All rights reserved."
+      },
+      "footer": {
+        "links": [
+          "About",
+          "Privacy Policy",
+          "Terms of Service"
+        ]
+      }
+    },
+    "Scenes": {
+      "EventService": {
+        "title": "Event Services",
+        "description": "We offer a range of services to create unforgettable celebrity experiences:",
+        "points": {
+          "celebrityConventions": "Celebrity Conventions",
+          "meetAndGreets": "Meet-and-Greets",
+          "vipExperiences": "VIP Experiences",
+          "corporateEvents": "Corporate Events",
+          "customEvents": "Custom Events",
+          "eventManagement": "Event Management"
+        }
+      },
+      "WebsiteDevelopment": {
+        "title": "Website/App Development & Upkeep",
+        "description": "In today's digital era, a robust online presence is critical for political campaigns.",
+        "points": {
+          "customWebsiteDesign": "Custom Website Design",
+          "mobileAppDevelopment": "Mobile App Development",
+          "contentManagement": "Content Management",
+          "securityAndCompliance": "Security and Compliance",
+          "ongoingMaintenance": "Ongoing Maintenance"
+        }
+      },
+      "CampaignManagement": {
+        "title": "End-to-End Campaign Management",
+        "description": "Our comprehensive campaign management services guide your political journey from inception to victory.",
+        "points": {
+          "strategicPlanning": "Strategic Planning",
+          "fundraisingAndCompliance": "Fundraising and Compliance",
+          "mediaAndCommunications": "Media and Communications",
+          "eventManagement": "Event Management",
+          "volunteerCoordination": "Volunteer Coordination",
+          "dataAnalytics": "Data Analytics",
+          "electionDayOperations": "Election Day Operations"
+        }
+      },
+      "DataAnalysis": {
+        "title": "Data Analysis & Surveys",
+        "description": "Data-driven decision-making is essential for modern campaigns.",
+        "points": {
+          "voterProfiling": "Voter Profiling",
+          "surveyDesign": "Survey Design",
+          "predictiveAnalytics": "Predictive Analytics",
+          "sentimentAnalysis": "Sentiment Analysis",
+          "geographicInformationSystems": "Geographic Information Systems (GIS)",
+          "realTimeDashboards": "Real-time Dashboards"
+        }
+      },
+      "MicroTargeting": {
+        "title": "Micro-targeting & Booth Strategy",
+        "description": "Connecting with voters personally and ensuring turnout is key to victory.",
+        "points": {
+          "voterSegmentation": "Voter Segmentation",
+          "tailoredMessaging": "Tailored Messaging",
+          "channelOptimization": "Channel Optimization",
+          "boothManagement": "Booth Management",
+          "voterMobilization": "Voter Mobilization",
+          "dataCollection": "Data Collection"
+        }
+      },
+      "PublicOutreach": {
+        "title": "Public Outreach & Mobilization",
+        "description": "Building voter relationships and driving participation are central to success.",
+        "points": {
+          "communityEngagement": "Community Engagement",
+          "eventPlanning": "Event Planning",
+          "canvassingOperations": "Canvassing Operations",
+          "voterEducation": "Voter Education",
+          "grassrootsOrganizing": "Grassroots Organizing",
+          "digitalOutreach": "Digital Outreach"
+        }
+      },
+      "DigitalStrategy": {
+        "title": "Digital & Social Media Strategy",
+        "description": "A strong online presence is vital for modern campaigns.",
+        "points": {
+          "socialMediaManagement": "Social Media Management",
+          "contentCreation": "Content Creation",
+          "onlineAdvertising": "Online Advertising",
+          "influencerPartnerships": "Influencer Partnerships",
+          "analyticsAndMonitoring": "Analytics and Monitoring",
+          "crisisManagement": "Crisis Management"
+        }
+      },
+      "PolicyConsulting": {
+        "title": "Policy & Governance Consulting",
+        "description": "Effective governance requires informed policies.",
+        "points": {
+          "policyResearch": "Policy Research",
+          "policyDevelopment": "Policy Development",
+          "legislativeStrategy": "Legislative Strategy",
+          "governanceTraining": "Governance Training",
+          "stakeholderEngagement": "Stakeholder Engagement",
+          "issueBriefings": "Issue Briefings"
+        }
+      },
+      "LeaderBranding": {
+        "title": "Leader & Party Branding",
+        "description": "Perception shapes political success.",
+        "points": {
+          "brandStrategy": "Brand Strategy",
+          "visualIdentity": "Visual Identity",
+          "messageDevelopment": "Message Development",
+          "mediaTraining": "Media Training",
+          "reputationManagement": "Reputation Management",
+          "consistencyAcrossPlatforms": "Consistency Across Platforms"
+        }
+      },
+      "VolunteerTraining": {
+        "title": "Volunteer Training & Deployment",
+        "description": "Volunteers are the backbone of campaigns.",
+        "points": {
+          "recruitmentCampaigns": "Recruitment Campaigns",
+          "trainingPrograms": "Training Programs",
+          "roleAssignment": "Role Assignment",
+          "coordinationTools": "Coordination Tools",
+          "motivationAndRecognition": "Motivation and Recognition",
+          "leadershipDevelopment": "Leadership Development"
+        }
+      },
+      "YouthEngagement": {
+        "title": "Youth & Women Engagement",
+        "description": "Engaging youth and women is crucial for broad support.",
+        "points": {
+          "targetedOutreach": "Targeted Outreach",
+          "issueAdvocacy": "Issue Advocacy",
+          "eventsAndForums": "Events and Forums",
+          "mentorshipPrograms": "Mentorship Programs",
+          "socialMediaCampaigns": "Social Media Campaigns",
+          "partnerships": "Partnerships"
+        }
+      },
+      "WarRoomMonitoring": {
+        "title": "War Room Monitoring & Control",
+        "description": "Swift responses to campaign developments are critical.",
+        "points": {
+          "centralCommandCenter": "Central Command Center",
+          "mediaMonitoring": "Media Monitoring",
+          "rapidResponse": "Rapid Response",
+          "dataIntegration": "Data Integration",
+          "coordination": "Coordination",
+          "scenarioPlanning": "Scenario Planning"
+        }
+      }
+    }
+  }
+}

@@ -2,8 +2,10 @@
 
 import React, { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "motion/react";
+import { useTranslations } from "next-intl";
 
 const AnimatedCards = () => {
+  const t = useTranslations();
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { 
     margin:""
@@ -15,45 +17,24 @@ const AnimatedCards = () => {
 
   const cards = [
     {
-      id: "01",
-      title:
-        "We offer a comprehensive range of polling and survey services tailored to your needs:",
-      bullets: [
-        "Voter Sentiment Polls: Gauge public opinion on candidates, issues, or policies.",
-        "Issue-Based Surveys: Deep dives into specific topics, from healthcare to economic policy.",
-        "Campaign Tracking: Monitor voter trends and campaign performance over time.",
-        "Focus Groups: Qualitative insights to complement quantitative data.",
-        "Exit Polls: Real-time data on election day to predict outcomes.",
-        "Custom Analytics: Bespoke reports and visualizations for your unique needs.",
-      ],
-      howWeWork: [
-        "Consultation: We collaborate with you to define objectives and target audiences.",
-        "Design: Our team crafts precise, unbiased questions and methodologies.",
-        "Execution: We conduct polls using phone, online, or in-person methods.",
-        "Analysis: We deliver clear, actionable reports with data visualizations.",
-        "Support: Ongoing consultation to maximize the impact of your results.",
-      ],
+      id: t('Home.Scene3.cards.card1.id'),
+      title: t('Home.Scene3.cards.card1.title'),
+      bullets: t.raw('Home.Scene3.cards.card1.bullets'),
+      howWeWork: t.raw('Home.Scene3.cards.card1.howWeWork'),
       img: null,
     },
     {
-      id: "02",
-      title: "Recent Polls",
-      subtitle: "Latest Insights",
-      bullets: [
-        "National Election Pulse (Oct 2025): 52% of voters prioritize economic stability over social issues.",
-        "State-Level Approval Ratings (Sep 2025): Governors in swing states face declining approval.",
-        "Issue Spotlight: Climate Policy (Aug 2025): 68% of voters support renewable energy initiatives.",
-      ],
+      id: t('Home.Scene3.cards.card2.id'),
+      title: t('Home.Scene3.cards.card2.title'),
+      subtitle: t('Home.Scene3.cards.card2.subtitle'),
+      bullets: t.raw('Home.Scene3.cards.card2.bullets'),
       img: "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
     },
     {
-      id: "03",
-      title: "Recent Polls",
-      subtitle: "Latest Insights",
-      bullets: [
-        "Education Policy Survey (Sep 2025): 74% support increased teacher salaries.",
-        "Healthcare Access Report (Aug 2025): 61% believe rural access is inadequate.",
-      ],
+      id: t('Home.Scene3.cards.card3.id'),
+      title: t('Home.Scene3.cards.card3.title'),
+      subtitle: t('Home.Scene3.cards.card3.subtitle'),
+      bullets: t.raw('Home.Scene3.cards.card3.bullets'),
       img: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
     },
   ];

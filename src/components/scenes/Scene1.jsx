@@ -6,181 +6,183 @@ import Card from "../card";
 import { useInView } from "react-intersection-observer";
 import { ScrollContext } from "@/context/scrollcontext";
 import { useTheme } from "next-themes";
-
-const scenes = [
-  {
-    id: 1,
-    label: "Scene 2",
-    title: "Event Services",
-    desc: "We offer a range of services to create unforgettable celebrity experiences:",
-    points: [
-      "Celebrity Conventions",
-      "Meet-and-Greets",
-      "VIP Experiences",
-      "Corporate Events",
-      "Custom Events",
-      "Event Management",
-    ],
-  },
-  {
-    id: 2,
-    label: "Scene 3",
-    title: "Website/App Development & Upkeep",
-    desc: "In today’s digital era, a robust online presence is critical for political campaigns.",
-    points: [
-      "Custom Website Design",
-      "Mobile App Development",
-      "Content Management",
-      "Security and Compliance",
-      "Ongoing Maintenance",
-    ],
-  },
-  {
-    id: 3,
-    label: "Scene 4",
-    title: "End-to-End Campaign Management",
-    desc: "Our comprehensive campaign management services guide your political journey from inception to victory.",
-    points: [
-      "Strategic Planning",
-      "Fundraising and Compliance",
-      "Media and Communications",
-      "Event Management",
-      "Volunteer Coordination",
-      "Data Analytics",
-      "Election Day Operations",
-    ],
-  },
-  {
-    id: 4,
-    label: "Scene 5",
-    title: "Data Analysis & Surveys",
-    desc: "Data-driven decision-making is essential for modern campaigns.",
-    points: [
-      "Voter Profiling",
-      "Survey Design",
-      "Predictive Analytics",
-      "Sentiment Analysis",
-      "Geographic Information Systems (GIS)",
-      "Real-time Dashboards",
-    ],
-  },
-  {
-    id: 5,
-    label: "Scene 6",
-    title: "Micro-targeting & Booth Strategy",
-    desc: "Connecting with voters personally and ensuring turnout is key to victory.",
-    points: [
-      "Voter Segmentation",
-      "Tailored Messaging",
-      "Channel Optimization",
-      "Booth Management",
-      "Voter Mobilization",
-      "Data Collection",
-    ],
-  },
-  {
-    id: 6,
-    label: "Scene 7",
-    title: "Public Outreach & Mobilization",
-    desc: "Building voter relationships and driving participation are central to success.",
-    points: [
-      "Community Engagement",
-      "Event Planning",
-      "Canvassing Operations",
-      "Voter Education",
-      "Grassroots Organizing",
-      "Digital Outreach",
-    ],
-  },
-  {
-    id: 7,
-    label: "Scene 8",
-    title: "Digital & Social Media Strategy",
-    desc: "A strong online presence is vital for modern campaigns.",
-    points: [
-      "Social Media Management",
-      "Content Creation",
-      "Online Advertising",
-      "Influencer Partnerships",
-      "Analytics and Monitoring",
-      "Crisis Management",
-    ],
-  },
-  {
-    id: 8,
-    label: "Scene 9",
-    title: "Policy & Governance Consulting",
-    desc: "Effective governance requires informed policies.",
-    points: [
-      "Policy Research",
-      "Policy Development",
-      "Legislative Strategy",
-      "Governance Training",
-      "Stakeholder Engagement",
-      "Issue Briefings",
-    ],
-  },
-  {
-    id: 9,
-    label: "Scene 10",
-    title: "Leader & Party Branding",
-    desc: "Perception shapes political success.",
-    points: [
-      "Brand Strategy",
-      "Visual Identity",
-      "Message Development",
-      "Media Training",
-      "Reputation Management",
-      "Consistency Across Platforms",
-    ],
-  },
-  {
-    id: 10,
-    label: "Scene 11",
-    title: "Volunteer Training & Deployment",
-    desc: "Volunteers are the backbone of campaigns.",
-    points: [
-      "Recruitment Campaigns",
-      "Training Programs",
-      "Role Assignment",
-      "Coordination Tools",
-      "Motivation and Recognition",
-      "Leadership Development",
-    ],
-  },
-  {
-    id: 11,
-    label: "Scene 12",
-    title: "Youth & Women Engagement",
-    desc: "Engaging youth and women is crucial for broad support.",
-    points: [
-      "Targeted Outreach",
-      "Issue Advocacy",
-      "Events and Forums",
-      "Mentorship Programs",
-      "Social Media Campaigns",
-      "Partnerships",
-    ],
-  },
-  {
-    id: 12,
-    label: "Scene 13",
-    title: "War Room Monitoring & Control",
-    desc: "Swift responses to campaign developments are critical.",
-    points: [
-      "Central Command Center",
-      "Media Monitoring",
-      "Rapid Response",
-      "Data Integration",
-      "Coordination",
-      "Scenario Planning",
-    ],
-  },
-];
+import { useTranslations } from "next-intl";
 
 const Scene1 = ({ xGreen }) => {
   const { setActiveScene } = useContext(ScrollContext);
   const { theme } = useTheme();
+  const t = useTranslations();
+
+  const scenes = [
+    {
+      id: 1,
+      label: "Scene 2",
+      title: t('Home.Scenes.EventService.title'),
+      desc: t('Home.Scenes.EventService.description'),
+      points: [
+        t('Home.Scenes.EventService.points.celebrityConventions'),
+        t('Home.Scenes.EventService.points.meetAndGreets'),
+        t('Home.Scenes.EventService.points.vipExperiences'),
+        t('Home.Scenes.EventService.points.corporateEvents'),
+        t('Home.Scenes.EventService.points.customEvents'),
+        t('Home.Scenes.EventService.points.eventManagement'),
+      ],
+    },
+    {
+      id: 2,
+      label: "Scene 3",
+      title: t('Home.Scenes.WebsiteDevelopment.title'),
+      desc: t('Home.Scenes.WebsiteDevelopment.description'),
+      points: [
+        t('Home.Scenes.WebsiteDevelopment.points.customWebsiteDesign'),
+        t('Home.Scenes.WebsiteDevelopment.points.mobileAppDevelopment'),
+        t('Home.Scenes.WebsiteDevelopment.points.contentManagement'),
+        t('Home.Scenes.WebsiteDevelopment.points.securityAndCompliance'),
+        t('Home.Scenes.WebsiteDevelopment.points.ongoingMaintenance'),
+      ],
+    },
+    {
+      id: 3,
+      label: "Scene 4",
+      title: t('Home.Scenes.CampaignManagement.title'),
+      desc: t('Home.Scenes.CampaignManagement.description'),
+      points: [
+        t('Home.Scenes.CampaignManagement.points.strategicPlanning'),
+        t('Home.Scenes.CampaignManagement.points.fundraisingAndCompliance'),
+        t('Home.Scenes.CampaignManagement.points.mediaAndCommunications'),
+        t('Home.Scenes.CampaignManagement.points.eventManagement'),
+        t('Home.Scenes.CampaignManagement.points.volunteerCoordination'),
+        t('Home.Scenes.CampaignManagement.points.dataAnalytics'),
+        t('Home.Scenes.CampaignManagement.points.electionDayOperations'),
+      ],
+    },
+    {
+      id: 4,
+      label: "Scene 5",
+      title: t('Home.Scenes.DataAnalysis.title'),
+      desc: t('Home.Scenes.DataAnalysis.description'),
+      points: [
+        t('Home.Scenes.DataAnalysis.points.voterProfiling'),
+        t('Home.Scenes.DataAnalysis.points.surveyDesign'),
+        t('Home.Scenes.DataAnalysis.points.predictiveAnalytics'),
+        t('Home.Scenes.DataAnalysis.points.sentimentAnalysis'),
+        t('Home.Scenes.DataAnalysis.points.geographicInformationSystems'),
+        t('Home.Scenes.DataAnalysis.points.realTimeDashboards'),
+      ],
+    },
+    {
+      id: 5,
+      label: "Scene 6",
+      title: t('Home.Scenes.MicroTargeting.title'),
+      desc: t('Home.Scenes.MicroTargeting.description'),
+      points: [
+        t('Home.Scenes.MicroTargeting.points.voterSegmentation'),
+        t('Home.Scenes.MicroTargeting.points.tailoredMessaging'),
+        t('Home.Scenes.MicroTargeting.points.channelOptimization'),
+        t('Home.Scenes.MicroTargeting.points.boothManagement'),
+        t('Home.Scenes.MicroTargeting.points.voterMobilization'),
+        t('Home.Scenes.MicroTargeting.points.dataCollection'),
+      ],
+    },
+    {
+      id: 6,
+      label: "Scene 7",
+      title: t('Home.Scenes.PublicOutreach.title'),
+      desc: t('Home.Scenes.PublicOutreach.description'),
+      points: [
+        t('Home.Scenes.PublicOutreach.points.communityEngagement'),
+        t('Home.Scenes.PublicOutreach.points.eventPlanning'),
+        t('Home.Scenes.PublicOutreach.points.canvassingOperations'),
+        t('Home.Scenes.PublicOutreach.points.voterEducation'),
+        t('Home.Scenes.PublicOutreach.points.grassrootsOrganizing'),
+        t('Home.Scenes.PublicOutreach.points.digitalOutreach'),
+      ],
+    },
+    {
+      id: 7,
+      label: "Scene 8",
+      title: t('Home.Scenes.DigitalStrategy.title'),
+      desc: t('Home.Scenes.DigitalStrategy.description'),
+      points: [
+        t('Home.Scenes.DigitalStrategy.points.socialMediaManagement'),
+        t('Home.Scenes.DigitalStrategy.points.contentCreation'),
+        t('Home.Scenes.DigitalStrategy.points.onlineAdvertising'),
+        t('Home.Scenes.DigitalStrategy.points.influencerPartnerships'),
+        t('Home.Scenes.DigitalStrategy.points.analyticsAndMonitoring'),
+        t('Home.Scenes.DigitalStrategy.points.crisisManagement'),
+      ],
+    },
+    {
+      id: 8,
+      label: "Scene 9",
+      title: t('Home.Scenes.PolicyConsulting.title'),
+      desc: t('Home.Scenes.PolicyConsulting.description'),
+      points: [
+        t('Home.Scenes.PolicyConsulting.points.policyResearch'),
+        t('Home.Scenes.PolicyConsulting.points.policyDevelopment'),
+        t('Home.Scenes.PolicyConsulting.points.legislativeStrategy'),
+        t('Home.Scenes.PolicyConsulting.points.governanceTraining'),
+        t('Home.Scenes.PolicyConsulting.points.stakeholderEngagement'),
+        t('Home.Scenes.PolicyConsulting.points.issueBriefings'),
+      ],
+    },
+    {
+      id: 9,
+      label: "Scene 10",
+      title: t('Home.Scenes.LeaderBranding.title'),
+      desc: t('Home.Scenes.LeaderBranding.description'),
+      points: [
+        t('Home.Scenes.LeaderBranding.points.brandStrategy'),
+        t('Home.Scenes.LeaderBranding.points.visualIdentity'),
+        t('Home.Scenes.LeaderBranding.points.messageDevelopment'),
+        t('Home.Scenes.LeaderBranding.points.mediaTraining'),
+        t('Home.Scenes.LeaderBranding.points.reputationManagement'),
+        t('Home.Scenes.LeaderBranding.points.consistencyAcrossPlatforms'),
+      ],
+    },
+    {
+      id: 10,
+      label: "Scene 11",
+      title: t('Home.Scenes.VolunteerTraining.title'),
+      desc: t('Home.Scenes.VolunteerTraining.description'),
+      points: [
+        t('Home.Scenes.VolunteerTraining.points.recruitmentCampaigns'),
+        t('Home.Scenes.VolunteerTraining.points.trainingPrograms'),
+        t('Home.Scenes.VolunteerTraining.points.roleAssignment'),
+        t('Home.Scenes.VolunteerTraining.points.coordinationTools'),
+        t('Home.Scenes.VolunteerTraining.points.motivationAndRecognition'),
+        t('Home.Scenes.VolunteerTraining.points.leadershipDevelopment'),
+      ],
+    },
+    {
+      id: 11,
+      label: "Scene 12",
+      title: t('Home.Scenes.YouthEngagement.title'),
+      desc: t('Home.Scenes.YouthEngagement.description'),
+      points: [
+        t('Home.Scenes.YouthEngagement.points.targetedOutreach'),
+        t('Home.Scenes.YouthEngagement.points.issueAdvocacy'),
+        t('Home.Scenes.YouthEngagement.points.eventsAndForums'),
+        t('Home.Scenes.YouthEngagement.points.mentorshipPrograms'),
+        t('Home.Scenes.YouthEngagement.points.socialMediaCampaigns'),
+        t('Home.Scenes.YouthEngagement.points.partnerships'),
+      ],
+    },
+    {
+      id: 12,
+      label: "Scene 13",
+      title: t('Home.Scenes.WarRoomMonitoring.title'),
+      desc: t('Home.Scenes.WarRoomMonitoring.description'),
+      points: [
+        t('Home.Scenes.WarRoomMonitoring.points.centralCommandCenter'),
+        t('Home.Scenes.WarRoomMonitoring.points.mediaMonitoring'),
+        t('Home.Scenes.WarRoomMonitoring.points.rapidResponse'),
+        t('Home.Scenes.WarRoomMonitoring.points.dataIntegration'),
+        t('Home.Scenes.WarRoomMonitoring.points.coordination'),
+        t('Home.Scenes.WarRoomMonitoring.points.scenarioPlanning'),
+      ],
+    },
+  ];
 
   const bgImage =
     theme === "dark"
@@ -207,38 +209,34 @@ const Scene1 = ({ xGreen }) => {
         <div className="absolute top-[5%] left-[10%] right-[10%] z-10 px-12 text-[#4F2D91]">
           {/* Headers in one line */}
           <div className="flex items-center gap-4 mb-8">
-            <h2 className="font-bold text-5xl">SOLVE</h2>
+            <h2 className="font-bold text-5xl">{t('Home.Scene1.headers.solve')}</h2>
             <span className="text-5xl font-bold">.</span>
-            <h2 className="font-bold text-5xl">ENHANCE</h2>
+            <h2 className="font-bold text-5xl">{t('Home.Scene1.headers.enhance')}</h2>
             <span className="text-5xl font-bold">.</span>
-            <h2 className="font-bold text-5xl">ACCELERATE</h2>
+            <h2 className="font-bold text-5xl">{t('Home.Scene1.headers.accelerate')}</h2>
           </div>
 
           {/* Three Column Layout for Points */}
           <div className="grid grid-cols-3 gap-8">
             {/* Solve Points */}
             <ul className="list-disc list-inside text-lg font-medium space-y-2">
-              <li>Event Services</li>
-              <li>End-to-End Campaign Management</li>
-              <li>Data Analysis & Surveys</li>
-              <li>Micro-targeting & Booth Strategy</li>
-              <li>Public Outreach & Mobilization</li>
-              <li>Volunteer Training & Deployment</li>
+              {t.raw('Home.Scene1.sections.solve.points').map((point, index) => (
+                <li key={index}>{point}</li>
+              ))}
             </ul>
 
             {/* Enhance Points */}
             <ul className="list-disc list-inside text-lg font-medium space-y-2">
-              <li>Website/App Development & Upkeep</li>
-              <li>Digital & Social Media Strategy</li>
-              <li>Leader & Party Branding</li>
-              <li>Policy & Governance Consulting</li>
-              <li>War Room Monitoring & Control</li>
+              {t.raw('Home.Scene1.sections.enhance.points').map((point, index) => (
+                <li key={index}>{point}</li>
+              ))}
             </ul>
 
             {/* Accelerate Points */}
             <ul className="list-disc list-inside text-lg font-medium space-y-2">
-              <li>Youth & Women Engagement</li>
-              <li>Polls</li>
+              {t.raw('Home.Scene1.sections.accelerate.points').map((point, index) => (
+                <li key={index}>{point}</li>
+              ))}
             </ul>
           </div>
         </div>

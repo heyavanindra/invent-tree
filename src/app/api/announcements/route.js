@@ -1,5 +1,5 @@
-import { connectDB } from "@/app/lib/db";
-import Announcement from "@/app/models/Announcement";
+import { connectDB } from "@/lib/db";
+import Announcement from "@/models/Announcement";
 
 
 // GET all announcements
