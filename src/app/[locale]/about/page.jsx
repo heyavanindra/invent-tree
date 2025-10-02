@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "motion/react";
+import { useTranslations, Trans } from "next-intl";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -8,35 +9,36 @@ const fadeInUp = {
   visible: (i = 1) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.2, duration: 0.8, type: "spring" }
-  })
+    transition: { delay: i * 0.2, duration: 0.8, type: "spring" },
+  }),
 };
 
 const team = [
   {
     name: "Abhishek Kaushal",
     role: "Founder & Lead Developer",
-    desc: "Over 4 years in web technologies (MERN stack). Clean code, efficient systems, building for scale."
+    desc: "Over 4 years in web technologies (MERN stack). Clean code, efficient systems, building for scale.",
   },
   {
     name: "Priya Sharma",
     role: "UI/UX Designer",
-    desc: "Intuitive user experiences, user psychology & modern design. Balances form & function."
+    desc: "Intuitive user experiences, user psychology & modern design. Balances form & function.",
   },
   {
     name: "Ravi Verma",
     role: "Backend Architect",
-    desc: "Builds robust backend systems using Node.js, Express, MongoDB. Focus on scale, security, and performance."
+    desc: "Builds robust backend systems using Node.js, Express, MongoDB. Focus on scale, security, and performance.",
   },
   {
     name: "Sneha Patel",
     role: "Marketing & Client Relations",
-    desc: "Drives client communication and marketing. Ensures transparency and smooth collaboration."
-  }
+    desc: "Drives client communication and marketing. Ensures transparency and smooth collaboration.",
+  },
 ];
 
 export default function AboutUs() {
-   const [news, setNews] = useState([]);
+  const [news, setNews] = useState([]);
+  const t = useTranslations("about");
   useEffect(() => {
     const fetchNews = async () => {
       try {
@@ -65,7 +67,7 @@ export default function AboutUs() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.1, duration: 1, type: "spring" }}
         >
-          About Invent-Tree
+          {t("title")}
         </motion.h1>
         <motion.p
           className="text-center text-lg mb-8 text-gray-700 dark:text-gray-300"
@@ -73,73 +75,53 @@ export default function AboutUs() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
         >
-          Uncovering the pulse of the people through accurate, data-driven political surveys.
+          {t("subHeading")}
         </motion.p>
 
         {/* Who We Are */}
-      {/* Who We Are */}
-<div className="p-6 rounded-2xl mb-10 bg-[#f4f7ff] dark:bg-[#2e2d2d]">
-  <motion.div
-    className="rounded-lg shadow px-6 py-6 border border-[#c1c7d0]/40 dark:border-gray-600"
-    custom={1}
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ once: true }}
-    variants={fadeInUp}
-  >
-    <p>
-      <strong>Who We Are</strong><br />
-      Invent-Tree is a leading political survey and polling firm dedicated to providing
-      high-quality, unbiased data to inform decision-making. With over a decade of
-      experience, we’ve worked with political campaigns, advocacy groups, and media outlets
-      to deliver insights that matter.
-    </p>
-    <p className="mt-3">
-      We are a multidisciplinary team of data scientists, statisticians, political analysts, and
-      communication experts who share one mission — to decode public opinion. Our focus is on 
-      combining traditional research with cutting-edge digital methodologies to ensure accuracy 
-      and reliability.
-    </p>
-    <p className="mt-3">
-      From grassroots-level surveys in rural regions to large-scale nationwide polls, 
-      Invent-Tree ensures every voice is heard. We take pride in our neutrality and commitment 
-      to evidence-based insights that empower stakeholders to take informed actions.
-    </p>
-  </motion.div>
-</div>
+        {/* Who We Are */}
+        <div className="p-6 rounded-2xl mb-10 bg-[#f4f7ff] dark:bg-[#2e2d2d]">
+          <motion.div
+            className="rounded-lg shadow px-6 py-6 border border-[#c1c7d0]/40 dark:border-gray-600"
+            custom={1}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+          >
+            <p>
+              <strong>{t("whoWeAre.title")}</strong>
+              <br />
+              {t("whoWeAre.description")}
+            </p>
+            <p className="mt-3">{t("whoWeAre.para1")}</p>
+            <p className="mt-3">{t("whoWeAre.para2")}</p>
+          </motion.div>
+        </div>
 
-{/* Mission */}
-<div className="p-6 rounded-2xl mb-10 bg-[#f4f7ff] dark:bg-[#2e2d2d]">
-  <motion.div
-    className="rounded-lg shadow px-6 py-6 border border-[#c1c7d0]/40 dark:border-gray-600"
-    custom={2}
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ once: true }}
-    variants={fadeInUp}
-  >
-    <p>
-      <strong>Our Mission</strong><br />
-      <span className="text-[#8777a9] font-semibold">
-        Accurate. Transparent. Timely.
-      </span><br />
-      <span>
-        To provide polling data that reflects the voice of the public,
-        enabling informed decisions in the political landscape.
-      </span>
-    </p>
-    <p className="mt-3">
-      At Invent-Tree, we believe data should inspire trust and clarity. 
-      Our mission is not only to measure public opinion but also to make it accessible 
-      and understandable for policymakers, organizations, and the public at large.
-    </p>
-    <p className="mt-3">
-      By embracing innovation in data collection and analytics, we strive to bridge the 
-      gap between people and decision-makers. Our ultimate goal is to foster a transparent 
-      democratic process where evidence, not assumption, drives progress.
-    </p>
-  </motion.div>
-</div>
+        {/* Mission */}
+        <div className="p-6 rounded-2xl mb-10 bg-[#f4f7ff] dark:bg-[#2e2d2d]">
+          <motion.div
+            className="rounded-lg shadow px-6 py-6 border border-[#c1c7d0]/40 dark:border-gray-600"
+            custom={2}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+          >
+            <p>
+              <strong>{t("ourMission.title")}</strong>
+              <br />
+              <span className="text-[#8777a9] font-semibold">
+                {t("ourMission.tagline")}
+              </span>
+              <br />
+              <span>{t("ourMission.para1")}</span>
+            </p>
+            <p className="mt-3">{t("ourMission.para2")}</p>
+            <p className="mt-3">{t("ourMission.para3")}</p>
+          </motion.div>
+        </div>
 
         {/* Why Choose Us */}
         <motion.h2
@@ -148,7 +130,7 @@ export default function AboutUs() {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.09, duration: 0.6, type: "spring" }}
         >
-          Why Choose Invent-Tree?
+          {t("whoChooseUs.title")}
         </motion.h2>
         <div className="p-6 mb-12 bg-[#f4f7ff] dark:bg-[#2e2d2d] rounded-2xl">
           <motion.ul
@@ -158,10 +140,26 @@ export default function AboutUs() {
             viewport={{ once: true }}
             variants={fadeInUp}
           >
-            <li><strong>Precision:</strong> Advanced statistical methods and representative sampling.</li>
-            <li><strong>Integrity:</strong> Strict adherence to ethical polling standards.</li>
-            <li><strong>Customization:</strong> Polls designed to answer your specific questions.</li>
-            <li><strong>Speed:</strong> Fast turnaround without compromising quality.</li>
+            <li>
+              {t.rich("whoChooseUs.point1", {
+                       strong: (chunks) => <strong>{chunks}</strong>,
+                     })}
+            </li>
+            <li>
+              {t.rich("whoChooseUs.point1", {
+                       strong: (chunks) => <strong>{chunks}</strong>,
+                     })}
+            </li>
+            <li>
+              {t.rich("whoChooseUs.point1", {
+                       strong: (chunks) => <strong>{chunks}</strong>,
+                     })}
+            </li>
+            <li>
+              {t.rich("whoChooseUs.point1", {
+                       strong: (chunks) => <strong>{chunks}</strong>,
+                     })}
+            </li>
           </motion.ul>
         </div>
 
@@ -172,10 +170,10 @@ export default function AboutUs() {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.1, duration: 0.6, type: "spring" }}
         >
-          Meet Our Team
+          {t("team.title")}
         </motion.h2>
         <div className="grid sm:grid-cols-2 gap-6 mb-12 bg-[#f4f7ff] dark:bg-[#2e2d2d] p-6 rounded-2xl">
-          {team.map((member, i) => (
+          {t.raw("team.members").map((member, i) => (
             <motion.div
               key={member.name}
               className="rounded-lg p-5 border border-[#c1c7d0]/40 dark:border-gray-600 shadow-lg hover:scale-105 transition-transform bg-white dark:bg-[#1f1f1f]"
@@ -202,49 +200,54 @@ export default function AboutUs() {
             viewport={{ once: true }}
             variants={fadeInUp}
           >
-            <h2 className="text-xl font-semibold mb-2 text-[#67577f]">Privacy Policy</h2>
+            <h2 className="text-xl font-semibold mb-2 text-[#67577f]">
+              {t("policies.title")}
+            </h2>
             <ul className="list-disc pl-5 text-gray-700 dark:text-gray-300">
-              <li>We value your privacy and protect your personal information.</li>
-              <li>Data Collection: Only data necessary for improving services is collected.</li>
-              <li>Usage: Data is used only for service delivery, communications, and analytics. Not shared or sold without consent.</li>
-              <li>Security: Industry-standard encryption secures your data.</li>
-              <li>Cookies: Cookies are used for enhancing user experience; manage via your browser.</li>
+              {t.raw("policies.points").map((polices, idx) => (
+                <li key={idx}>{polices}</li>
+              ))}
             </ul>
-            <Link href={"/policy"} className="mt-3 underline text-[#8777a9] cursor-pointer">
+            <Link
+              href={"/policy"}
+              className="mt-3 underline text-[#8777a9] cursor-pointer"
+            >
               Read full Privacy Policy →
             </Link>
           </motion.div>
         </div>
-       <div className="mt-16">
-         <h1 className=" pb-4 font-semibold text-2xl text-[#67577F]">Annoucement</h1>
-         <div className="relative z-10 space-y-4 lg:space-y-6 max-h-[50vh] overflow-y-auto pr-2">
-           {news.length > 0 ? (
-             news.map((item, i) => (
-               <article
-                 key={i}
-                 className="border-b border-[#c1c7d0] dark:border-gray-700 pb-4 lg:pb-6 hover:opacity-80"
-               >
-                 <div className="flex flex-wrap items-baseline text-xs font-bold text-gray-600 dark:text-gray-400 mb-1">
-                   <time>{item.date}</time>
-                   <span className="ml-2 lg:ml-3 bg-[#8777a9] text-white px-2 py-1 text-[10px] rounded uppercase font-bold">
-                     {item.tag}
-                   </span>
-                 </div>
-                 <h2 className="text-[#8777a9] dark:text-[#b6a4d9] py-1 lg:py-2 text-base lg:text-lg cursor-pointer font-semibold">
-                   {item.title}
-                 </h2>
-                 <p className="text-sm text-[#6b7280] dark:text-gray-400 line-clamp-3 max-w-full lg:max-w-[90%]">
-                   {item.description}
-                 </p>
-               </article>
-             ))
-           ) : (
-             <p className="text-gray-500 dark:text-gray-400">
-               No announcements available.
-             </p>
-           )}
-         </div>
-       </div>
+        <div className="mt-16">
+          <h1 className=" pb-4 font-semibold text-2xl text-[#67577F]">
+            Annoucement
+          </h1>
+          <div className="relative z-10 space-y-4 lg:space-y-6 max-h-[50vh] overflow-y-auto pr-2">
+            {news.length > 0 ? (
+              news.map((item, i) => (
+                <article
+                  key={i}
+                  className="border-b border-[#c1c7d0] dark:border-gray-700 pb-4 lg:pb-6 hover:opacity-80"
+                >
+                  <div className="flex flex-wrap items-baseline text-xs font-bold text-gray-600 dark:text-gray-400 mb-1">
+                    <time>{item.date}</time>
+                    <span className="ml-2 lg:ml-3 bg-[#8777a9] text-white px-2 py-1 text-[10px] rounded uppercase font-bold">
+                      {item.tag}
+                    </span>
+                  </div>
+                  <h2 className="text-[#8777a9] dark:text-[#b6a4d9] py-1 lg:py-2 text-base lg:text-lg cursor-pointer font-semibold">
+                    {item.title}
+                  </h2>
+                  <p className="text-sm text-[#6b7280] dark:text-gray-400 line-clamp-3 max-w-full lg:max-w-[90%]">
+                    {item.description}
+                  </p>
+                </article>
+              ))
+            ) : (
+              <p className="text-gray-500 dark:text-gray-400">
+                No announcements available.
+              </p>
+            )}
+          </div>
+        </div>
 
         {/* Company Details */}
         <div className="p-6 mt-16 bg-[#f4f7ff] dark:bg-[#2e2d2d] rounded-2xl">
@@ -255,14 +258,25 @@ export default function AboutUs() {
             viewport={{ once: true }}
             transition={{ delay: 0.22, duration: 0.8 }}
           >
-            <h2 className="text-xl font-semibold mb-2 text-[#67577f]">🧾 Company Details</h2>
+            <h2 className="text-xl font-semibold mb-2 text-[#67577f]">
+              🧾 {t("contact.companyDetails")}
+            </h2>
             <div className="space-y-1 text-gray-700 dark:text-gray-300">
-              <div>Company Name: Invent-Tree</div>
-              <div>Experience: 10+ years in political survey & polling</div>
-              <div>Address: Park Street, Green Olives, Hinjewadi Phase II, Pune - 57</div>
-              <div>Email: projects@invent-tree.in</div>
-              <div>Phone: +91-9930005234</div>
-              <div>Legal Entity: Registered under Indian Companies Act, MSME Certified</div>
+              <div>{t("contact.companyName")}: Invent-Tree</div>
+              <div>
+                {t("contact.experience")}: 10+ years in political survey &
+                polling
+              </div>
+              <div>
+                {t("contact.address")}: Park Street, Green Olives, Hinjewadi
+                Phase II, Pune - 57
+              </div>
+              <div>{t("contact.email")}: projects@invent-tree.in</div>
+              <div>{t("contact.phone")}: +91-9930005234</div>
+              <div>
+                {t("contact.legalEntity")}: Registered under Indian Companies
+                Act, MSME Certified
+              </div>
             </div>
           </motion.div>
         </div>

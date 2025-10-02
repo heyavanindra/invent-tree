@@ -7,6 +7,7 @@ import { useInView } from "react-intersection-observer";
 import { ScrollContext } from "@/context/scrollcontext";
 import { useTheme } from "next-themes";
 import { useTranslations } from "next-intl";
+import Pin from "../pin";
 
 const Scene1 = ({ xGreen }) => {
   const { setActiveScene } = useContext(ScrollContext);
@@ -17,177 +18,210 @@ const Scene1 = ({ xGreen }) => {
     {
       id: 1,
       label: "Scene 2",
-      title: t('Home.Scenes.EventService.title'),
-      desc: t('Home.Scenes.EventService.description'),
+      title: t("Home.Scenes.EventService.title"),
+      desc: t("Home.Scenes.EventService.description"),
       points: [
-        t('Home.Scenes.EventService.points.celebrityConventions'),
-        t('Home.Scenes.EventService.points.meetAndGreets'),
-        t('Home.Scenes.EventService.points.vipExperiences'),
-        t('Home.Scenes.EventService.points.corporateEvents'),
-        t('Home.Scenes.EventService.points.customEvents'),
-        t('Home.Scenes.EventService.points.eventManagement'),
+        t("Home.Scenes.EventService.points.celebrityConventions"),
+        t("Home.Scenes.EventService.points.meetAndGreets"),
+        t("Home.Scenes.EventService.points.vipExperiences"),
+        t("Home.Scenes.EventService.points.corporateEvents"),
+        t("Home.Scenes.EventService.points.customEvents"),
+        t("Home.Scenes.EventService.points.eventManagement"),
       ],
+      className: " left-[15.6%] top-[10%]",
+      pin:"left-[15%] top-[20%]"
     },
     {
       id: 2,
       label: "Scene 3",
-      title: t('Home.Scenes.WebsiteDevelopment.title'),
-      desc: t('Home.Scenes.WebsiteDevelopment.description'),
+      title: t("Home.Scenes.WebsiteDevelopment.title"),
+      desc: t("Home.Scenes.WebsiteDevelopment.description"),
       points: [
-        t('Home.Scenes.WebsiteDevelopment.points.customWebsiteDesign'),
-        t('Home.Scenes.WebsiteDevelopment.points.mobileAppDevelopment'),
-        t('Home.Scenes.WebsiteDevelopment.points.contentManagement'),
-        t('Home.Scenes.WebsiteDevelopment.points.securityAndCompliance'),
-        t('Home.Scenes.WebsiteDevelopment.points.ongoingMaintenance'),
+        t("Home.Scenes.WebsiteDevelopment.points.customWebsiteDesign"),
+        t("Home.Scenes.WebsiteDevelopment.points.mobileAppDevelopment"),
+        t("Home.Scenes.WebsiteDevelopment.points.contentManagement"),
+        t("Home.Scenes.WebsiteDevelopment.points.securityAndCompliance"),
+        t("Home.Scenes.WebsiteDevelopment.points.ongoingMaintenance"),
       ],
+      className: "left-[40%] top-15",
+      pin:"left-[39%] top-15"
+      
     },
     {
       id: 3,
       label: "Scene 4",
-      title: t('Home.Scenes.CampaignManagement.title'),
-      desc: t('Home.Scenes.CampaignManagement.description'),
+      title: t("Home.Scenes.CampaignManagement.title"),
+      desc: t("Home.Scenes.CampaignManagement.description"),
       points: [
-        t('Home.Scenes.CampaignManagement.points.strategicPlanning'),
-        t('Home.Scenes.CampaignManagement.points.fundraisingAndCompliance'),
-        t('Home.Scenes.CampaignManagement.points.mediaAndCommunications'),
-        t('Home.Scenes.CampaignManagement.points.eventManagement'),
-        t('Home.Scenes.CampaignManagement.points.volunteerCoordination'),
-        t('Home.Scenes.CampaignManagement.points.dataAnalytics'),
-        t('Home.Scenes.CampaignManagement.points.electionDayOperations'),
+        t("Home.Scenes.CampaignManagement.points.strategicPlanning"),
+        t("Home.Scenes.CampaignManagement.points.fundraisingAndCompliance"),
+        t("Home.Scenes.CampaignManagement.points.mediaAndCommunications"),
+        t("Home.Scenes.CampaignManagement.points.eventManagement"),
+        t("Home.Scenes.CampaignManagement.points.volunteerCoordination"),
+        t("Home.Scenes.CampaignManagement.points.dataAnalytics"),
+        t("Home.Scenes.CampaignManagement.points.electionDayOperations"),
       ],
+      className: "",
+      pin:"left-[15%] top-[0%]"
+      
     },
     {
       id: 4,
       label: "Scene 5",
-      title: t('Home.Scenes.DataAnalysis.title'),
-      desc: t('Home.Scenes.DataAnalysis.description'),
+      title: t("Home.Scenes.DataAnalysis.title"),
+      desc: t("Home.Scenes.DataAnalysis.description"),
       points: [
-        t('Home.Scenes.DataAnalysis.points.voterProfiling'),
-        t('Home.Scenes.DataAnalysis.points.surveyDesign'),
-        t('Home.Scenes.DataAnalysis.points.predictiveAnalytics'),
-        t('Home.Scenes.DataAnalysis.points.sentimentAnalysis'),
-        t('Home.Scenes.DataAnalysis.points.geographicInformationSystems'),
-        t('Home.Scenes.DataAnalysis.points.realTimeDashboards'),
+        t("Home.Scenes.DataAnalysis.points.voterProfiling"),
+        t("Home.Scenes.DataAnalysis.points.surveyDesign"),
+        t("Home.Scenes.DataAnalysis.points.predictiveAnalytics"),
+        t("Home.Scenes.DataAnalysis.points.sentimentAnalysis"),
+        t("Home.Scenes.DataAnalysis.points.geographicInformationSystems"),
+        t("Home.Scenes.DataAnalysis.points.realTimeDashboards"),
       ],
+      className: "",
+      pin:"left-[15%] top-[0%]"
+      
     },
     {
       id: 5,
       label: "Scene 6",
-      title: t('Home.Scenes.MicroTargeting.title'),
-      desc: t('Home.Scenes.MicroTargeting.description'),
+      title: t("Home.Scenes.MicroTargeting.title"),
+      desc: t("Home.Scenes.MicroTargeting.description"),
       points: [
-        t('Home.Scenes.MicroTargeting.points.voterSegmentation'),
-        t('Home.Scenes.MicroTargeting.points.tailoredMessaging'),
-        t('Home.Scenes.MicroTargeting.points.channelOptimization'),
-        t('Home.Scenes.MicroTargeting.points.boothManagement'),
-        t('Home.Scenes.MicroTargeting.points.voterMobilization'),
-        t('Home.Scenes.MicroTargeting.points.dataCollection'),
+        t("Home.Scenes.MicroTargeting.points.voterSegmentation"),
+        t("Home.Scenes.MicroTargeting.points.tailoredMessaging"),
+        t("Home.Scenes.MicroTargeting.points.channelOptimization"),
+        t("Home.Scenes.MicroTargeting.points.boothManagement"),
+        t("Home.Scenes.MicroTargeting.points.voterMobilization"),
+        t("Home.Scenes.MicroTargeting.points.dataCollection"),
       ],
+      className: "left-[26.2%] top-[20%]",
+      pin:"left-[27.3%] top-[65%]"
+      
     },
     {
       id: 6,
       label: "Scene 7",
-      title: t('Home.Scenes.PublicOutreach.title'),
-      desc: t('Home.Scenes.PublicOutreach.description'),
+      title: t("Home.Scenes.PublicOutreach.title"),
+      desc: t("Home.Scenes.PublicOutreach.description"),
       points: [
-        t('Home.Scenes.PublicOutreach.points.communityEngagement'),
-        t('Home.Scenes.PublicOutreach.points.eventPlanning'),
-        t('Home.Scenes.PublicOutreach.points.canvassingOperations'),
-        t('Home.Scenes.PublicOutreach.points.voterEducation'),
-        t('Home.Scenes.PublicOutreach.points.grassrootsOrganizing'),
-        t('Home.Scenes.PublicOutreach.points.digitalOutreach'),
+        t("Home.Scenes.PublicOutreach.points.communityEngagement"),
+        t("Home.Scenes.PublicOutreach.points.eventPlanning"),
+        t("Home.Scenes.PublicOutreach.points.canvassingOperations"),
+        t("Home.Scenes.PublicOutreach.points.voterEducation"),
+        t("Home.Scenes.PublicOutreach.points.grassrootsOrganizing"),
+        t("Home.Scenes.PublicOutreach.points.digitalOutreach"),
       ],
+      className: "left-[45%] top-[10%]",
+      pin:"left-[46%] top-[55%]"
+      
     },
     {
       id: 7,
       label: "Scene 8",
-      title: t('Home.Scenes.DigitalStrategy.title'),
-      desc: t('Home.Scenes.DigitalStrategy.description'),
+      title: t("Home.Scenes.DigitalStrategy.title"),
+      desc: t("Home.Scenes.DigitalStrategy.description"),
       points: [
-        t('Home.Scenes.DigitalStrategy.points.socialMediaManagement'),
-        t('Home.Scenes.DigitalStrategy.points.contentCreation'),
-        t('Home.Scenes.DigitalStrategy.points.onlineAdvertising'),
-        t('Home.Scenes.DigitalStrategy.points.influencerPartnerships'),
-        t('Home.Scenes.DigitalStrategy.points.analyticsAndMonitoring'),
-        t('Home.Scenes.DigitalStrategy.points.crisisManagement'),
+        t("Home.Scenes.DigitalStrategy.points.socialMediaManagement"),
+        t("Home.Scenes.DigitalStrategy.points.contentCreation"),
+        t("Home.Scenes.DigitalStrategy.points.onlineAdvertising"),
+        t("Home.Scenes.DigitalStrategy.points.influencerPartnerships"),
+        t("Home.Scenes.DigitalStrategy.points.analyticsAndMonitoring"),
+        t("Home.Scenes.DigitalStrategy.points.crisisManagement"),
       ],
+      className: "left-[33.3%] top-[10%]",
+      pin:"left-[34.3%] top-[60%]"
+      
     },
     {
       id: 8,
       label: "Scene 9",
-      title: t('Home.Scenes.PolicyConsulting.title'),
-      desc: t('Home.Scenes.PolicyConsulting.description'),
+      title: t("Home.Scenes.PolicyConsulting.title"),
+      desc: t("Home.Scenes.PolicyConsulting.description"),
       points: [
-        t('Home.Scenes.PolicyConsulting.points.policyResearch'),
-        t('Home.Scenes.PolicyConsulting.points.policyDevelopment'),
-        t('Home.Scenes.PolicyConsulting.points.legislativeStrategy'),
-        t('Home.Scenes.PolicyConsulting.points.governanceTraining'),
-        t('Home.Scenes.PolicyConsulting.points.stakeholderEngagement'),
-        t('Home.Scenes.PolicyConsulting.points.issueBriefings'),
+        t("Home.Scenes.PolicyConsulting.points.policyResearch"),
+        t("Home.Scenes.PolicyConsulting.points.policyDevelopment"),
+        t("Home.Scenes.PolicyConsulting.points.legislativeStrategy"),
+        t("Home.Scenes.PolicyConsulting.points.governanceTraining"),
+        t("Home.Scenes.PolicyConsulting.points.stakeholderEngagement"),
+        t("Home.Scenes.PolicyConsulting.points.issueBriefings"),
       ],
+      className: "left-[94%] top-[5%]",
+      pin:"left-[97%] top-[0%]"
+      
     },
     {
       id: 9,
       label: "Scene 10",
-      title: t('Home.Scenes.LeaderBranding.title'),
-      desc: t('Home.Scenes.LeaderBranding.description'),
+      title: t("Home.Scenes.LeaderBranding.title"),
+      desc: t("Home.Scenes.LeaderBranding.description"),
       points: [
-        t('Home.Scenes.LeaderBranding.points.brandStrategy'),
-        t('Home.Scenes.LeaderBranding.points.visualIdentity'),
-        t('Home.Scenes.LeaderBranding.points.messageDevelopment'),
-        t('Home.Scenes.LeaderBranding.points.mediaTraining'),
-        t('Home.Scenes.LeaderBranding.points.reputationManagement'),
-        t('Home.Scenes.LeaderBranding.points.consistencyAcrossPlatforms'),
+        t("Home.Scenes.LeaderBranding.points.brandStrategy"),
+        t("Home.Scenes.LeaderBranding.points.visualIdentity"),
+        t("Home.Scenes.LeaderBranding.points.messageDevelopment"),
+        t("Home.Scenes.LeaderBranding.points.mediaTraining"),
+        t("Home.Scenes.LeaderBranding.points.reputationManagement"),
+        t("Home.Scenes.LeaderBranding.points.consistencyAcrossPlatforms"),
       ],
+      className: "left-[85%] top-[0%]",
+      pin:"left-[84%] top-[30%]"
+      
     },
     {
       id: 10,
       label: "Scene 11",
-      title: t('Home.Scenes.VolunteerTraining.title'),
-      desc: t('Home.Scenes.VolunteerTraining.description'),
+      title: t("Home.Scenes.VolunteerTraining.title"),
+      desc: t("Home.Scenes.VolunteerTraining.description"),
       points: [
-        t('Home.Scenes.VolunteerTraining.points.recruitmentCampaigns'),
-        t('Home.Scenes.VolunteerTraining.points.trainingPrograms'),
-        t('Home.Scenes.VolunteerTraining.points.roleAssignment'),
-        t('Home.Scenes.VolunteerTraining.points.coordinationTools'),
-        t('Home.Scenes.VolunteerTraining.points.motivationAndRecognition'),
-        t('Home.Scenes.VolunteerTraining.points.leadershipDevelopment'),
+        t("Home.Scenes.VolunteerTraining.points.recruitmentCampaigns"),
+        t("Home.Scenes.VolunteerTraining.points.trainingPrograms"),
+        t("Home.Scenes.VolunteerTraining.points.roleAssignment"),
+        t("Home.Scenes.VolunteerTraining.points.coordinationTools"),
+        t("Home.Scenes.VolunteerTraining.points.motivationAndRecognition"),
+        t("Home.Scenes.VolunteerTraining.points.leadershipDevelopment"),
       ],
+      // className: "left-[85%] top-[0%]",
+      // pin:"left-[84%] top-[30%]"
+      
     },
     {
       id: 11,
       label: "Scene 12",
-      title: t('Home.Scenes.YouthEngagement.title'),
-      desc: t('Home.Scenes.YouthEngagement.description'),
+      title: t("Home.Scenes.YouthEngagement.title"),
+      desc: t("Home.Scenes.YouthEngagement.description"),
       points: [
-        t('Home.Scenes.YouthEngagement.points.targetedOutreach'),
-        t('Home.Scenes.YouthEngagement.points.issueAdvocacy'),
-        t('Home.Scenes.YouthEngagement.points.eventsAndForums'),
-        t('Home.Scenes.YouthEngagement.points.mentorshipPrograms'),
-        t('Home.Scenes.YouthEngagement.points.socialMediaCampaigns'),
-        t('Home.Scenes.YouthEngagement.points.partnerships'),
+        t("Home.Scenes.YouthEngagement.points.targetedOutreach"),
+        t("Home.Scenes.YouthEngagement.points.issueAdvocacy"),
+        t("Home.Scenes.YouthEngagement.points.eventsAndForums"),
+        t("Home.Scenes.YouthEngagement.points.mentorshipPrograms"),
+        t("Home.Scenes.YouthEngagement.points.socialMediaCampaigns"),
+        t("Home.Scenes.YouthEngagement.points.partnerships"),
       ],
+      className: "left-[61%]",
+      pin:" left-[60%]"
+      
     },
     {
       id: 12,
       label: "Scene 13",
-      title: t('Home.Scenes.WarRoomMonitoring.title'),
-      desc: t('Home.Scenes.WarRoomMonitoring.description'),
+      title: t("Home.Scenes.WarRoomMonitoring.title"),
+      desc: t("Home.Scenes.WarRoomMonitoring.description"),
       points: [
-        t('Home.Scenes.WarRoomMonitoring.points.centralCommandCenter'),
-        t('Home.Scenes.WarRoomMonitoring.points.mediaMonitoring'),
-        t('Home.Scenes.WarRoomMonitoring.points.rapidResponse'),
-        t('Home.Scenes.WarRoomMonitoring.points.dataIntegration'),
-        t('Home.Scenes.WarRoomMonitoring.points.coordination'),
-        t('Home.Scenes.WarRoomMonitoring.points.scenarioPlanning'),
+        t("Home.Scenes.WarRoomMonitoring.points.centralCommandCenter"),
+        t("Home.Scenes.WarRoomMonitoring.points.mediaMonitoring"),
+        t("Home.Scenes.WarRoomMonitoring.points.rapidResponse"),
+        t("Home.Scenes.WarRoomMonitoring.points.dataIntegration"),
+        t("Home.Scenes.WarRoomMonitoring.points.coordination"),
+        t("Home.Scenes.WarRoomMonitoring.points.scenarioPlanning"),
       ],
+      className: "left-[71.3%]",
+      pin:"left-[70%] top-[0%]"
+      
     },
   ];
 
   const bgImage =
-    theme === "dark"
-      ? "url('/assests/Illustration Invent-Tree final-51.webp')"
-      : "url('/IT-Illustration.png')";
+    theme === "dark" ? "url('/Final-03.webp')" : "url('/Final-02.webp')";
 
   return (
     <motion.div
@@ -209,39 +243,51 @@ const Scene1 = ({ xGreen }) => {
         <div className="absolute top-[5%] left-[10%] right-[10%] z-10 px-12 text-[#4F2D91]">
           {/* Headers in one line */}
           <div className="flex items-center gap-4 mb-8">
-            <h2 className="font-bold text-5xl">{t('Home.Scene1.headers.solve')}</h2>
+            <h2 className="font-bold text-5xl">
+              {t("Home.Scene1.headers.solve")}
+            </h2>
             <span className="text-5xl font-bold">.</span>
-            <h2 className="font-bold text-5xl">{t('Home.Scene1.headers.enhance')}</h2>
+            <h2 className="font-bold text-5xl">
+              {t("Home.Scene1.headers.enhance")}
+            </h2>
             <span className="text-5xl font-bold">.</span>
-            <h2 className="font-bold text-5xl">{t('Home.Scene1.headers.accelerate')}</h2>
+            <h2 className="font-bold text-5xl">
+              {t("Home.Scene1.headers.accelerate")}
+            </h2>
           </div>
 
           {/* Three Column Layout for Points */}
           <div className="grid grid-cols-3 gap-8">
             {/* Solve Points */}
             <ul className="list-disc list-inside text-lg font-medium space-y-2">
-              {t.raw('Home.Scene1.sections.solve.points').map((point, index) => (
-                <li key={index}>{point}</li>
-              ))}
+              {t
+                .raw("Home.Scene1.sections.solve.points")
+                .map((point, index) => (
+                  <li key={index}>{point}</li>
+                ))}
             </ul>
 
             {/* Enhance Points */}
             <ul className="list-disc list-inside text-lg font-medium space-y-2">
-              {t.raw('Home.Scene1.sections.enhance.points').map((point, index) => (
-                <li key={index}>{point}</li>
-              ))}
+              {t
+                .raw("Home.Scene1.sections.enhance.points")
+                .map((point, index) => (
+                  <li key={index}>{point}</li>
+                ))}
             </ul>
 
             {/* Accelerate Points */}
             <ul className="list-disc list-inside text-lg font-medium space-y-2">
-              {t.raw('Home.Scene1.sections.accelerate.points').map((point, index) => (
-                <li key={index}>{point}</li>
-              ))}
+              {t
+                .raw("Home.Scene1.sections.accelerate.points")
+                .map((point, index) => (
+                  <li key={index}>{point}</li>
+                ))}
             </ul>
           </div>
         </div>
       </motion.div>
-      <div className="flex w-full h-screen justify-end items-center gap-x-[30rem] mr-[600px]">
+      <div className="relative  w-full h-screen">
         {scenes.map((scene, idx) => {
           const { ref, inView } = useInView({
             triggerOnce: false,
@@ -254,16 +300,19 @@ const Scene1 = ({ xGreen }) => {
             }
           }, [inView]);
 
-          return (
+          return <span  key={idx + scene.id}>
             <Card
               ref={ref}
-              key={idx + scene.id}
+            
               id={scene.id}
               desc={scene.desc}
               title={scene.title}
               points={scene.points}
+              position={scene.className}
+              
             ></Card>
-          );
+            <Pin className={scene.pin}></Pin>
+          </span>;
         })}
       </div>
     </motion.div>

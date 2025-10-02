@@ -47,10 +47,7 @@
         },
         "accelerate": {
           "title": "Accelerate",
-          "points": [
-            "Youth & Women Engagement",
-            "Polls"
-          ]
+          "points": ["Youth & Women Engagement", "Polls"]
         }
       }
     },
@@ -124,11 +121,7 @@
         "copyright": "© 2025 Invent-tree. All rights reserved."
       },
       "footer": {
-        "links": [
-          "About",
-          "Privacy Policy",
-          "Terms of Service"
-        ]
+        "links": ["About", "Privacy Policy", "Terms of Service"]
       }
     },
     "Scenes": {
@@ -277,5 +270,226 @@
         }
       }
     }
-  }
+  },
+ 
+  "policies": {
+    "tabs": {},
+    "policy": {
+      "core-legal": {
+        "title": "Core Legal Documentation",
+        "description": "Essential legal frameworks that govern our service delivery and client relationships.",
+        "items": [
+          {
+            "title": "Terms & Conditions",
+            "sections": [
+              {
+                "heading": "Eligibility",
+                "text": "You must be at least 18 years old or have parental/guardian consent to use our Services. By using the Services, you represent and warrant that you meet this requirement."
+              },
+              {
+                "heading": "Services Offered",
+                "text": "We provide consultancy, digital development, event planning, research, and related professional services. Specific deliverables, timelines, and fees will be governed by separate service agreements."
+              },
+              {
+                "heading": "User Responsibilities",
+                "text": "You agree to use our Services only for lawful purposes. You must not misuse our Services, attempt unauthorized access, or engage in activities that harm our systems, data, or reputation."
+              },
+              {
+                "heading": "Intellectual Property",
+                "text": "All content, branding, designs, text, graphics, and software are owned by Invent-Tree or its licensors. You may not copy, modify, distribute, or exploit any material without prior written consent."
+              },
+              {
+                "heading": "Payments",
+                "text": "For paid services, you agree to pay fees as per the agreed terms. All charges are non-refundable unless covered by our Refund & Cancellation Policy."
+              },
+              {
+                "heading": "Limitation of Liability",
+                "text": "Our Services are provided on an \"as is\" basis. To the maximum extent permitted by law, we are not liable for indirect, incidental, or consequential damages arising from use of our Services."
+              },
+              {
+                "heading": "Indemnification",
+                "text": "You agree to indemnify and hold us harmless from any claims, damages, or liabilities arising from your misuse of our Services."
+              },
+              {
+                "heading": "Third-Party Links",
+                "text": "Our Services may include links to third-party sites. We are not responsible for their content, policies, or practices."
+              },
+              {
+                "heading": "Governing Law",
+                "text": "These Terms shall be governed by and construed in accordance with the laws of India, with exclusive jurisdiction of courts in Lucknow, Uttar Pradesh."
+              },
+              {
+                "heading": "Changes to Terms",
+                "text": "We reserve the right to modify these Terms at any time. Updates will be posted on this page with a revised date."
+              }
+            ]
+          },
+          {
+            "title": "Privacy Policy",
+            "sections": [
+              {
+                "heading": "Information We Collect",
+                "text": "Personal details (name, email, phone, address) provided when contacting us or signing up. Payment information for services. Usage data (IP address, browser type, access times, pages visited). Data from surveys, polls, or campaigns (with explicit consent)."
+              },
+              {
+                "heading": "How We Use Your Data",
+                "text": "To provide and improve our Services. To communicate updates, offers, and insights. To process transactions and manage accounts. For analytics, research, and compliance with legal obligations."
+              },
+              {
+                "heading": "Data Sharing",
+                "text": "We do not sell your personal data. We may share data only with: Trusted service providers under confidentiality agreements. Legal or regulatory authorities where required. Clients, in anonymized and aggregated form, for research/polling insights."
+              },
+              {
+                "heading": "Data Security",
+                "text": "We implement strict technical and organizational measures to protect data, including encryption, restricted access, and regular audits."
+              },
+              {
+                "heading": "Cookies & Tracking",
+                "text": "We use cookies to enhance your browsing experience. You may disable cookies in your browser, but some features may not work properly."
+              },
+              {
+                "heading": "User Rights",
+                "text": "Under the DPDP Act, you have the right to: Access, correct, or delete your personal data. Withdraw consent for data use. Lodge complaints with the Data Protection Board of India."
+              },
+              {
+                "heading": "Retention",
+                "text": "We retain personal data only as long as necessary for the purposes stated above or as required by law."
+              },
+              {
+                "heading": "International Data Transfers",
+                "text": "If data is transferred outside India, we ensure adequate protection through legal safeguards."
+              },
+              {
+                "heading": "Updates",
+                "text": "We may update this Privacy Policy. Please check this page regularly for updates."
+              }
+            ]
+          },
+          {
+            "title": "Terms of Use",
+            "sections": [
+              {
+                "heading": "Acceptable Use",
+                "text": "You agree not to: Violate applicable laws or regulations. Engage in harassment, hate speech, or defamatory activities. Upload harmful code or attempt to disrupt our systems. Use our platform for unauthorized political propaganda or unlawful fundraising."
+              },
+              {
+                "heading": "User Accounts",
+                "text": "If you create an account, you are responsible for maintaining its confidentiality and for all activities under it. We reserve the right to suspend accounts for misuse."
+              },
+              {
+                "heading": "Intellectual Property",
+                "text": "All content provided on our platform is protected by copyright, trademark, and other intellectual property laws. Unauthorized use is strictly prohibited."
+              },
+              {
+                "heading": "Termination",
+                "text": "We may suspend or terminate your access without notice if you violate these Terms of Use."
+              },
+              {
+                "heading": "Disclaimer",
+                "text": "We make no guarantees that the website will be error-free, uninterrupted, or fully secure at all times."
+              }
+            ]
+          },
+          {
+            "title": "Refund & Cancellation Policy",
+            "sections": [
+              {
+                "heading": "Service Contracts",
+                "text": "Once a project agreement is signed and payment made, cancellation requests must be made in writing. Refund eligibility will depend on the stage of work completed."
+              },
+              {
+                "heading": "Event Services",
+                "text": "Cancellations made 30 days before an event may be eligible for a partial refund (excluding non-refundable deposits and expenses). No refunds will be issued for cancellations made within 7 days of the event."
+              },
+              {
+                "heading": "Digital/Website Development",
+                "text": "Refunds are not available once design, coding, or development work has started. If work is canceled before initiation, a refund minus administrative charges may be issued."
+              },
+              {
+                "heading": "Consultancy & Polling Services",
+                "text": "Fees for surveys, polling, and consultancy are non-refundable once data collection or advisory has commenced."
+              },
+              {
+                "heading": "Exceptions",
+                "text": "Refunds may be issued in cases of proven service failure or non-delivery, subject to management approval."
+              },
+              {
+                "heading": "Contact for Refunds",
+                "text": "All refund/cancellation requests should be sent to our support team for review and processing."
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "about": {
+      "title": "About Invent-Tree",
+      "subHeading": "Uncovering the pulse of the people through accurate, data-driven political surveys.",
+      "whoWeAre": {
+        "title": "Who We Are",
+        "description": "Invent-Tree is a leading political survey and polling firm dedicated to providing high-quality, unbiased data to inform decision-making. With over a decade of experience, we’ve worked with political campaigns, advocacy groups, and media outlets to deliver insights that matter.",
+        "para1": "We are a multidisciplinary team of data scientists, statisticians, political analysts, and communication experts who share one mission — to decode public opinion. Our focus is on combining traditional research with cutting-edge digital methodologies to ensure accuracy and reliability.",
+        "para2": "From grassroots-level surveys in rural regions to large-scale nationwide polls, Invent-Tree ensures every voice is heard. We take pride in our neutrality and commitment to evidence-based insights that empower stakeholders to take informed actions."
+      },
+      "tagline": "Our Mission",
+      "ourMission": {
+        "title": "Our Mission",
+        "tagline": "Accurate. Transparent. Timely.",
+        "para1": "To provide polling data that reflects the voice of the public, enabling informed decisions in the political landscape.",
+        "para2": "At Invent-Tree, we believe data should inspire trust and clarity. Our mission is not only to measure public opinion but also to make it accessible and understandable for policymakers, organizations, and the public at large.",
+        "para3": "By embracing innovation in data collection and analytics, we strive to bridge the gap between people and decision-makers. Our ultimate goal is to foster a transparent democratic process where evidence, not assumption, drives progress."
+      },
+      "whoChooseUs": {
+        "title": "Why Choose Invent-Tree?",
+        "point1": "<strong>Precision</strong>: Advanced statistical methods and representative sampling.",
+        "point2": "<strong>Integrity:</strong> Strict adherence to ethical polling standards.",
+        "point3": "<strong>Customization:</strong> Polls designed to answer your specific questions.",
+        "point4": "<strong>Speed:</strong> Fast turnaround without compromising quality."
+      },
+      "team": {
+        "title": "Meet Our Team",
+        "members": [
+          {
+            "name": "Abhishek Kaushal",
+            "role": "Founder & Lead Developer",
+            "desc": "Over 4 years in web technologies (MERN stack). Clean code, efficient systems, building for scale."
+          },
+          {
+            "name": "Priya Sharma",
+            "role": "UI/UX Designer",
+            "desc": "Intuitive user experiences, user psychology & modern design. Balances form & function."
+          },
+          {
+            "name": "Ravi Verma",
+            "role": "Backend Architect",
+            "desc": "Builds robust backend systems using Node.js, Express, MongoDB. Focus on scale, security, and performance."
+          },
+          {
+            "name": "Sneha Patel",
+            "role": "Marketing & Client Relations",
+            "desc": "Drives client communication and marketing. Ensures transparency and smooth collaboration."
+          }
+        ]
+      },
+      "policies": {
+        "title": "Privacy Policy",
+        "points": [
+          "We value your privacy and protect your personal information.",
+          "Data Collection: Only data necessary for improving services is collected.",
+          "Usage: Data is used only for service delivery, communications, and analytics. Not shared or sold without consent.",
+          "Security: Industry-standard encryption secures your data.",
+          "Cookies: Cookies are used for enhancing user experience; manage via your browser."
+        ]
+      },
+      "contact": {
+        "companyDetails": "Company Details",
+        "companyName": "Company Name",
+        "experience": "Experience",
+        "address": "Address",
+        "email": "Email",
+        "phone": "Phone",
+        "legalEntity": "Legal Entity"
+      }
+    } 
 }
