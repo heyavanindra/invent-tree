@@ -233,9 +233,7 @@ const Scene1 = ({ xGreen }) => {
         className="absolute top-0 bottom-0 z-10 bg-transparent"
       >
         <img className="h-screen w-full" src="/green.svg" />
-        {/* Text Section */}
         <div className="absolute top-[5%] left-[10%] right-[10%] z-10 px-12 text-[#4F2D91]">
-          {/* Headers in one line */}
           <div className="flex items-center gap-4 mb-8">
             <h2 className="font-bold text-5xl">
               {t("Home.Scene1.headers.solve")}
@@ -250,9 +248,7 @@ const Scene1 = ({ xGreen }) => {
             </h2>
           </div>
 
-          {/* Three Column Layout for Points */}
           <div className="grid grid-cols-3 gap-8">
-            {/* Solve Points */}
             <ul className="list-disc list-inside text-lg font-medium space-y-2">
               {t
                 .raw("Home.Scene1.sections.solve.points")
@@ -261,7 +257,6 @@ const Scene1 = ({ xGreen }) => {
                 ))}
             </ul>
 
-            {/* Enhance Points */}
             <ul className="list-disc list-inside text-lg font-medium space-y-2">
               {t
                 .raw("Home.Scene1.sections.enhance.points")
@@ -270,7 +265,6 @@ const Scene1 = ({ xGreen }) => {
                 ))}
             </ul>
 
-            {/* Accelerate Points */}
             <ul className="list-disc list-inside text-lg font-medium space-y-2">
               {t
                 .raw("Home.Scene1.sections.accelerate.points")

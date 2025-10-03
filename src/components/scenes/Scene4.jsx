@@ -55,7 +55,6 @@ const Scene4 = () => {
             <hr className="border-t border-[#c1c7d0]/40 dark:border-gray-700 mb-6 lg:mb-8" />
 
             <div className="relative z-10 space-y-4 lg:space-y-6 max-h-[50vh] overflow-y-hidden pr-2">
-              {/* PDF Brochure - Always First */}
               <article className="border-b border-[#c1c7d0] dark:border-gray-700 pb-4 lg:pb-6">
                 <div className="flex flex-wrap items-baseline text-xs font-bold text-gray-600 dark:text-gray-400 mb-1">
                   <time>{new Date().toLocaleDateString()}</time>
@@ -88,7 +87,6 @@ const Scene4 = () => {
                 </a>
               </article>
 
-              {/* Regular Announcements from Backend */}
               {news.length > 0 ? (
                 news.map((item, i) => (
                   <article

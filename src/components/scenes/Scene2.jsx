@@ -3,7 +3,6 @@ import React from 'react';
 import { motion } from 'motion/react';
 
 const ScrollingCarousel = () => {
-  // Image URLs
   const images = [
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9SRRmhH4X5N2e4QalcoxVbzYsD44C-sQv-w&s",
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFYqoKTu_o3Zns2yExbst2Co84Gpc2Q1RJbA&s",
@@ -23,7 +22,6 @@ const ScrollingCarousel = () => {
     "https://res.cloudinary.com/dk2mdk9md/image/upload/v1758735851/0e8bef40-05ab-494d-b3b9-31adc69288df_bz6uj0.jpg"
   ];
 
-  // Function to insert random text boxes into image array
   const insertRandomTexts = (imageArray) => {
     const result = [...imageArray.map(url => ({ type: 'image', content: url, isSquare: false }))];
     
@@ -44,7 +42,6 @@ const ScrollingCarousel = () => {
   return (
     <div className="w-full h-screen bg-zinc-100 overflow-hidden">
       <div className="flex h-full">
-        {/* Left Column */}
         <div className="w-1/2 h-full overflow-hidden">
           <motion.div
             className="flex flex-col"
