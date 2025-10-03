@@ -28,8 +28,8 @@ const Scene1 = ({ xGreen }) => {
         t("Home.Scenes.EventService.points.customEvents"),
         t("Home.Scenes.EventService.points.eventManagement"),
       ],
-      className: "xl:left-[15%] left-[14%] top-[10%]",
-      pin:"xl:left-[14%] left-[13%] top-[20%]"
+      className: "left-[1850px] top-[10%]",
+      pin:"left-[1700px] top-[80px]"
     },
     {
       id: 2,
@@ -220,17 +220,12 @@ const Scene1 = ({ xGreen }) => {
     },
   ];
 
-  const bgImage =
-    theme === "dark" ? "url('/Final-03.webp')" : "url('/Final-02.webp')";
+  
 
   return (
     <motion.div
-      className="relative flex h-screen w-full bg-cover bg-no-repeat "
-      style={{
-        backgroundImage: bgImage,
-        backgroundSize: "auto 100%", // fit height, crop width
-        backgroundPosition: "center",
-      }}
+      className="relative flex h-screen w-full"
+      
     >
       <motion.div
         style={{
@@ -302,7 +297,7 @@ const Scene1 = ({ xGreen }) => {
           }, [inView]);
 
           return <span  key={idx + scene.id}>
-            <Card
+            {/* <Card
               ref={ref}
             
               id={scene.id}
@@ -312,7 +307,7 @@ const Scene1 = ({ xGreen }) => {
               position={scene.className}
               
             ></Card>
-            <Pin className={scene.pin}></Pin>
+            <Pin className={scene.pin}></Pin>*/}
           </span>;
         })}
       </div>
