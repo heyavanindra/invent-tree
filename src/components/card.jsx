@@ -5,7 +5,7 @@ import React from "react";
 
 const Card = ({ desc, title, id, ref, points, position }) => {
   return (
-    <div ref={ref}>
+    <div>
       <motion.div
         className={cn(
           "absolute  flex flex-col justify-center items-center ",
@@ -17,6 +17,7 @@ const Card = ({ desc, title, id, ref, points, position }) => {
         transition={{ duration: 0.2 }}
       >
         <motion.div
+           ref={ref}
           className="p-4 bg-white/80 flex flex-col justify-center items-center gap-y-2 backdrop-blur-xs rounded-2xl lg:w-[20vw] text-center w-xs"
           initial={{
             y: 30,

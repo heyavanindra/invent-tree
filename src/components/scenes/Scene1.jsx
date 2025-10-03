@@ -28,8 +28,8 @@ const Scene1 = ({ xGreen }) => {
         t("Home.Scenes.EventService.points.customEvents"),
         t("Home.Scenes.EventService.points.eventManagement"),
       ],
-      className: " left-[15.6%] top-[10%]",
-      pin:"left-[15%] top-[20%]"
+      className: "xl:left-[15%] left-[14%] top-[10%]",
+      pin:"xl:left-[14%] left-[13%] top-[20%]"
     },
     {
       id: 2,
@@ -61,8 +61,8 @@ const Scene1 = ({ xGreen }) => {
         t("Home.Scenes.CampaignManagement.points.dataAnalytics"),
         t("Home.Scenes.CampaignManagement.points.electionDayOperations"),
       ],
-      className: "",
-      pin:"left-[15%] top-[0%]"
+      className: "xl:left-[90.5%] left-[92%] top-[10%]",
+      pin:"xl:left-[89%] left-[91%] top-[20%]"
       
     },
     {
@@ -78,8 +78,8 @@ const Scene1 = ({ xGreen }) => {
         t("Home.Scenes.DataAnalysis.points.geographicInformationSystems"),
         t("Home.Scenes.DataAnalysis.points.realTimeDashboards"),
       ],
-      className: "",
-      pin:"left-[15%] top-[0%]"
+      className: "left-[53.5%] top-[10%]",
+      pin:"left-[52%] top-[20%]"
       
     },
     {
@@ -146,8 +146,8 @@ const Scene1 = ({ xGreen }) => {
         t("Home.Scenes.PolicyConsulting.points.stakeholderEngagement"),
         t("Home.Scenes.PolicyConsulting.points.issueBriefings"),
       ],
-      className: "left-[94%] top-[5%]",
-      pin:"left-[97%] top-[0%]"
+      className: "xl:left-[94.5%] top-[5%] left-[96%]",
+      pin:"xl:left-[98%] left-[99%] top-[0%]"
       
     },
     {
@@ -180,8 +180,8 @@ const Scene1 = ({ xGreen }) => {
         t("Home.Scenes.VolunteerTraining.points.motivationAndRecognition"),
         t("Home.Scenes.VolunteerTraining.points.leadershipDevelopment"),
       ],
-      // className: "left-[85%] top-[0%]",
-      // pin:"left-[84%] top-[30%]"
+      className: "xl:left-[85%] left-[86%] top-[0%]",
+      pin:"left-[84%] top-[30%]"
       
     },
     {
@@ -296,6 +296,7 @@ const Scene1 = ({ xGreen }) => {
 
           useEffect(() => {
             if (inView) {
+              console.log(scene.id)
               setActiveScene(scene.id);
             }
           }, [inView]);

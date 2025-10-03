@@ -169,9 +169,9 @@ export default function Home() {
           </div>
         </motion.div>
 
-        {/* <AnimatePresence>
+        <AnimatePresence>
           {isInView && <RotatingScene />}
-        </AnimatePresence>*/}
+        </AnimatePresence>
 
         <ProgressBarNavigation
           steps={steps}
