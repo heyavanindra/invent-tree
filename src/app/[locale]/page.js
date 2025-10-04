@@ -155,11 +155,7 @@ export default function Home() {
           <div className="w-[100vw] h-screen">
             <HomePage opacity={opacity} />
           </div>
-          <div className="h-screen min-w-[10300px] bg-[url('/Final-02.webp')] dark:bg-[url('/Final-03.webp')]  bg-repeat-y"
-            style={{
-              backgroundSize:"100% auto"
-            }}
-          >
+          <div className="h-screen w-[12840px]">
             <Scene1 xGreen={xGreen} />
           </div>
           <div className="h-screen w-[30vw]">
