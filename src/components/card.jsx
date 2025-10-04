@@ -29,7 +29,7 @@ const Card = ({ desc, title, id, ref, points, position }) => {
             opacity: 1,
             scale: 1,
           }}
-          viewpoirt={{ margin: "0px -300px 0px -100px" }}
+          viewport={{ margin: "0px -300px 0px -100px" }}
           transition={{
             type: "spring",
             stiffness: 150,

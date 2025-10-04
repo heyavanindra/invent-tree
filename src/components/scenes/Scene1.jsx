@@ -28,7 +28,7 @@ const Scene1 = ({ xGreen }) => {
         t("Home.Scenes.EventService.points.customEvents"),
         t("Home.Scenes.EventService.points.eventManagement"),
       ],
-      className: "left-[20%] top-[10%]",
+      className: "left-[1850px] top-[10%]",
       pin:"left-[1700px] top-[80px]"
     },
     {
@@ -224,7 +224,8 @@ const Scene1 = ({ xGreen }) => {
 
   return (
     <motion.div
-      className="relative flex h-screen w-full" 
+      className="relative flex h-screen w-full"
+      
     >
       <motion.div
         style={{
@@ -296,7 +297,7 @@ const Scene1 = ({ xGreen }) => {
           }, [inView]);
 
           return <span  key={idx + scene.id}>
-            <Card
+            {/* <Card
               ref={ref}
             
               id={scene.id}
@@ -306,7 +307,7 @@ const Scene1 = ({ xGreen }) => {
               position={scene.className}
               
             ></Card>
-            <Pin className={scene.pin}></Pin>
+            <Pin className={scene.pin}></Pin>*/}
           </span>;
         })}
       </div>
