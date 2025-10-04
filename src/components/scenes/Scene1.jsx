@@ -228,8 +228,8 @@ const Scene1 = ({ xGreen }) => {
       className="relative flex h-screen w-full bg-cover bg-no-repeat "
       style={{
         backgroundImage: bgImage,
-        backgroundSize: "auto 100%", // fit height, crop width
-        backgroundPosition: "center",
+        backgroundSize: "auto 100%", 
+        backgroundPosition: "left center",
       }}
     >
       <motion.div
@@ -304,7 +304,6 @@ const Scene1 = ({ xGreen }) => {
           return <span  key={idx + scene.id}>
             <Card
               ref={ref}
-            
               id={scene.id}
               desc={scene.desc}
               title={scene.title}

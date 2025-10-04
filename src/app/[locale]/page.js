@@ -155,7 +155,7 @@ export default function Home() {
           <div className="w-[100vw] h-screen">
             <HomePage opacity={opacity} />
           </div>
-          <div className="h-screen w-[12840px]">
+          <div className="h-screen w-[10840px]">
             <Scene1 xGreen={xGreen} />
           </div>
           <div className="h-screen w-[30vw]">

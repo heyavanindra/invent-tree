@@ -17,8 +17,8 @@ const Card = ({ desc, title, id, ref, points, position }) => {
         transition={{ duration: 0.2 }}
       >
         <motion.div
-           ref={ref}
-          className="p-4 bg-white/80 flex flex-col justify-center items-center gap-y-2 backdrop-blur-xs rounded-2xl lg:w-[20vw] text-center w-xs"
+          ref={ref}
+          className=" bg-white/90 rounded-2xl overflow-hidden flex flex-col justify-center items-center gap-y-2 backdrop-blur-xs lg:w-[20vw] text-center w-xs"
           initial={{
             y: 30,
             opacity: 0,
@@ -37,7 +37,9 @@ const Card = ({ desc, title, id, ref, points, position }) => {
             delay: 0.1,
           }}
         >
-          <h1 className="text-3xl font-semibold text-[#604e84]">{title}</h1>
+          <div className="bg-[#675880] p-2 w-full">
+            <h1 className="text-3xl font-semibold text-[#1e1e1e]">{title}</h1>
+          </div>
           <p className="font-medium dark:text-neutral-600">{desc}</p>
           <div>
             {points?.length > 0 && (
