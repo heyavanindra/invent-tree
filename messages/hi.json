@@ -343,6 +343,17 @@
 
   "policy": {
     "title": "नीतियाँ और कानूनी पारदर्शिता",
+    "tabs": [
+      { "id": "core-legal", "label": "मुख्य कानूनी" },
+      { "id": "governance", "label": "शासन" },
+      { "id": "data-protection", "label": "डेटा सुरक्षा" },
+      { "id": "media-communication", "label": "मीडिया और संचार" },
+      { "id": "survey-research", "label": "सर्वेक्षण और अनुसंधान" },
+      { "id": "specialized", "label": "विशेषीकृत सेवाएँ" },
+      { "id": "health-safety", "label": "स्वास्थ्य और सुरक्षा" },
+      { "id": "hr-policies", "label": "मानव संसाधन नीतियाँ" },
+      { "id": "finance", "label": "वित्त" }
+    ],
     "policies": {
       "core-legal": {
         "title": "मुख्य कानूनी दस्तावेज़ीकरण",

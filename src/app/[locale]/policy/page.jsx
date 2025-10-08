@@ -17,7 +17,7 @@ import {
 import { useTranslations } from "next-intl";
 
 export default function PoliciesComponent() {
-  const t = useTranslations("policy")
+  const t = useTranslations("policy");
   const [activeTab, setActiveTab] = useState("core-legal");
   const [activePolicy, setActivePolicy] = useState(0);
   const scrollContainerRef = useRef(null);
@@ -39,17 +39,17 @@ export default function PoliciesComponent() {
     setActivePolicy(0);
   };
 
-  const tabs = [
-    { id: "core-legal", label: "Core Legal", icon: FileText },
-    { id: "governance", label: "Governance", icon: Shield },
+  const tabsIcon = [
+    { icon: FileText },
+    { icon: Shield },
     // { id: 'client-service', label: 'Client & Service', icon: Users },
-    { id: "data-protection", label: "Data Protection", icon: Lock },
-    { id: "media-communication", label: "Media & Communication", icon: Globe },
-    { id: "survey-research", label: "Survey & Research", icon: BarChart3 },
-    { id: "specialized", label: "Specialized Services", icon: AlertCircle },
-    { id: "health-safety", label: "Health & Safety", icon: Heart },
-    { id: "hr-policies", label: "HR Policies", icon: Users },
-    { id: "finance", label: "Finance", icon: DollarSign },
+    { icon: Lock },
+    { icon: Globe },
+    { icon: BarChart3 },
+    { icon: AlertCircle },
+    { icon: Heart },
+    { icon: Users },
+    { icon: DollarSign },
   ];
 
   // const policies = {
@@ -1031,12 +1031,12 @@ export default function PoliciesComponent() {
 
   return (
     <main className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-12">
-      <header className="mb-8 mt-12 sm:mb-12 text-center">
+      <header className="mb-8 mt-24 sm:mb-12 text-center">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
           {t("title")}
         </h1>
         <p className="text-lg sm:text-xl text-neutral-600 dark:text-neutral-400 max-w-4xl mx-auto leading-relaxed px-4">
-          {t('description')}
+          {t("description")}
         </p>
       </header>
 
@@ -1070,8 +1070,8 @@ export default function PoliciesComponent() {
               className="flex space-x-4 sm:space-x-8 overflow-x-auto scrollbar-hide px-8 sm:px-12"
               style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
             >
-              {tabs.map((tab) => {
-                const Icon = tab.icon;
+              {t.raw("tabs").map((tab, idx) => {
+                const Icon = tabsIcon[idx].icon
                 return (
                   <button
                     key={tab.id}
@@ -1173,17 +1173,17 @@ export default function PoliciesComponent() {
       <footer className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-neutral-200 dark:border-neutral-700 text-center">
         <div className="bg-neutral-50 dark:bg-neutral-800 rounded-lg p-4 sm:p-6">
           <p className="text-sm sm:text-base text-neutral-700 dark:text-neutral-300 mb-4">
-           {t('footer.title')}
+            {t("footer.title")}
           </p>
           <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400">
-            {t('footer.subtitl')}{" "}
+            {t("footer.subtitl")}{" "}
             <a
               href="mailto:legal@invent-tree.com"
               className="text-[#BDD5E9] dark:text-[#BDD5E9] hover:underline font-medium"
             >
               legal@invent-tree.com
             </a>{" "}
-          {t('footer.address')}{" "}
+            {t("footer.address")}{" "}
             <a
               href="mailto:compliance@invent-tree.com"
               className="text-[#BDD5E9] dark:text-[#BDD5E9] hover:underline font-medium"

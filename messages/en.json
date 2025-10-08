@@ -496,6 +496,17 @@
   },
   "policy": {
     "title": "Policies & Legal Transparency",
+    "tabs":[
+    { "id": "core-legal", "label": "Core Legal" },
+    { "id": "governance", "label": "Governance" },
+    { "id": "data-protection", "label": "Data Protection" },
+    { "id": "media-communication", "label": "Media & Communication" },
+    { "id": "survey-research", "label": "Survey & Research" },
+    { "id": "specialized", "label" : "Specialized Services"},
+    { "id": "health-safety", "label": "Health & Safety"},
+    { "id": "hr-policies", "label": "HR Policies" },
+    { "id": "finance", "label": "Finance"}
+  ],
     "policies": {
       "core-legal": {
         "title": "Core Legal Documentation",
