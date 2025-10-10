@@ -19,31 +19,45 @@ import HomepageMobile from "@/components/mobile-view-components/Homepage";
 import ScenesSection from "@/components/mobile-view-components/ScenesSection";
 import ProgressBarNavigation from "@/components/progress-bar";
 
-
 export default function Home() {
-  const ref = useRef(null);             
-  const scrollWrapperRef = useRef(null); 
+  const ref = useRef(null);
+  const scrollWrapperRef = useRef(null);
+  const bgRef = useRef(null);
   const [scrollHeight, setScrollHeight] = useState("200vh");
   const [activeStep, setActiveStep] = useState(0);
-  
+
   const steps = [
-    { number: '01', label: 'Home' },
-    { number: '02', label: 'Services' },
-    { number: '03', label: 'Polls' },
-    { number: '04', label: 'Announcement' },
+    { number: "01", label: "Home" },
+    { number: "02", label: "Services" },
+    { number: "03", label: "Polls" },
+    { number: "04", label: "Announcement" },
   ];
 
- 
   const [sectionWidths, setSectionWidths] = useState([]);
-  
+  useEffect(() => {
+    if (!bgRef.current) {
+      return;
+    }
+    const totalwidth = bgRef.current.totalWidth;
+    const Innerwidth = bgRef.current.innerWidth;
+    const offsetwidth = bgRef.current.offsetWidth;
+    console.log(
+      "Innerwidth",
+      Innerwidth,
+      "offset width",
+      offsetwidth,
+      "total width",
+      totalwidth,
+    );
+  });
   useEffect(() => {
     const vw = window.innerWidth;
     setSectionWidths([
-      { width: vw, name: 'home' },
-      { width: 12840 +  (30 / 100) * vw, name: 'scene1' },
-      { width: 1500, name: 'scene2' },
-      { width: 800, name: 'scene3' },
-      { width: 1500, name: 'announcement' }, 
+      { width: vw, name: "home" },
+      { width: 12840 + (30 / 100) * vw, name: "scene1" },
+      { width: 1500, name: "scene2" },
+      { width: 800, name: "scene3" },
+      { width: 1500, name: "announcement" },
     ]);
   }, []);
 
@@ -72,12 +86,15 @@ export default function Home() {
   const { isInView, setIsInView } = useContext(ScrollContext);
 
   useMotionValueEvent(scrollYProgress, "change", (progress) => {
-    const totalWidth = sectionWidths.reduce((acc, section) => acc + section.width, 0);
+    const totalWidth = sectionWidths.reduce(
+      (acc, section) => acc + section.width,
+      0,
+    );
     const currentPosition = progress * totalWidth;
-    
+
     let accumulatedWidth = 0;
     let newActiveStep = 0;
-    
+
     for (let i = 0; i < sectionWidths.length; i++) {
       if (
         currentPosition >= accumulatedWidth &&
@@ -88,11 +105,11 @@ export default function Home() {
       }
       accumulatedWidth += sectionWidths[i].width;
     }
-    
+
     if (currentPosition >= totalWidth - 5) {
       newActiveStep = sectionWidths.length - 1;
     }
-    
+
     setActiveStep(newActiveStep);
   });
 
@@ -105,23 +122,27 @@ export default function Home() {
   });
 
   const handleStepClick = (stepIndex) => {
-    const totalWidth = sectionWidths.reduce((acc, section) => acc + section.width, 0);
+    const totalWidth = sectionWidths.reduce(
+      (acc, section) => acc + section.width,
+      0,
+    );
     let targetPosition = 0;
-    
+
     for (let i = 0; i < stepIndex; i++) {
       targetPosition += sectionWidths[i].width;
     }
-    
+
     if (stepIndex < sectionWidths.length) {
       targetPosition += sectionWidths[stepIndex].width / 1000;
     }
-    
+
     const targetProgress = targetPosition / totalWidth;
-    
-    const targetScrollY = targetProgress * (ref.current.offsetHeight - window.innerHeight);
+
+    const targetScrollY =
+      targetProgress * (ref.current.offsetHeight - window.innerHeight);
     window.scrollTo({
       top: targetScrollY,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   };
 
@@ -135,7 +156,11 @@ export default function Home() {
   }, []);
 
   return (
-    <div ref={ref} className="flex relative flex-col w-full" style={{ height: scrollHeight }}>
+    <div
+      ref={ref}
+      className="flex relative flex-col w-full"
+      style={{ height: scrollHeight }}
+    >
       {/* Mobile */}
       <div className="md:hidden">
         <HomepageMobile />
@@ -155,7 +180,7 @@ export default function Home() {
           <div className="w-[100vw] h-screen">
             <HomePage opacity={opacity} />
           </div>
-          <div className="h-screen w-[10840px]">
+          <div ref={bgRef} className="h-screen w-[14840px]">
             <Scene1 xGreen={xGreen} />
           </div>
           <div className="h-screen w-[30vw]">
@@ -169,9 +194,7 @@ export default function Home() {
           </div>
         </motion.div>
 
-        <AnimatePresence>
-          {isInView && <RotatingScene />}
-        </AnimatePresence>
+        <AnimatePresence>{isInView && <RotatingScene />}</AnimatePresence>
 
         <ProgressBarNavigation
           steps={steps}
