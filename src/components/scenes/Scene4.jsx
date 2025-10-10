@@ -126,7 +126,7 @@ const Scene4 = () => {
           </div>
         </aside>
 
-        <main className="w-full sm:w-full flex flex-col justify-start px-5 sm:px-8 lg:px-12 xl:px-18 py-8 sm:py-8 pb-4 flex-0.9">
+        <main className="w-full sm:w-full flex flex-col justify-start px-5 sm:px-8 lg:px-12 xl:px-18 py-2 sm:py-0 pb-4 flex-0.9">
           <div className="mb-8 w-full mt-4 sm:mt-0 flex justify-center">
             <img
               src="/logo/logo3.webp"

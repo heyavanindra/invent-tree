@@ -1,13 +1,16 @@
+
 'use client';
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
+import { cn } from '@/lib/utils';
 
 const ProgressBarNavigation = ({ 
   steps, 
   activeStep = 1,
   onStepClick,
   className = "",
-  position = "bottom-right"
+  position = "bottom-right",
+  size = "medium" // "small", "medium", "large"
 }) => {
   const [hoveredStep, setHoveredStep] = useState(null);
   const [progressWidth, setProgressWidth] = useState(0);
@@ -25,9 +28,44 @@ const ProgressBarNavigation = ({
         return "bottom-8 left-1/2 -translate-x-1/2";
       case "bottom-right":
       default:
-        return "bottom-0 right-1";
+        return "bottom-0 right-0";
     }
   };
+
+  const getSizeConfig = () => {
+    switch (size) {
+      case "small":
+        return {
+          button: "w-8 h-8",
+          padding: "px-4 py-3",
+          margin: "mx-2",
+          fontSize: "text-xs",
+          tooltip: "text-xs px-3 py-1.5 bottom-12",
+          tooltipWidth: "70px"
+        };
+      case "large":
+        return {
+          button: "w-14 h-14",
+          padding: "px-8 py-5",
+          margin: "mx-4",
+          fontSize: "text-base",
+          tooltip: "text-base px-5 py-2.5 bottom-20",
+          tooltipWidth: "110px"
+        };
+      case "medium":
+      default:
+        return {
+          button: "w-10 h-10",
+          padding: "px-5 py-3",
+          margin: "mx-2.5",
+          fontSize: "text-sm",
+          tooltip: "text-sm px-4 py-2 bottom-14",
+          tooltipWidth: "90px"
+        };
+    }
+  };
+
+  const sizeConfig = getSizeConfig();
 
   const handleStepClick = (index) => {
     if (onStepClick) {
@@ -36,35 +74,35 @@ const ProgressBarNavigation = ({
   };
 
   return (
-    <div className={`hidden md:block fixed ${getPositionClasses()} z-50 ${className}`}>
+    <div className={cn("hidden md:block fixed z-50 ",className,getPositionClasses())}>
       <div className="flex items-center justify-center">
         <motion.div 
-          className="relative flex items-center w-fit bg-transparent rounded-full px-6 py-4 shadow-none"
+          className={`relative flex items-center w-fit bg-transparent rounded-full ${sizeConfig.padding} shadow-none`}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
           
-          <div className="absolute top-1/2 left-6 right-6 h-[2px] bg-gradient-to-r from-white/30 to-white/10 dark:from-white/20 dark:to-white/5 rounded-full z-0" />
+          <div className={`absolute top-1/2 ${size === "small" ? "left-4 right-4" : size === "large" ? "left-8 right-8" : "left-5 right-5"} h-[2px] bg-gradient-to-r from-white/30 to-white/10 dark:from-white/20 dark:to-white/5 rounded-full z-0`} />
           
           <motion.div
-            className="absolute top-1/2 left-6 h-[2px] bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 rounded-full z-10 shadow-lg shadow-blue-500/30"
+            className={`absolute top-1/2 ${size === "small" ? "left-4" : size === "large" ? "left-8" : "left-5"} h-[2px] bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 rounded-full z-10 shadow-lg shadow-blue-500/30`}
             initial={{ width: "0%" }}
             animate={{ width: `${progressWidth}%` }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           />
           
           <motion.div
-            className="absolute top-1/2 left-6 h-[4px] bg-gradient-to-r from-blue-400/50 via-purple-400/50 to-pink-400/50 rounded-full blur-sm z-5"
+            className={`absolute top-1/2 ${size === "small" ? "left-4" : size === "large" ? "left-8" : "left-5"} h-[4px] bg-gradient-to-r from-blue-400/50 via-purple-400/50 to-pink-400/50 rounded-full blur-sm z-5`}
             initial={{ width: "0%" }}
             animate={{ width: `${progressWidth}%` }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           />
           
           {steps.map((step, index) => (
-            <div key={index} className="relative z-20 flex flex-col items-center mx-3">
+            <div key={index} className={`relative z-20 flex flex-col items-center ${sizeConfig.margin}`}>
               <motion.div
-                className="absolute bottom-16 px-4 py-2 rounded-xl backdrop-blur-lg bg-white/90 dark:bg-gray-900/90 text-gray-800 dark:text-white shadow-2xl border border-white/20 dark:border-gray-700/50 whitespace-nowrap"
+                className={`absolute ${sizeConfig.tooltip} rounded-xl backdrop-blur-lg bg-white/90 dark:bg-gray-900/90 text-gray-800 dark:text-white shadow-2xl border border-white/20 dark:border-gray-700/50 whitespace-nowrap`}
                 initial={{ opacity: 0, y: 10, scale: 0.8 }}
                 animate={{ 
                   opacity: (hoveredStep === index || (hoveredStep === null && activeStep === index)) ? 1 : 0,
@@ -72,9 +110,9 @@ const ProgressBarNavigation = ({
                   scale: (hoveredStep === index || (hoveredStep === null && activeStep === index)) ? 1 : 0.8
                 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
-                style={{ minWidth: '90px', textAlign: 'center' }}
+                style={{ minWidth: sizeConfig.tooltipWidth, textAlign: 'center' }}
               >
-                <div className="font-medium text-sm">{step.label}</div>
+                <div className="font-medium">{step.label}</div>
                 {/* Enhanced tooltip arrow with glow */}
                 <div className="absolute left-1/2 -bottom-1.5 -translate-x-1/2">
                   <div className="w-3 h-3 bg-white/90 dark:bg-gray-900/90 border-r border-b border-white/20 dark:border-gray-700/50 rotate-45" />
@@ -84,7 +122,7 @@ const ProgressBarNavigation = ({
               
               <motion.button
                 aria-label={`Go to ${step.label}`}
-                className={`relative w-12 h-12 flex items-center justify-center font-medium text-sm rounded-full transition-all duration-300 group overflow-hidden
+                className={`relative ${sizeConfig.button} flex items-center justify-center font-medium ${sizeConfig.fontSize} rounded-full transition-all duration-300 group overflow-hidden
                   ${index <= activeStep 
                     ? 'text-white shadow-lg shadow-blue-500/30' 
                     : 'text-gray-400 dark:text-gray-500 hover:text-white dark:hover:text-white'
@@ -148,4 +186,4 @@ const ProgressBarNavigation = ({
   );
 };
 
-export default ProgressBarNavigation;
+export default ProgressBarNavigation

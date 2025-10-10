@@ -114,7 +114,7 @@ export default function Home() {
   });
 
   useMotionValueEvent(xGreen, "change", (latest) => {
-    if (latest < -400 && latest > -2333) {
+    if (latest < -270 && latest > -2533) {
       setIsInView(true);
     } else {
       setIsInView(false);
