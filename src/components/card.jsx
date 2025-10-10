@@ -37,11 +37,11 @@ const Card = ({ desc, title, id, ref, points, position }) => {
             delay: 0.1,
           }}
         >
-          <div className="bg-[#675880] p-2 w-full">
-            <h1 className="text-3xl font-semibold text-[#1e1e1e]">{title}</h1>
+          <div className="bg-gradient-to-b from-[#DD1F3D] to-[#233A8D] p-2 w-full">
+            <h1 className="text-3xl font-semibold text-neutral-50">{title}</h1>
           </div>
           <p className="font-medium dark:text-neutral-600">{desc}</p>
-          <div>
+          <div className="pb-3">
             {points?.length > 0 && (
               <ul className="list-disc list-inside text-left mt-2 space-y-1">
                 {points.map((point, idx) => (

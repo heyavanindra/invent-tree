@@ -171,7 +171,7 @@ export default function Home() {
       </div>
 
       {/* Desktop */}
-      <div className="sticky md:block hidden inset-0 h-screen overflow-hidden">
+      <div className="sticky md:block  hidden inset-0  overflow-hidden">
         <motion.div
           ref={scrollWrapperRef}
           className="flex w-fit overflow-hidden"
@@ -180,7 +180,7 @@ export default function Home() {
           <div className="w-[100vw] h-screen">
             <HomePage opacity={opacity} />
           </div>
-          <div ref={bgRef} className="h-screen w-[14840px]">
+          <div ref={bgRef} className="h-screen w-[23840px]">
             <Scene1 xGreen={xGreen} />
           </div>
           <div className="h-screen w-[30vw]">
