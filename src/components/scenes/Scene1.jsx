@@ -61,7 +61,7 @@ const Scene1 = ({ xGreen }) => {
           t("Home.Scenes.CampaignManagement.points.electionDayOperations"),
         ],
         className: "left-[24.9%] top-[20%]",
-        pin: "left-[24%] top-[25%]",
+        pin: "left-[23.8%] top-[30%]",
       },
       {
         id: 5,
@@ -125,7 +125,7 @@ const Scene1 = ({ xGreen }) => {
           t("Home.Scenes.DigitalStrategy.points.crisisManagement"),
         ],
         className: "left-[54.8%] top-[25%]",
-        pin: "left-[54%] top-[25%]",
+        pin: "left-[53.7%] top-[30%]",
       },
       {
         id: 9,
@@ -157,7 +157,7 @@ const Scene1 = ({ xGreen }) => {
           t("Home.Scenes.LeaderBranding.points.consistencyAcrossPlatforms"),
         ],
         className: "left-[69.6%] top-[30%]",
-        pin: "left-[69%] top-[30%]",
+        pin: "left-[68.5%] top-[32%]",
       },
       {
         id: 11,
@@ -173,7 +173,7 @@ const Scene1 = ({ xGreen }) => {
           t("Home.Scenes.VolunteerTraining.points.leadershipDevelopment"),
         ],
         className: "left-[77%] top-[20%]",
-        pin: "left-[76.2%] top-[25%]",
+        pin: "left-[75.9%] top-[28%]",
       },
       {
         id: 12,
@@ -188,8 +188,8 @@ const Scene1 = ({ xGreen }) => {
           t("Home.Scenes.YouthEngagement.points.socialMediaCampaigns"),
           t("Home.Scenes.YouthEngagement.points.partnerships"),
         ],
-        className: "left-[85%] top-[25%]",
-        pin: "left-[84%] top-[25%]",
+        className: "left-[84.5%] top-[25%]",
+        pin: "left-[83.4%] top-[35%]",
       },
       {
         id: 13,
