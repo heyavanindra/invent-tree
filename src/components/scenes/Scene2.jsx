@@ -1,37 +1,45 @@
-"use client"
-import React from 'react';
-import { motion } from 'motion/react';
+"use client";
+import React from "react";
+import { motion } from "motion/react";
 
 const ScrollingCarousel = () => {
   // Image URLs
   const images = [
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9SRRmhH4X5N2e4QalcoxVbzYsD44C-sQv-w&s",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFYqoKTu_o3Zns2yExbst2Co84Gpc2Q1RJbA&s",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc9APxkj0xClmrU3PpMZglHQkx446nQPG6lA&s",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoFRQjM-wM_nXMA03AGDXgJK3VeX7vtD3ctA&s",
-    "https://thumbs.dreamstime.com/b/innovative-medical-device-featuring-eye-image-illustrating-advanced-tracking-technology-generated-ai-358374352.jpg",
-    "https://gratisography.com/wp-content/uploads/2024/11/gratisography-augmented-reality-800x525.jpg",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUPIfiGgUML8G3ZqsNLHfaCnZK3I5g4tJabQ&s",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUsbmTZu_uMrmJ0z--CrG-o1UIXytu1OCizQ&s",
-    "https://cdn.pixabay.com/photo/2018/08/04/11/30/draw-3583548_1280.png",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbnUheL6Gz4BOy-uR6-BZ8KFIYVVDn-18ciQ&s"
+    "https://res.cloudinary.com/dk2mdk9md/image/upload/v1760438720/54890ca6-f239-4a94-94ef-c43ea20b1dbe_b5bfhy.jpg",
+    "https://res.cloudinary.com/dk2mdk9md/image/upload/v1760438718/f9f3a672-13bf-49e3-b835-4e28073f6b9f_achldt.jpg",
+    "https://res.cloudinary.com/dk2mdk9md/image/upload/v1760438718/de34d6c5-1074-44a6-b56f-0e555d56d1a0_j9ru2g.jpg",
+    "https://res.cloudinary.com/dk2mdk9md/image/upload/v1760438717/Rv_Logo-06_wnrypx.png",
+    "https://res.cloudinary.com/dk2mdk9md/image/upload/v1760438718/c6f379b7-e748-49a4-8063-ace3d96f273d_cx1n1w.jpg",
+    "https://res.cloudinary.com/dk2mdk9md/image/upload/v1760438717/a403f2f7-b0fc-4509-8b14-a5e51ba48a0a_uvgsyx.jpg",
+    "https://res.cloudinary.com/dk2mdk9md/image/upload/v1760438717/08bc50f7-316b-40fd-899a-7c6efaa3b34d_vnndzx.jpg",
+    "https://res.cloudinary.com/dk2mdk9md/image/upload/v1760438717/0f843f03-f828-47ce-b615-6141f687e808_pwnpbr.jpg",
   ];
 
   const textWords = [
-    "https://res.cloudinary.com/dk2mdk9md/image/upload/v1758735865/3e25f99d-9210-4130-be1e-84bc5f3abe39_suvvoe.jpg", 
-    "https://res.cloudinary.com/dk2mdk9md/image/upload/v1758735865/b423c3e1-e1fe-454a-b445-04206456b312_ji0jtw.jpg", 
-    "https://res.cloudinary.com/dk2mdk9md/image/upload/v1758735851/0e8bef40-05ab-494d-b3b9-31adc69288df_bz6uj0.jpg"
+    "https://res.cloudinary.com/dk2mdk9md/image/upload/v1758735865/3e25f99d-9210-4130-be1e-84bc5f3abe39_suvvoe.jpg",
+    "https://res.cloudinary.com/dk2mdk9md/image/upload/v1758735865/b423c3e1-e1fe-454a-b445-04206456b312_ji0jtw.jpg",
+    "https://res.cloudinary.com/dk2mdk9md/image/upload/v1758735851/0e8bef40-05ab-494d-b3b9-31adc69288df_bz6uj0.jpg",
   ];
 
   // Function to insert random text boxes into image array
   const insertRandomTexts = (imageArray) => {
-    const result = [...imageArray.map(url => ({ type: 'image', content: url, isSquare: false }))];
-    
-    textWords.forEach(word => {
+    const result = [
+      ...imageArray.map((url) => ({
+        type: "image",
+        content: url,
+        isSquare: false,
+      })),
+    ];
+
+    textWords.forEach((word) => {
       const randomIndex = Math.floor(Math.random() * result.length);
-      result.splice(randomIndex, 0, { type: 'image', content: word, isSquare: true });
+      result.splice(randomIndex, 0, {
+        type: "image",
+        content: word,
+        isSquare: true,
+      });
     });
-    
+
     return result;
   };
 
@@ -71,7 +79,7 @@ const ScrollingCarousel = () => {
                   <img
                     src={item.content}
                     alt={`carousel-image-${index}`}
-                    className="w-full h-32 md:h-40 object-cover"
+                    className="w-full h-full object-cover"
                   />
                 )}
               </div>
@@ -105,7 +113,7 @@ const ScrollingCarousel = () => {
                   <img
                     src={item.content}
                     alt={`carousel-image-${index}`}
-                    className="w-full h-32 md:h-40 object-cover"
+                    className="w-full h-full object-cover"
                   />
                 )}
               </div>
@@ -115,6 +123,6 @@ const ScrollingCarousel = () => {
       </div>
     </div>
   );
-}; 
+};
 
 export default ScrollingCarousel;

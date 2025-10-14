@@ -7,7 +7,7 @@ import RotatedSVG from "./RotatedSVG";
 import { useTranslations } from "next-intl";
 
 const HomePage = ({ opacity }) => {
-  const t = useTranslations("Home")
+  const t = useTranslations("Home");
   return (
     <motion.div className="relative dark:bg-neutral-900 flex w-screen min-h-screen items-center overflow-hidden bg-no-repeat bg-cover">
       <div className="absolute bottom-4 left-4 md:bottom-12 md:left-12 hidden sm:block">
@@ -35,12 +35,12 @@ const HomePage = ({ opacity }) => {
             {t("title")}
           </p>
           <span className="h-px w-32 sm:w-40 md:w-[200px] bg-neutral-600 mask-l-from-0 mask-r-from-0 my-2"></span>
-          <h3 className="text-base sm:text-lg md:text-xl">{t('tagline')}</h3>
+          <h3 className="text-base sm:text-lg md:text-xl">{t("tagline")}</h3>
         </div>
 
         <div className="flex flex-col sm:ml-8 md:ml-20 lg:ml-40 justify-center items-center w-full sm:w-auto">
           <div className="mb-6 sm:mb-0">
-            <RotatedSVG 
+            <RotatedSVG
               size={200}
               logoSize={55}
               className="sm:w-[220px] sm:h-[220px] md:w-[260px] md:h-[260px] lg:w-[300px] lg:h-[300px]"
@@ -50,21 +50,31 @@ const HomePage = ({ opacity }) => {
           <div className="w-full max-w-2xl">
             <ul className="text-left text-xs sm:text-sm md:text-base lg:text-lg p-4 space-y-2 sm:space-y-3 sm:leading-tight lg:leading-relaxed list-disc list-inside">
               <li>
-                <span className="font-semibold text-[#4f2d91]">{t('whatwedo.trustedData.title')}</span>{" "}
-              {t('whatwedo.trustedData.description')}              </li>
+                <span className="font-semibold text-[#4f2d91]">
+                  {t("whatwedo.trustedData.title")}
+                </span>{" "}
+                {t("whatwedo.trustedData.description")}{" "}
+              </li>
               <li>
-                <span className="font-semibold text-[#4f2d91]">{t('whatwedo.expertAnalysis.title')}</span>{" "}
-               {t('whatwedo.expertAnalysis.description')}              </li>
+                <span className="font-semibold text-[#4f2d91]">
+                  {t("whatwedo.expertAnalysis.title")}
+                </span>{" "}
+                {t("whatwedo.expertAnalysis.description")}{" "}
+              </li>
               <li>
-                <span className="font-semibold text-[#4f2d91]">{t('whatwedo.customSolutions.title')}</span>{" "}
-               {t('whatwedo.customSolutions.description')}              </li>
+                <span className="font-semibold text-[#4f2d91]">
+                  {t("whatwedo.customSolutions.title")}
+                </span>{" "}
+                {t("whatwedo.customSolutions.description")}{" "}
+              </li>
             </ul>
 
             <Link
               href={"/about"}
               className="inline-block rounded-lg ml-4 sm:ml-6 md:ml-8 px-3 py-1.5 sm:px-4 sm:py-2 bg-gradient-to-r from-purple-500 to-pink-400 font-semibold cursor-pointer hover:scale-105 transition-transform duration-300 ease-in-out text-xs sm:text-sm md:text-base text-white"
             >
-            {t('learnMore')}            </Link>
+              {t("learnMore")}{" "}
+            </Link>
           </div>
         </div>
       </div>

@@ -19,7 +19,7 @@ import { useTranslations } from "next-intl";
 export default function PoliciesComponent() {
   const t = useTranslations("policy");
   const [activeTab, setActiveTab] = useState("core-legal");
-  const [activePolicy, setActivePolicy] = useState(0);
+  const [activePolicy, setActivePolicy] = useState(0)
   const scrollContainerRef = useRef(null);
 
   const scrollLeft = () => {
