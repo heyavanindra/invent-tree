@@ -72,8 +72,8 @@ const ScrollingCarousel = () => {
             {leftItems.map((item, index) => (
               <div key={`left-${index}`} className="flex-shrink-0">
                 {item.type === "text" ? (
-                  <div className="w-full aspect-square bg-white dark:bg-black flex items-center justify-center">
-                    <h2 className="text-[#67577F] dark:text-[#F0EFEF]  text-6xl font-bold">
+                  <div className="w-full aspect-square bg-white dark:bg-neutral-900 flex items-center justify-center ">
+                    <h2 className="text-[#67577F] dark:text-[#F0EFEF]  text-6xl font-bold p-3">
                       {item.content}
                     </h2>
                   </div>
@@ -81,7 +81,7 @@ const ScrollingCarousel = () => {
                   <img
                     src={item.content}
                     alt={`carousel-image-${index}`}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover bg-white dark:bg-neutral-900"
                   />
                 )}
               </div>
@@ -104,7 +104,7 @@ const ScrollingCarousel = () => {
             {rightItems.map((item, index) => (
               <div key={`right-${index}`} className="flex-shrink-0">
                 {item.type === "text" ? (
-                  <div className="w-full aspect-square bg-white dark:bg-black flex items-center justify-center">
+                  <div className="w-full aspect-square bg-white dark:bg-neutral-900 flex items-center justify-center">
                     <h2 className="text-[#67577F] dark:text-[#F0EFEF]  text-6xl font-bold">
                       {item.content}
                     </h2>
@@ -113,7 +113,7 @@ const ScrollingCarousel = () => {
                   <img
                     src={item.content}
                     alt={`carousel-image-${index}`}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover bg-white dark:bg-neutral-900"
                   />
                 )}
               </div>
