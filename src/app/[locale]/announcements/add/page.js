@@ -14,9 +14,9 @@ export default function AddAnnouncementPage() {
   const [error, setError] = useState("");
   const [animate, setAnimate] = useState(false);
   const router = useRouter();
-  
-  const SECRET_PASSCODE = "1234"; // 
 
+  const SECRET_PASSCODE = process.env.NEXT_PUBLIC_PASSCODE;
+ 
   useEffect(() => {
     // Trigger animation on mount
     setAnimate(true);
